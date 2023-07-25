@@ -68,11 +68,7 @@ export default function ModelJSXGenerator({
             items={highlightedParts}
           /> */}
           {/* <Pick handleToggleMenu={handleToggleMenu} state={state} /> */}
-          <Canvas
-            gl={{ logarithmicDepthBuffer: true }}
-            shadows
-            camera={{ position: [-15, 25, 30], fov: 45 }}
-          >
+          <Canvas gl={{ logarithmicDepthBuffer: true }} shadows camera={camera}>
             <color attach="background" args={[bgcolor]} />
             {/* {directionalLight?.map(({ intensity, position }, index) => {
               return (

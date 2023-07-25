@@ -1,37 +1,51 @@
 [
   {
+    "_id": "621a48ed27920006f77aba88-x1",
+    "coursename": "Transformer 2",
+    "image": "/images/transformerHero.png",
+    "link": "model_pages/transformer2",
+    "size": 13.6
+  },
+  {
+    "_id": "621a48ed27920006f77aba88-x2",
+    "coursename": "Drone",
+    "image": "/images/induction.png",
+    "link": "model_pages/drone",
+    "size": 13.6
+  },
+  {
     "_id": "621a48ed27920006f77aba88",
     "coursename": "Induction Motor",
     "image": "/images/induction.png",
-    "link": "model_pages/Induction",
+    "link": "model_pages/induction",
     "size": 13.6
   },
   {
     "_id": "621a48ed27920006f77aba89",
     "coursename": "DC SHUNT MOTOR",
     "image": "/images/DCshunt.png",
-    "link": "model_pages/Dcshunt",
+    "link": "model_pages/dc_shunt",
     "size": 24.9
   },
   {
     "_id": "621a48ed27920006f77aba8a",
     "coursename": "Working of DC Shunt Motor",
     "image": "/images/working_principle_of_dc.png",
-    "link": "model_pages/ShuntMotor",
+    "link": "model_pages/shunt_motor",
     "size": 4.8
   },
   {
     "_id": "621a48ed27920006f77aba8b",
     "coursename": "Kitkat Fuse",
     "image": "/images/fuse.png",
-    "link": "model_pages/Fuse",
+    "link": "model_pages/fuse",
     "size": 18
   },
   {
     "_id": "621a48ed27920006f77aba8d",
     "coursename": "Ammeter",
     "image": "/images/ammeter.png",
-    "link": "model_pages/Ammeter",
+    "link": "model_pages/ammeter",
     "size": 2.6
   },
 
@@ -39,7 +53,7 @@
     "_id": "62512c0eeb2a1a68ac32181c",
     "coursename": "Variac",
     "image": "/images/variac1.png",
-    "link": "model_pages/Variac",
+    "link": "model_pages/variac",
     "size": 8.6,
     "paragraphs": [
       "A VARIAC, also known as an auto-transformer, is a type of variable transformer that is commonly used in electrical and electronic applications. It allows the user to vary the output voltage of an AC power source by adjusting the position of a movable contact along a coil winding",
@@ -60,7 +74,7 @@
     "_id": "62664c95486b3c49081e89a8",
     "coursename": "Transformer",
     "image": "/images/transformerHero.png",
-    "link": "model_pages/Transformer",
+    "link": "model_pages/transformer",
     "size": 10.2,
     "paragraphs": [
       "A distribution transformer is an electrical transformer that is used to step down the voltage of electricity from the transmission level to the distribution level, making it suitable for use in homes, businesses, and other low voltage applications. These transformers are typically smaller than power transformers and are mounted on poles or pads in close proximity to the areas they serve.",
@@ -81,7 +95,7 @@
     "_id": "62716be89c7c04e3622ebffe",
     "coursename": "Working Principle of DC Motor",
     "image": "/images/elementry.png",
-    "link": "model_pages/Elementry",
+    "link": "model_pages/elementry",
     "size": 0.99,
     "hidden": true
   },
@@ -89,7 +103,7 @@
     "_id": "627bf51e230fde07150bf1e1",
     "coursename": "Alternator",
     "image": "/images/alternator1.png",
-    "link": "model_pages/Alternator",
+    "link": "model_pages/alternator",
     "size": 11.6,
     "paragraphs": [
       "An alternator is an electrical generator that converts mechanical energy into electrical energy in the form of alternating current (AC). Alternators are commonly used in vehicles to charge the battery and power the electrical systems while the engine is running. They are also used in power plants to generate electricity on a larger scale.",
@@ -110,14 +124,14 @@
     "_id": "627e7d371296fa2149ec5838",
     "coursename": "Working Principle of Induction Motor",
     "image": "/images/workingPrincipleInductionmotor.png",
-    "link": "model_pages/WorkingPrincipleOfInductionMotor",
+    "link": "model_pages/working_principle_of_induction_motor",
     "size": 22.8
   },
   {
     "_id": "62aa1ae0527305fdd10a7caf",
     "coursename": "Synchronous Motor",
     "image": "/images/synchronus.png",
-    "link": "model_pages/SynchronousMotor",
+    "link": "model_pages/synchronous_motor",
     "size": 26.8
   },
   {
@@ -131,21 +145,21 @@
     "_id": "62ea1d0e08a38e3b194b5e84",
     "coursename": "Single Phase Induction Motor with Run Capacitor",
     "image": "/images/singlephase.png",
-    "link": "model_pages/SinglePhase",
+    "link": "model_pages/single_phase",
     "size": 3.1
   },
   {
     "_id": "62f94f1a86c2ff45a351a57f",
     "coursename": "Wind Turbine",
     "image": "/images/windTurbine.png",
-    "link": "model_pages/WindTurbine",
+    "link": "model_pages/wind_turbine",
     "size": 3.1
   },
   {
     "_id": "638c7769beefc05eeffc9234",
     "coursename": "Shaded Pole Motor",
     "image": "/images/shadedpole.png",
-    "link": "model_pages/Shadedpole",
+    "link": "model_pages/shaded_pole",
     "size": 3.1
   }
 ]
