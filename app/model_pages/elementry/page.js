@@ -96,6 +96,8 @@ function Model({ ...props }) {
     >
       <Select enabled={highlightedParts[0].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube.geometry}
           material={materials.North_Pole}
           position={[0, 0, 5.21]}
@@ -104,6 +106,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube001.geometry}
           material={materials.South_Pole}
           position={[0, 0, -5.21]}
@@ -113,6 +117,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[2].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           ref={cmt}
           geometry={nodes.BezierCircle001.geometry}
           material={materials.Commutator}
@@ -121,6 +127,8 @@ function Model({ ...props }) {
           scale={0.51}
         >
           <mesh
+            castShadow
+            receiveShadow
             geometry={nodes.Vert001.geometry}
             material={materials.Wire}
             rotation={[-Math.PI, 0.03, -Math.PI / 2]}
@@ -130,6 +138,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[3].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BezierCircle002.geometry}
           material={materials.Brush}
           position={[5.6, 0, 0]}
@@ -139,6 +149,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[4].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           ref={Battery}
           geometry={nodes.Cylinder001.geometry}
           material={materials.Battery}
@@ -149,6 +161,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[5].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Vert002.geometry}
           material={materials.Wire}
           position={[8.09, 0, 0.48]}
@@ -157,6 +171,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[6].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cone001.geometry}
           material={materials.Magnteic_field}
           rotation={[-Math.PI / 2, 0, 0]}

@@ -27,7 +27,7 @@ const Hero = () => {
               machines better
             </p>
             <div>
-              <Link href="/ThreeD">
+              <Link href="/model_list">
                 <div className="cursor-pointer btn-second px-8 py-4 shadow-md dark:shadow-3xl dark:hover:shadow-orange-500/10 dark:shadow-orange-500/30 rounded-2xl">
                   Explore 3D Models
                 </div>

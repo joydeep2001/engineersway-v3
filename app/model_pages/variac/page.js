@@ -181,6 +181,8 @@ function Model({ ...props }) {
       </group>
       <Select enabled={highlightedParts[0].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Base.geometry}
           ref={Bse}
           material={materials.Base}
@@ -192,6 +194,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BindingPost1.geometry}
           material={materials.Binding_post}
           position={[0.66, 13.03, -0.69]}
@@ -201,6 +205,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BindingPost2.geometry}
           material={materials.Binding_post}
           position={[0.66, 13.03, -0.69]}
@@ -210,6 +216,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BindingPost3.geometry}
           material={materials.Binding_post}
           position={[0.66, 13.03, -0.69]}
@@ -219,6 +227,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BindingPost4.geometry}
           material={materials.Binding_post}
           position={[0.66, 13.03, -0.69]}
@@ -233,12 +243,16 @@ function Model({ ...props }) {
       >
         <Select enabled={highlightedParts[2].highlight}>
           <mesh
+            castShadow
+            receiveShadow
             geometry={nodes["Assambly_-_BindingPostCap3-1"].geometry}
             material={materials.Terminal}
           />
         </Select>
         <Select enabled={highlightedParts[3].highlight}>
           <mesh
+            castShadow
+            receiveShadow
             geometry={nodes["Assambly_-_BindingPostCap3-1_1"].geometry}
             material={materials.Terminal_}
           />
@@ -246,6 +260,8 @@ function Model({ ...props }) {
       </group>
       <Select enabled={highlightedParts[4].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BottomCoreHolder.geometry}
           ref={B_holder}
           material={materials.Bottom_CoreHolder}
@@ -257,6 +273,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[5].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BrushHolder.geometry}
           material={materials.Brush_Holder}
           position={[0.66, 13.03, -0.69]}
@@ -266,6 +284,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[6].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.BrushWire.geometry}
           material={materials.BrushWire}
           position={[0.66, 13.03, -0.69]}
@@ -275,6 +295,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[7].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.CarbonBrush.geometry}
           material={materials.Carbon_Brush}
           position={[0.66, 13.03, -0.69]}
@@ -284,6 +306,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[8].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.CentralShaft.geometry}
           material={materials.Central_Shaft}
           position={[0.66, 13.03, -0.69]}
@@ -293,6 +317,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[9].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Coil.geometry}
           material={materials.Coil}
           position={[0.66, 13.03, -0.69]}
@@ -302,6 +328,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[10].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Screw.geometry}
           material={materials.Screw}
           position={[6.79, 5.91, -10.89]}
@@ -312,6 +340,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[11].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.FrontPanel.geometry}
           ref={Fpanel}
           material={materials.FrontPanel}
@@ -323,6 +353,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[12].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Fuse.geometry}
           material={materials.Fuse}
           position={[7.2, 7.17, -15.37]}
@@ -332,6 +364,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[13].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.FuseNut.geometry}
           material={materials.Nut}
           position={[0.66, 13.03, -0.69]}
@@ -341,6 +375,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[14].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.hex_flange_nut.geometry}
           material={materials.Hex_flange_nut}
           position={[0.66, 13.03, -0.69]}
@@ -350,6 +386,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[10].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.hex_head_tapping_screw.geometry}
           material={materials.Screw}
           position={[0.66, 13.03, -0.69]}
@@ -359,6 +397,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[15].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.IndicatorPlate.geometry}
           material={materials.IndicatorPlate}
           position={[7.01, 10.67, -6.82]}
@@ -368,6 +408,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[16].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.IronCore.geometry}
           material={materials.Iron_core}
           position={[0.66, 13.03, -0.69]}
@@ -377,6 +419,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[17].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Knob.geometry}
           material={materials.Knob}
           position={[6.92, 12.08 + KnobP, -6.86]}
@@ -388,6 +432,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[13].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Nut.geometry}
           material={materials.Nut}
           position={[0.66, 13.03, -0.69]}
@@ -397,6 +443,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[18].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_OuterBody-1"].geometry}
           material={materials.Outerbody}
           position={[7.1, 7.68, -8.59 + Body]}
@@ -406,6 +454,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[19].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_Spring-1"].geometry}
           material={materials.Spring}
           position={[0.66, 13.03, -0.69]}
@@ -415,6 +465,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[20].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_UpperCoreHolder-1"].geometry}
           material={materials.Upper_Core_Holder}
           position={[0.66, 13.03, -0.69]}
@@ -424,6 +476,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[21].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_Wiper-1"].geometry}
           material={materials.Wiper}
           position={[0.66, 13.03, -0.69]}
@@ -433,6 +487,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[22].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_Wire1-1"].geometry}
           material={materials.Wire}
           position={[0.66, 13.03, -0.69]}
@@ -442,6 +498,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[22].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_Wire2-1"].geometry}
           material={materials.Wire}
           position={[0.66, 13.03, -0.69]}
@@ -451,6 +509,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[22].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_Wire3-1"].geometry}
           material={materials.Wire}
           position={[0.66, 13.03, -0.69]}
@@ -460,6 +520,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[23].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assambly_-_WireInsulation-1"].geometry}
           material={materials.Wire_insulation}
           position={[0.66, 13.03, -0.69]}
@@ -469,6 +531,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[24].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Bolt.geometry}
           material={materials.Bolt}
           position={[7.31, 9.29, -7.71]}
@@ -477,6 +541,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[25].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Object.geometry}
           material={materials.FUSE}
           position={[7.58, 7.05, -16.57]}
@@ -687,7 +753,7 @@ export default function DcShunt() {
       // state={state}
       camera={camera}
       directionalLight={directionalLight}
-      bgcolor="#050505"
+      bgcolor="#363636"
       highlightedParts={highlightedParts}
     >
       <Model dispatch={dispatch} highlightedParts={highlightState} />

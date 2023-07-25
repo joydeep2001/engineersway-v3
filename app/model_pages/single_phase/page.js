@@ -874,7 +874,6 @@ export default function Induction() {
         dispatch={dispatch}
         highlightedParts={highlightState}
         position={[0 + X, 0 + Y, 0 + Z]}
-        scale={15}
       />
     </ModelJSXGenerator>
   );

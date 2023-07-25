@@ -98,6 +98,8 @@ function Model({ ...props }) {
       </group>
       <Select enabled={highlightedParts[0].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_pan_slot_head_am-5"].geometry}
           material={nodes["Assem1_-_pan_slot_head_am-5"].material}
           position={[2.41, 1.24, 2.11]}
@@ -108,6 +110,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_pan_slot_head_am-6"].geometry}
           material={nodes["Assem1_-_pan_slot_head_am-6"].material}
           position={[2.43, 1.08, 2.11]}
@@ -118,6 +122,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[2].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_pan_slot_head_am-7"].geometry}
           material={nodes["Assem1_-_pan_slot_head_am-7"].material}
           position={[1.63, 1.08, 2.11]}
@@ -127,6 +133,8 @@ function Model({ ...props }) {
       </Select>
       <Select enabled={highlightedParts[6].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Fuse_Bridge.geometry}
           material={materials.Fuse_Bridge}
           position={[2.03 + posX, 1.48 + posY, 2.11]}
@@ -135,6 +143,8 @@ function Model({ ...props }) {
         >
           <Select enabled={highlightedParts[3].highlight}>
             <mesh
+              castShadow
+              receiveShadow
               geometry={nodes["Assem1_-_pan_slot_head_am-5"].geometry}
               material={nodes["Assem1_-_pan_slot_head_am-5"].material}
               position={[2.41, 1.24, 2.11]}
@@ -145,6 +155,8 @@ function Model({ ...props }) {
 
           <Select enabled={highlightedParts[4].highlight}>
             <mesh
+              castShadow
+              receiveShadow
               geometry={nodes["Assem1_-_pan_slot_head_am-6"].geometry}
               material={nodes["Assem1_-_pan_slot_head_am-6"].material}
               position={[2.43, 1.08, 2.11]}
@@ -155,6 +167,8 @@ function Model({ ...props }) {
 
           <Select enabled={highlightedParts[5].highlight}>
             <mesh
+              castShadow
+              receiveShadow
               geometry={nodes["Assem1_-_pan_slot_head_am-7"].geometry}
               material={nodes["Assem1_-_pan_slot_head_am-7"].material}
               position={[1.63, 1.08, 2.11]}
@@ -167,6 +181,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[7].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_pan_slot_head_am-2"].geometry}
           material={nodes["Assem1_-_pan_slot_head_am-2"].material}
           position={[1.75, 1.24, 2.11]}
@@ -177,6 +193,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[8].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_PART3-1"].geometry}
           material={materials.Base}
           position={[2.02, 1.18, 2.11]}
@@ -187,6 +205,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[9].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_part4-1"].geometry}
           material-color="#b87300"
           material={materials.Contact_Point}
@@ -198,6 +218,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[10].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_pan_slot_head_am-3"].geometry}
           material={nodes["Assem1_-_pan_slot_head_am-3"].material}
           position={[1.65, 1.24, 2.11]}
@@ -208,6 +230,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[11].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["Assem1_-_pan_slot_head_am-4"].geometry}
           material={nodes["Assem1_-_pan_slot_head_am-4"].material}
           position={[2.31, 1.24, 2.11]}
@@ -218,6 +242,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[12].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Plane.geometry}
           material={materials.Plane}
           position={[1.76, 1.02, 1.91]}
@@ -342,7 +368,11 @@ export default function Fuse() {
       directionalLight={directionalLight}
       bgcolor="#050505"
     >
-      <Model dispatch={dispatch} highlightedParts={highlightState} />
+      <Model
+        rotation={[0, Math.PI, 0]}
+        dispatch={dispatch}
+        highlightedParts={highlightState}
+      />
     </ModelJSXGenerator>
   );
   // return (

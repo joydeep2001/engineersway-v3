@@ -181,6 +181,8 @@ function Model({ ...props }) {
     >
       <Select enabled={highlightedParts[0].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Arbor-1"].geometry}
           material={materials.Arbor}
           position={[8.13, 50.04, -73.41]}
@@ -191,6 +193,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[1].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Base-1"].geometry}
           material={materials.Base}
           position={[8.2, 9.4, -92.74]}
@@ -201,6 +205,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[2].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_BaseTable-1"].geometry}
           material={materials.Base_Table}
           position={[8.15, 5.65, -71.21]}
@@ -211,6 +217,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[3].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Boss-Extrude47-1"].geometry}
           material={materials.Shaft}
           position={[8.15, 72.38, -73.44]}
@@ -221,6 +229,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[4].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_CapSpring-1"].geometry}
           material={materials["Material.001"]}
           position={[1.38, 60.06, -76.67]}
@@ -231,6 +241,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[5].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckBody-1"].geometry}
           material={materials.ChuckBody}
           position={[8.15, 46.93, -73.41]}
@@ -241,6 +253,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[6].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckGear-1"].geometry}
           material={materials.ChuckGear}
           position={[8.15, 47.51, -73.41]}
@@ -251,6 +265,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[7].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckJaw1-1"].geometry}
           material={materials.ChuckJaw}
           position={[8.15, 46.07, -73.04]}
@@ -261,6 +277,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[8].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckJaw2-1"].geometry}
           material={materials.ChuckJaw}
           position={[8.47, 46.07, -73.59]}
@@ -271,6 +289,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[9].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckJaw3-1"].geometry}
           material={materials.ChuckJaw}
           position={[7.83, 46.07, -73.59]}
@@ -281,6 +301,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[10].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckLock-1"].geometry}
           material={nodes["ass_-_ChuckLock-1"].material}
           position={[7.3, 56.63, -73.42]}
@@ -291,6 +313,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[11].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_ChuckSleeve-1"].geometry}
           material={materials.ChuckSleeve}
           position={[8.15, 49.07, -73.41]}
@@ -301,6 +325,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[12].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Column-1"].geometry}
           material={materials.Column}
           position={[8.15, 46.89, -88.67]}
@@ -311,6 +337,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[13].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Grip1-1"].geometry}
           material={materials.Grip}
           position={[18.64, 59.83, -76.64]}
@@ -321,6 +349,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[14].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Grip2-1"].geometry}
           material={materials.Grip}
           position={[18.64, 60.06, -76.64]}
@@ -331,6 +361,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[15].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Grip3-1"].geometry}
           material={materials.Grip}
           position={[18.49, 60.47, -76.64]}
@@ -341,6 +373,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[16].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Handle1-1"].geometry}
           material={materials.Handle}
           position={[18.49, 60.47, -76.64]}
@@ -351,6 +385,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[17].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Handle2-1"].geometry}
           material={materials.Handle}
           position={[18.64, 59.83, -76.64]}
@@ -361,6 +397,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[18].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Handle3-1"].geometry}
           material={materials.Handle}
           position={[18.64, 60.06, -76.64]}
@@ -371,6 +409,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[19].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Head_Assembly-1"].geometry}
           material={materials.Head_Assembly}
           position={[8.65 + HeadAssembly, 64.23, -80.97]}
@@ -383,6 +423,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[20].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-1"].geometry}
           material={materials.Screw}
           position={[7.73, 71.34, -84.58]}
@@ -393,6 +435,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[21].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-2"].geometry}
           material={materials.Screw}
           position={[7.73, 71.34, -78.64]}
@@ -403,6 +447,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[22].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-3"].geometry}
           material={materials.Screw}
           position={[0.29, 65.08, -103.24]}
@@ -413,6 +459,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[23].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-4"].geometry}
           material={materials.Screw}
           position={[0.29, 58.25, -103.24]}
@@ -423,6 +471,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[24].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-5"].geometry}
           material={materials.Screw}
           position={[16.01, 65.08, -103.24]}
@@ -433,6 +483,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[25].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-6"].geometry}
           material={nodes["ass_-_hex_flange_machine_screw_am-6"].material}
           position={[2.93, 55.94, -101.31]}
@@ -443,6 +495,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[26].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-7"].geometry}
           material={materials.Screw}
           position={[10.69, 67.87, -95.33]}
@@ -453,6 +507,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[27].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-8"].geometry}
           material={materials.Screw}
           position={[5.49, 67.87, -95.33]}
@@ -463,6 +519,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[28].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_hex_flange_machine_screw_am-9"].geometry}
           material={materials.Screw}
           position={[16.01, 58.24, -103.24]}
@@ -473,6 +531,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[29].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Hub-1"].geometry}
           material={materials.Hub}
           position={[5.84 + Hub, 60.06, -76.68]}
@@ -485,6 +545,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[30].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_LockingNut-1"].geometry}
           material={materials.LockingNut}
           position={[8.36, 9.87, -94.04]}
@@ -495,6 +557,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[31].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_LockingNutHandle-1"].geometry}
           material={materials.LockingNutHandle}
           position={[4.33, 9.87, -94.03]}
@@ -505,6 +569,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[32].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_LockingPin-1"].geometry}
           material={materials.Locking_Pin}
           position={[8.15, 78.24, -104.34]}
@@ -515,6 +581,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[33].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_LockingPin1-1"].geometry}
           material={materials.Locking_Pin}
           position={[8.15, 78.24, -74.39]}
@@ -525,6 +593,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[34].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Motor-1"].geometry}
           material={materials.Motor}
           position={[8.14, 62.02, -104.18]}
@@ -535,6 +605,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[35].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_MotorMountingBracket-1"].geometry}
           material={materials.Motor_mounting_bracket}
           position={[8.22, 63.12, -100.23]}
@@ -545,6 +617,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[36].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_MotorShaft-1"].geometry}
           material={materials.Motor_Shaft}
           position={[8.15, 66.95, -103.35]}
@@ -555,6 +629,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[37].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Nut1-1"].geometry}
           material={nodes["ass_-_Nut1-1"].material}
           position={[0.91, 60.05, -76.67]}
@@ -565,6 +641,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[38].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Pully2-1"].geometry}
           material={materials.Pully}
           position={[8.15, 75.4, -103.36]}
@@ -575,6 +653,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[39].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_PullyBelt-1"].geometry}
           material={materials.Belt}
           position={[8.15, 77.21, -81.99]}
@@ -585,6 +665,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[40].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_PullyGardBase-1"].geometry}
           material={materials.PulleyGardBase}
           position={[8.08, 71.31, -85.48]}
@@ -595,6 +677,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[41].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_radial_ball_bearing_68_am-1"].geometry}
           material={materials.BallBearing}
           position={[8.15, 72.38, -73.44]}
@@ -605,6 +689,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[42].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_SequringPin-1"].geometry}
           material={materials.SecuringPin}
           position={[5.67, 9.87, -94.04]}
@@ -622,6 +708,8 @@ function Model({ ...props }) {
       >
         <Select enabled={highlightedParts[43].highlight}>
           <mesh
+            castShadow
+            receiveShadow
             geometry={
               nodes["ass_-_socket_button_head_cap_screw_am-5_1"].geometry
             }
@@ -631,6 +719,8 @@ function Model({ ...props }) {
 
         <Select enabled={highlightedParts[44].highlight}>
           <mesh
+            castShadow
+            receiveShadow
             geometry={
               nodes["ass_-_socket_button_head_cap_screw_am-5_2"].geometry
             }
@@ -641,6 +731,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[45].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_socket_set_screw_cone_point_am-6"].geometry}
           material={nodes["ass_-_socket_set_screw_cone_point_am-6"].material}
           position={[8.15, 64.57, -88.75]}
@@ -651,6 +743,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[46].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_socket_set_screw_cone_point_am-7"].geometry}
           material={materials.socketsetscrew}
           position={[14.33, 63.12, -88.72]}
@@ -661,6 +755,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[47].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_socket_set_screw_cone_point_am-8"].geometry}
           material={materials.socketsetscrew}
           position={[14.54, 58.31, -88.72]}
@@ -671,6 +767,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[48].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Spindle-1"].geometry}
           material={materials.Spindle}
           position={[8.03 - Spindle, 58.28, -73.42]}
@@ -683,6 +781,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[49].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Spring-1"].geometry}
           material={materials.Spring}
           position={[1.73 + Spring, 60.08, -76.73]}
@@ -695,6 +795,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[50].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Table-1"].geometry}
           material={materials.Table}
           position={[8.15, 25.39, -72.79]}
@@ -705,6 +807,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[51].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_TableBase-1"].geometry}
           material={materials.Table_Base}
           position={[8.22, 25.01, -92.98]}
@@ -715,6 +819,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[52].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_TubeQuill-1"].geometry}
           material={materials.TubeQuil}
           position={[7.97 - TubeQuil, 57.24, -73.79]}
@@ -727,6 +833,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[53].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Washer-1"].geometry}
           material={nodes["ass_-_Washer-1"].material}
           position={[1.18, 60.05, -76.66]}
@@ -737,6 +845,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[54].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Base-1001"].geometry}
           material={nodes["ass_-_Base-1001"].material}
           position={[-4.81, 0.99, -113.77]}
@@ -747,6 +857,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[55].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_LockingNut-1001"].geometry}
           material={materials.LockingNut}
           position={[8.36, 25.12, -93.87]}
@@ -757,6 +869,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[56].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_LockingNutHandle-1001"].geometry}
           material={materials.LockingNutHandle}
           position={[4.33, 25.11, -93.87]}
@@ -767,6 +881,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[57].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_SequringPin-1001"].geometry}
           material={materials.SecuringPin}
           position={[5.67, 25.11, -93.87]}
@@ -777,6 +893,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[58].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_radial_ball_bearing_68_am-1001"].geometry}
           material={materials.BallBearing}
           position={[8.15, 63.85, -73.44]}
@@ -787,6 +905,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[59].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_radial_ball_bearing_68_am-1002"].geometry}
           material={materials.BallBearing}
           position={[8.15, 54.13, -73.44]}
@@ -797,6 +917,8 @@ function Model({ ...props }) {
 
       <Select enabled={highlightedParts[60].highlight}>
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes["ass_-_Pully2-1001"].geometry}
           material={materials.Pully}
           position={[8.15, 75.68, -73.44]}

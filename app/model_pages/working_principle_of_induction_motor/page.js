@@ -74,6 +74,8 @@ function Model({ ...props }) {
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
         <mesh
+          castShadow
+          receiveShadow
           ref={squirrelcage}
           name="a_-_cage-1"
           geometry={nodes["a_-_cage-1"].geometry}
@@ -82,17 +84,23 @@ function Model({ ...props }) {
           scale={0.12}
         >
           <mesh
+            castShadow
+            receiveShadow
             name="a_-_DriveShaft-1"
             geometry={nodes["a_-_DriveShaft-1"].geometry}
             material={materials.Shaft}
           />
           <mesh
+            castShadow
+            receiveShadow
             name="a_-_RotorCore-1"
             geometry={nodes["a_-_RotorCore-1"].geometry}
             material={nodes["a_-_RotorCore-1"].material}
           />
         </mesh>
         <mesh
+          castShadow
+          receiveShadow
           name="a_-_Coil2-1"
           geometry={nodes["a_-_Coil2-1"].geometry}
           material={materials.Y_Phase}
@@ -100,6 +108,8 @@ function Model({ ...props }) {
           scale={0.12}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="a_-_Coil3-1"
           geometry={nodes["a_-_Coil3-1"].geometry}
           material={materials.B_Phase}
@@ -107,6 +117,8 @@ function Model({ ...props }) {
           scale={0.12}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="a_-_Coil1-1"
           geometry={nodes["a_-_Coil1-1"].geometry}
           material={materials.R_Phase}
@@ -114,6 +126,8 @@ function Model({ ...props }) {
           scale={0.12}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="a_-_Stator-1"
           geometry={nodes["a_-_Stator-1"].geometry}
           material={materials.Stator}
@@ -121,6 +135,8 @@ function Model({ ...props }) {
           scale={0.12}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="a_-_cage-1001"
           geometry={nodes["a_-_cage-1001"].geometry}
           material={materials.Sqiurrel_Cage}
@@ -129,6 +145,8 @@ function Model({ ...props }) {
           scale={0}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="Cylinder"
           geometry={nodes.Cylinder.geometry}
           material={materials.Direction_Of_Current}
@@ -137,6 +155,8 @@ function Model({ ...props }) {
           scale={0}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="Cylinder001"
           geometry={nodes.Cylinder001.geometry}
           material={materials.Direction_Of_Current}
@@ -145,6 +165,8 @@ function Model({ ...props }) {
           scale={0}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="Cylinder003"
           geometry={nodes.Cylinder003.geometry}
           material={materials.Direction_Of_Current}
@@ -153,6 +175,8 @@ function Model({ ...props }) {
           scale={0.01}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="Cylinder002"
           geometry={nodes.Cylinder002.geometry}
           material={materials.Direction_Of_Current}
@@ -161,6 +185,8 @@ function Model({ ...props }) {
           scale={0.01}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="Cylinder005"
           geometry={nodes.Cylinder005.geometry}
           material={materials.Direction_Of_Current}
@@ -169,6 +195,8 @@ function Model({ ...props }) {
           scale={0.01}
         />
         <mesh
+          castShadow
+          receiveShadow
           name="Cylinder006"
           geometry={nodes.Cylinder006.geometry}
           material={materials.Direction_Of_Current}
@@ -183,16 +211,22 @@ function Model({ ...props }) {
           scale={0.47}
         >
           <mesh
+            castShadow
+            receiveShadow
             name="Vert005"
             geometry={nodes.Vert005.geometry}
             material={materials.Magnetic_Field}
           />
           <mesh
+            castShadow
+            receiveShadow
             name="Vert005_1"
             geometry={nodes.Vert005_1.geometry}
             material={materials.North_pole}
           />
           <mesh
+            castShadow
+            receiveShadow
             name="Vert005_2"
             geometry={nodes.Vert005_2.geometry}
             material={materials.South_Pole}
@@ -244,7 +278,7 @@ export default function Induction() {
       directionalLight={directionalLight}
       bgcolor="#111111"
     >
-      <Model position={[0 + X, 0 + Y, 0 + Z]} />
+      <Model rotation={[0, Math.PI, 0]} position={[0 + X, 0 + Y, 0 + Z]} />
     </ModelJSXGenerator>
   );
 

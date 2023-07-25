@@ -112,7 +112,7 @@ const Explore = () => {
                 <span className="relative text-white  z-0"> </span>
               </h3>
             </div>
-            <a href={"/ThreeD"}>
+            <a href={"/model_list"}>
               <div
                 className="vBtn justify-center inline-block  items-center dark:bg-transparent dark:border-2 border-purple-600
               dark:hover:bg-fuchsia-600/20 transition transform"
