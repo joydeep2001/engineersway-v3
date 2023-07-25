@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" style={{ "color-scheme": "dark" }}>
       <head>
         <link
           rel="stylesheet"
@@ -28,9 +28,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <AppContextProvider>
-          <ThemeProvider attribute="class">{children}</ThemeProvider>
-        </AppContextProvider>
+        <ThemeProvider attribute="class">
+          <AppContextProvider>{children}</AppContextProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
