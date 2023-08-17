@@ -2,7 +2,7 @@ import NavLink from "next/link";
 
 export default function Warning(props) {
   const { modelInfo, onBack } = props;
-  const handleClick = e => {
+  const handleClick = (e) => {
     onBack();
   };
   return (
@@ -25,7 +25,7 @@ export default function Warning(props) {
         <div className="flex justify-center  mt-8 h-20">
           <NavLink href={"/" + modelInfo.link}>
             <button
-              onClick={e => {
+              onClick={(e) => {
                 e.target.innerHTML = "Loading...";
               }}
               className="flex flex-1 items-center justify-center bg-red-500 text-white"

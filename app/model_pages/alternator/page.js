@@ -29,6 +29,8 @@ import {
   useGroupControlsWithReset,
 } from "@/hooks/useControlsCustom";
 
+import Toolbar from "@/components/ToolBar";
+
 // const state = proxy({
 //   current: null,
 // });
@@ -1161,7 +1163,7 @@ export default function DcShunt() {
     { id: "Negetive", name: "Negetive", description: "Negetive" },
   ];
   const [highlightState, dispatch] = useReducer(reducer, highlightedParts);
-  const camera = { position: [-15, 15, 25], fov: 69 };
+  const camera = { position: [-15, 15, 25], fov: 100 };
   const directionalLight = [
     { intensity: 1, position: null },
     { intensity: 0.4, position: [0, 5, -25] },
@@ -1171,18 +1173,24 @@ export default function DcShunt() {
   ];
   const { isLoginCountDownComplete, setLoginCountDownComplete, loggedIn } =
     useContext(AppContext);
+  function rotateGear(e) {
+    //e.target.style.transform = "rotate(90deg)";
+  }
+
   return (
-    <ModelJSXGenerator
-      camera={camera}
-      directionalLight={directionalLight}
-      bgcolor="#050511"
-    >
-      <Model
-        position={[0 + X, 0 + Y, 0 + Z]}
-        dispatch={dispatch}
-        highlightedParts={highlightState}
-      />
-    </ModelJSXGenerator>
+    <div className="relative">
+      <ModelJSXGenerator
+        camera={camera}
+        directionalLight={directionalLight}
+        bgcolor="#2f2f30"
+      >
+        <Model
+          position={[0 + X, 0 + Y, 0 + Z]}
+          dispatch={dispatch}
+          highlightedParts={highlightState}
+        />
+      </ModelJSXGenerator>
+    </div>
   );
   // return (
   //   <>

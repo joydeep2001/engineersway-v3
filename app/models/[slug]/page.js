@@ -1,8 +1,8 @@
+"use client";
+
 import React, { Suspense, useContext, useState } from "react";
-import ProgressLoader from "./ProgressLoader";
-import Pick from "./Pick";
+import ProgressLoader from "@/components/ProgressLoader";
 import { Canvas, useFrame } from "@react-three/fiber";
-import dynamic from "next/dynamic";
 
 import {
   OrbitControls,
@@ -14,8 +14,8 @@ import {
   Environment,
   Html,
 } from "@react-three/drei";
-import Login from "./Login";
-import AppContextProvider, { AppContext } from "../context/AppContext";
+
+import AppContextProvider, { AppContext } from "@/context/AppContext";
 import {
   EffectComposer,
   SSAO,
@@ -31,20 +31,11 @@ import {
   ArcballControls,
 } from "@react-three/drei";
 
-import SideMenu from "./SideMenu";
-import PartDetailsView from "./PartDetailsView";
-import PartViewer from "./PartViewer";
-import ToolBar from "@/components/ToolBar";
-
 console.log(EffectComposer, SSAO, SMAA, Outline);
-export default function ModelJSXGenerator({
-  state,
-  directionalLight,
-  camera,
-  bgcolor,
-  children,
-  highlightedParts,
-}) {
+export default function ModelJSXGenerator({ params }) {
+  console.log(params);
+  const gltf = useGLTF(`/models/${[params.slug]}.glb`);
+
   const { loggedIn, setLoginCountDownComplete, isLoginCountDownComplete } =
     useContext(AppContext);
   const [casing, setCasing] = useState(false);
@@ -55,31 +46,9 @@ export default function ModelJSXGenerator({
   const handleToggleMenu = () => {
     setToggleMenu((prevState) => setToggleMenu(!prevState));
   };
+  const [popup, showPopup] = useState({ visibility: false, partDetails: {} });
+  const [showSinglePart, setShowSinglePart] = useState(false);
 
-  const [popup, showPopup] = useState({ visibility: false, selected: 0 });
-  const partDetails = [
-    {
-      name: "part1",
-    },
-    {
-      name: "part2",
-    },
-    {
-      name: "part3",
-    },
-    {
-      name: "part4",
-    },
-    {
-      name: "part5",
-    },
-    {
-      name: "part6",
-    },
-  ];
-  function handleShowPartDetails(i) {
-    showPopup({ visibility: true, selected: i });
-  }
   return (
     <>
       <AppContextProvider>
@@ -91,8 +60,12 @@ export default function ModelJSXGenerator({
             items={highlightedParts}
           /> */}
           {/* <Pick handleToggleMenu={handleToggleMenu} state={state} /> */}
-          <Canvas gl={{ logarithmicDepthBuffer: true }} shadows camera={camera}>
-            <color attach="background" args={[bgcolor]} />
+          <Canvas
+            gl={{ logarithmicDepthBuffer: true }}
+            shadows
+            camera={{ position: [-15, 25, 30], fov: 45 }}
+          >
+            <color attach="background" args={["grey"]} />
             {/* {directionalLight?.map(({ intensity, position }, index) => {
               return (
                 <directionalLight
@@ -121,10 +94,10 @@ export default function ModelJSXGenerator({
               <Stage
                 intensity={0.5}
                 environment={null}
-                shadows={{ type: "accumulative", bias: -0.003 }}
+                shadows={{ type: "accumulative", bias: -0.001 }}
                 adjustCamera={false}
               >
-                {children}
+                <primitive castShadow receiveShadow object={gltf.scene} />
               </Stage>
             </Suspense>
             {/* <GizmoHelper
@@ -140,16 +113,6 @@ export default function ModelJSXGenerator({
             {/* <Environment background preset="sunset" blur={0.8} /> */}
             {/* <ProgressLoader /> */}
           </Canvas>
-          <ToolBar
-            onPartCardClick={handleShowPartDetails}
-            partDetails={partDetails}
-          />
-          {popup.visibility && (
-            <PartDetailsView
-              showPopup={showPopup}
-              partDetails={partDetails[popup.selected]}
-            />
-          )}
         </div>
       </AppContextProvider>
     </>

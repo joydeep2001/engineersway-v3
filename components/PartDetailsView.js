@@ -14,7 +14,7 @@ export default function PartDetailsView({ showPopup, partDetails }) {
             <img src="images/transformer1.png" alt="" />
           </div>
           <h4>{partDetails.name}</h4>
-          <a className="showModel btn-second">Show 3D Model</a>
+          {/* <a className="showModel btn-second">Show 3D Model</a> */}
         </div>
         <div className="rightBlock">
           <div onClick={handleClose} className="detailsCros cursor-pointer">

@@ -464,7 +464,7 @@ button {
   opacity: 1;
   border-radius: 20px;
 }
-.styles_scroll-to-top__2A70v {
+/* .styles_scroll-to-top__2A70v {
   background-color: #ff7b01;
 }
 .slick-dots li.slick-active button:before {
@@ -483,6 +483,9 @@ button {
 
 .slick-arrow {
   display: none !important;
+} */
+.slick-slide {
+  padding: 5px; /* Adjust the value for the desired gap */
 }
 
 .heroImagewrap2:after {

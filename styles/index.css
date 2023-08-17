@@ -40,7 +40,11 @@
   .input-border {
     @apply border-0 border-b-2 border-b-orange-400 rounded-none pl-2;
   }
+  .part-card {
+    @apply m-2 h-12 w-12 bg-white-1 cursor-pointer;
+  }
 }
+
 .bg-brown-to-black {
   background-image: linear-gradient(
     88.97deg,
@@ -467,7 +471,7 @@ button {
 .styles_scroll-to-top__2A70v {
   background-color: #ff7b01;
 }
-.slick-dots li.slick-active button:before {
+/* .slick-dots li.slick-active button:before {
   transform: scale(1.5);
   opacity: 1 !important;
   color: #ee9a0d !important;
@@ -483,7 +487,7 @@ button {
 
 .slick-arrow {
   display: none !important;
-}
+} */
 
 .heroImagewrap2:after {
   content: "";
@@ -558,7 +562,7 @@ button {
 .pointHead {
   margin-right: 10px;
 }
-.exWrap .slick-arrow {
+/* .exWrap .slick-arrow {
   display: block !important;
   width: 50px;
   height: 50px;
@@ -567,14 +571,14 @@ button {
   border: 1px solid #ff7b01;
   z-index: 5;
   transition: 0.4s;
-}
-.exWrap .slick-arrow:hover {
+} */
+/* .exWrap .slick-arrow:hover {
   background-color: #ff7b01;
 }
 .exWrap .slick-arrow:hover::before {
   filter: brightness(0) invert(1);
-}
-.exWrap .slick-arrow:before {
+} */
+/* .exWrap .slick-arrow:before {
   position: absolute;
   content: "";
   width: 60px;
@@ -591,10 +595,10 @@ button {
   background-repeat: no-repeat;
   background-position: center center;
   transform: scale(0.7);
-}
-.exWrap .slick-next {
+} */
+/* .exWrap .slick-next {
   left: 70px;
-}
+} */
 h3 {
   background: -webkit-linear-gradient(#ff7b01, #b14400);
   -webkit-background-clip: text;
@@ -614,12 +618,12 @@ h3 {
 .teamConent h3 {
   text-shadow: none;
 }
-.exWrap .slick-prev {
+/* .exWrap .slick-prev {
   left: 0;
-}
-.exWrap .slick-prev:before {
+} */
+/* .exWrap .slick-prev:before {
   transform: rotate(180deg) scale(0.7);
-}
+} */
 .modelSlide {
   padding: 100px 0;
 }
@@ -815,9 +819,9 @@ h3 {
   }
 }
 @media (max-width: 1366px) {
-  .exWrap .slick-arrow {
+  /* .exWrap .slick-arrow {
     top: 60%;
-  }
+  } */
 }
 @media (max-width: 1280px) {
   .cardDetailsPr {
@@ -840,9 +844,9 @@ h3 {
       width: 50%;
       margin: 0 auto;
     }
-    .exWrap .slick-arrow {
+    /* .exWrap .slick-arrow {
       display: none !important;
-    }
+    } */
   }
   @media (max-width: 1024px) {
     .aText:before {

@@ -639,7 +639,7 @@ export default function Induction() {
     { intensity: 0.4, position: [0, 5, 25] },
     { intensity: 0.4, position: [0, -5, 0] },
   ];
-  const camera = { position: [105, 250, 325], fov: 90 };
+  const camera = { position: [105 + cX, 250 + cY, 325 + cZ], fov: 90 };
   const highlightedParts = [
     //0
     { id: "Cage", name: "Cage", description: "Cage", highlight: false },
