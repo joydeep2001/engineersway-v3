@@ -119,8 +119,8 @@ const ModelList = () => {
             <div className="sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {loading &&
                 [1, 2, 3, 4, 5, 6].map((el) => <SkeletonCardLoader key={el} />)}
-              {data.map?.(({ _id, coursename, image, link, hidden }) => {
-                if (hidden) return <></>;
+              {data.map?.(({ _id, coursename, image, link, published }) => {
+                if (!published) return <></>;
                 return (
                   <div key={_id} className="eaChCardP dark:bg-slate-800">
                     <div className="pdImg">

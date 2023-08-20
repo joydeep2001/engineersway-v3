@@ -38,7 +38,7 @@ import AppContextProvider, { AppContext } from "@/context/AppContext";
 //   current: null,
 // });
 
-const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/Transformer1.glb`;
+const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/transformer.glb`;
 
 function Model({ ...props }) {
   const group = useRef();
@@ -141,6 +141,384 @@ function Model({ ...props }) {
     }
   });
   const { highlightedParts, setPart } = props;
+  // return (
+  //   <group
+  //     ref={group}
+  //     {...props}
+  //     dispose={null}
+  //     onPointerOver={(e) => {
+  //       // e.stopPropagation(), set(e.object.material.name);
+  //     }}
+  //     onPointerOut={(e) => {
+  //       e.intersections.length === 0 && set(null);
+  //     }}
+  //     onClick={(e) => {
+  //       e.stopPropagation();
+  //       console.log("click");
+  //       // state.current = e.object.material.name;
+  //       // props.dispatch({ id: state.current });
+  //       // console.log(state.current);
+  //     }}
+  //     onPointerMissed={(e) => {
+  //       // state.current = null;
+  //     }}
+  //     onDoubleClick={(e) => {
+  //       console.log("double", e.object);
+  //       setPart((prevState) => ({
+  //         visible: !prevState.visible,
+  //         meshObject: e.object,
+  //       }));
+  //     }}
+  //   >
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_Boss-Extrude2111-1"].geometry}
+  //       visible={Insulator_visibility}
+  //       ref={Insulator}
+  //       material={materials.Paper_Insulator}
+  //       position={[, 4.96, -6.55]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_BreatherBody-1"].geometry}
+  //       material={materials.BreatherBody}
+  //       position={[19.58, 13.25, -8.7]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_BreatherSilicaGel-1"].geometry}
+  //       material={materials.SilikaGel}
+  //       position={[19.57, 13.04, -8.7]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_BuchholzRelay-1"].geometry}
+  //       material={materials.Buchholz_Relay}
+  //       position={[14.42, 11.65, -5.41]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_CoreFormer-1"].geometry}
+  //       material={materials.coreformer}
+  //       position={[6.86, 3.59, -8.95 + Coreformer]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_CorrugatedTank-1"].geometry}
+  //       ref={Tank_Cover}
+  //       visible={Tank_Visibility}
+  //       material={materials.CorrugatedTank}
+  //       position={[6.33, 7.15 - Tank, -8.03]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_HV_Bus1-1"].geometry}
+  //       material={materials.HV_Bus}
+  //       position={[11.16, 10.03, -9.34]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_HV_Coil-1"].geometry}
+  //       ref={HV_Coil}
+  //       visible={HV_Coilvisibility}
+  //       material={materials.HV_Coil}
+  //       position={[6.9, 4.16, -9.07 - HV]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LPattern133-1"].geometry}
+  //       material={materials.Lv_coil}
+  //       position={[7.91, 8.42, -6.11]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Bushing2-1"].geometry}
+  //       material={materials.LV_Bushing}
+  //       position={[5.34, 9.18, -7.26]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Bushing3-1"].geometry}
+  //       material={materials.LV_Bushing}
+  //       position={[6.63, 9.18, -6.69]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Bushing4-1"].geometry}
+  //       material={materials.LV_Bushing}
+  //       position={[7.91, 9.18, -6.12]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Insulator2-1"].geometry}
+  //       material={materials.LV_Insulator}
+  //       position={[5.36, 9.73, -7.31]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Insulator4-1"].geometry}
+  //       material={materials.LV_Insulator}
+  //       position={[7.93, 9.73, -6.16]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_Mirror1211-1"].geometry}
+  //       material={materials.Bolt}
+  //       position={[15.01, 11.1, -5.31]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_RingConnector3-1"].geometry}
+  //       material={materials.Ring_Connector}
+  //       position={[11.11, 8.54, -9.22]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_TopCover-1"].geometry}
+  //       visible={Cover_Visible}
+  //       ref={T_Cover}
+  //       material={materials.TopCover}
+  //       position={[8.11, 9.44 + TopCover, -8.69]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_YPhaseInsulator-1"].geometry}
+  //       material={materials.YPhase_Insulator}
+  //       position={[11.16, 10.93, -9.34]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_BPhaseInsulator-1"].geometry}
+  //       material={materials.BPhase_Insulator}
+  //       position={[7.72, 10.93, -10.87]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_Conservator-1"].geometry}
+  //       material={materials.Conservater}
+  //       position={[16.68, 12.62, -5.86]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_ConservatorTankCap-1"].geometry}
+  //       material={materials.ConservatorTankCap}
+  //       position={[17.6, 14.36, -4.27]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_Core-1"].geometry}
+  //       material={materials.Core}
+  //       position={[6.86 + Core, 4.25, -8.95]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_HV_Bus2-1"].geometry}
+  //       material={materials.HV_Bus}
+  //       position={[7.72, 10.03, -10.87]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_HV_Bus3-1"].geometry}
+  //       material={materials.HV_Bus}
+  //       position={[4.28, 10.03, -12.41]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LPattern88-1"].geometry}
+  //       material={materials.Bolt}
+  //       position={[4.49, 9.87, -12.87]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Bushing1-1"].geometry}
+  //       material={materials.LV_Bushing}
+  //       position={[4.06, 9.18, -7.84]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Insulator1-1"].geometry}
+  //       material={materials.LV_Insulator}
+  //       position={[4.08, 9.73, -7.88]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_LV_Insulator3-1"].geometry}
+  //       material={materials.LV_Insulator}
+  //       position={[6.65, 9.73, -6.73]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_RingConnector1-1"].geometry}
+  //       material={materials.Ring_Connector}
+  //       position={[4.23, 8.54, -12.28]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_RingConnector2-1"].geometry}
+  //       material={materials.Ring_Connector}
+  //       position={[7.67, 8.54, -10.75]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_RPhaseInsulator-1"].geometry}
+  //       material={materials.RPhase_Insulator}
+  //       position={[4.28, 10.93, -12.41]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_YPhaseInsulator-1001"].geometry}
+  //       material={materials.YPhase_Insulator}
+  //       position={[11.16, 10.93, -9.34]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_BPhaseInsulator-1001"].geometry}
+  //       material={materials.BPhase_Insulator}
+  //       position={[7.72, 10.93, -10.87]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+
+  //     <mesh
+  //       castShadow
+  //       receiveShadow
+  //       geometry={nodes["a_-_RPhaseInsulator-1001"].geometry}
+  //       material={materials.RPhase_Insulator}
+  //       position={[4.28, 10.93, -12.41]}
+  //       rotation={[-Math.PI / 2, 0, -0.42]}
+  //       scale={0.05}
+  //     />
+  //   </group>
+  // );
   return (
     <group
       ref={group}
@@ -171,350 +549,249 @@ function Model({ ...props }) {
       }}
     >
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_Boss-Extrude2111-1"].geometry}
+        material={materials.Paper_Insulator}
+        position={[12.232, 4.963, -6.554]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
+        scale={0.05}
         visible={Insulator_visibility}
         ref={Insulator}
-        material={materials.Paper_Insulator}
-        position={[, 4.96, -6.55]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
-        scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_BreatherBody-1"].geometry}
         material={materials.BreatherBody}
-        position={[19.58, 13.25, -8.7]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[19.575, 13.245, -8.698]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_BreatherSilicaGel-1"].geometry}
         material={materials.SilikaGel}
-        position={[19.57, 13.04, -8.7]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[19.575, 13.038, -8.697]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_BuchholzRelay-1"].geometry}
         material={materials.Buchholz_Relay}
-        position={[14.42, 11.65, -5.41]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[14.417, 11.653, -5.411]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_CoreFormer-1"].geometry}
         material={materials.coreformer}
-        position={[6.86, 3.59, -8.95 + Coreformer]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[6.864, 3.59, -8.947]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_CorrugatedTank-1"].geometry}
+        material={materials.CorrugatedTank}
+        position={[6.332, 7.152 - Tank, -8.027]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
+        scale={0.05}
         ref={Tank_Cover}
         visible={Tank_Visibility}
-        material={materials.CorrugatedTank}
-        position={[6.33, 7.15 - Tank, -8.03]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
-        scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_HV_Bus1-1"].geometry}
         material={materials.HV_Bus}
-        position={[11.16, 10.03, -9.34]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[11.164, 10.033, -9.339]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_HV_Coil-1"].geometry}
+        material={materials.HV_Coil}
+        position={[6.897, 4.164, -9.066 - HV]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
+        scale={0.05}
         ref={HV_Coil}
         visible={HV_Coilvisibility}
-        material={materials.HV_Coil}
-        position={[6.9, 4.16, -9.07 - HV]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
-        scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LPattern133-1"].geometry}
         material={materials.Lv_coil}
-        position={[7.91, 8.42, -6.11]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.909, 8.422, -6.108]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Bushing2-1"].geometry}
         material={materials.LV_Bushing}
-        position={[5.34, 9.18, -7.26]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[5.344, 9.178, -7.263]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Bushing3-1"].geometry}
         material={materials.LV_Bushing}
-        position={[6.63, 9.18, -6.69]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[6.628, 9.178, -6.69]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Bushing4-1"].geometry}
         material={materials.LV_Bushing}
-        position={[7.91, 9.18, -6.12]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.913, 9.178, -6.118]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Insulator2-1"].geometry}
         material={materials.LV_Insulator}
-        position={[5.36, 9.73, -7.31]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[5.364, 9.732, -7.306]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Insulator4-1"].geometry}
         material={materials.LV_Insulator}
-        position={[7.93, 9.73, -6.16]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.933, 9.732, -6.161]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_Mirror1211-1"].geometry}
         material={materials.Bolt}
-        position={[15.01, 11.1, -5.31]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[15.014, 11.099, -5.314]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_RingConnector3-1"].geometry}
         material={materials.Ring_Connector}
-        position={[11.11, 8.54, -9.22]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[11.109, 8.538, -9.216]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_TopCover-1"].geometry}
+        material={materials.TopCover}
+        position={[8.113, 9.435 + TopCover, -8.686]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
+        scale={0.05}
         visible={Cover_Visible}
         ref={T_Cover}
-        material={materials.TopCover}
-        position={[8.11, 9.44 + TopCover, -8.69]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
-        scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_YPhaseInsulator-1"].geometry}
         material={materials.YPhase_Insulator}
-        position={[11.16, 10.93, -9.34]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[11.164, 10.93, -9.339]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_BPhaseInsulator-1"].geometry}
         material={materials.BPhase_Insulator}
-        position={[7.72, 10.93, -10.87]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.724, 10.93, -10.873]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_Conservator-1"].geometry}
         material={materials.Conservater}
-        position={[16.68, 12.62, -5.86]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[16.685, 12.623, -5.86]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_ConservatorTankCap-1"].geometry}
         material={materials.ConservatorTankCap}
-        position={[17.6, 14.36, -4.27]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[17.602, 14.361, -4.27]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_Core-1"].geometry}
         material={materials.Core}
-        position={[6.86 + Core, 4.25, -8.95]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[6.865 + Core, 4.25, -8.946]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_HV_Bus2-1"].geometry}
         material={materials.HV_Bus}
-        position={[7.72, 10.03, -10.87]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.724, 10.033, -10.873]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_HV_Bus3-1"].geometry}
         material={materials.HV_Bus}
-        position={[4.28, 10.03, -12.41]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.283, 10.033, -12.407]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LPattern88-1"].geometry}
         material={materials.Bolt}
-        position={[4.49, 9.87, -12.87]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.488, 9.874, -12.866]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Bushing1-1"].geometry}
         material={materials.LV_Bushing}
-        position={[4.06, 9.18, -7.84]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.06, 9.178, -7.835]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Insulator1-1"].geometry}
         material={materials.LV_Insulator}
-        position={[4.08, 9.73, -7.88]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.079, 9.732, -7.879]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_LV_Insulator3-1"].geometry}
         material={materials.LV_Insulator}
-        position={[6.65, 9.73, -6.73]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[6.648, 9.732, -6.734]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_RingConnector1-1"].geometry}
         material={materials.Ring_Connector}
-        position={[4.23, 8.54, -12.28]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.228, 8.538, -12.284]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_RingConnector2-1"].geometry}
         material={materials.Ring_Connector}
-        position={[7.67, 8.54, -10.75]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.668, 8.538, -10.75]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_RPhaseInsulator-1"].geometry}
         material={materials.RPhase_Insulator}
-        position={[4.28, 10.93, -12.41]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.283, 10.93, -12.406]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_YPhaseInsulator-1001"].geometry}
         material={materials.YPhase_Insulator}
-        position={[11.16, 10.93, -9.34]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[11.164, 10.93, -9.339]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_BPhaseInsulator-1001"].geometry}
         material={materials.BPhase_Insulator}
-        position={[7.72, 10.93, -10.87]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[7.724, 10.93, -10.873]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
-
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["a_-_RPhaseInsulator-1001"].geometry}
         material={materials.RPhase_Insulator}
-        position={[4.28, 10.93, -12.41]}
-        rotation={[-Math.PI / 2, 0, -0.42]}
+        position={[4.283, 10.93, -12.406]}
+        rotation={[-Math.PI / 2, 0, -0.419]}
         scale={0.05}
       />
     </group>
@@ -544,7 +821,7 @@ export default function DcShunt() {
     { intensity: 0.4, position: [0, 5, 25] },
     { intensity: 1, position: [0, -5, 0] },
   ];
-  const camera = { position: [3, 30, -35], fov: 69 };
+  const camera = { position: [3, 30, -35], fov: 45 };
 
   const highlightedParts = [
     //0
@@ -755,6 +1032,7 @@ export default function DcShunt() {
       >
         <Model
           rotation={[0, Math.PI, 0]}
+          position={[0 + PositionX, 0 + PositionY, 0]}
           dispatch={dispatch}
           highlightedParts={highlightState}
         />

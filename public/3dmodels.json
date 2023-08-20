@@ -4,6 +4,7 @@
     "coursename": "Transformer 2",
     "image": "/images/transformerHero.png",
     "link": "model_pages/transformer2",
+    "published": false,
     "size": 13.6
   },
   {
@@ -11,6 +12,7 @@
     "coursename": "Drone",
     "image": "/images/induction.png",
     "link": "model_pages/drone",
+    "published": false,
     "size": 13.6
   },
   {
@@ -18,6 +20,7 @@
     "coursename": "Induction Motor",
     "image": "/images/induction.png",
     "link": "model_pages/induction",
+    "published": true,
     "size": 13.6
   },
   {
@@ -25,6 +28,7 @@
     "coursename": "DC SHUNT MOTOR",
     "image": "/images/DCshunt.png",
     "link": "model_pages/dc_shunt",
+    "published": false,
     "size": 24.9
   },
   {
@@ -32,6 +36,7 @@
     "coursename": "Working of DC Shunt Motor",
     "image": "/images/working_principle_of_dc.png",
     "link": "model_pages/shunt_motor",
+    "published": false,
     "size": 4.8
   },
   {
@@ -39,6 +44,7 @@
     "coursename": "Kitkat Fuse",
     "image": "/images/fuse.png",
     "link": "model_pages/fuse",
+    "published": false,
     "size": 18
   },
   {
@@ -46,6 +52,7 @@
     "coursename": "Ammeter",
     "image": "/images/ammeter.png",
     "link": "model_pages/ammeter",
+    "published": false,
     "size": 2.6
   },
 
@@ -54,6 +61,7 @@
     "coursename": "Variac",
     "image": "/images/variac1.png",
     "link": "model_pages/variac",
+    "published": false,
     "size": 8.6,
     "paragraphs": [
       "A VARIAC, also known as an auto-transformer, is a type of variable transformer that is commonly used in electrical and electronic applications. It allows the user to vary the output voltage of an AC power source by adjusting the position of a movable contact along a coil winding",
@@ -76,6 +84,7 @@
     "image": "/images/transformerHero.png",
     "link": "model_pages/transformer",
     "size": 10.2,
+    "published": true,
     "paragraphs": [
       "A distribution transformer is an electrical transformer that is used to step down the voltage of electricity from the transmission level to the distribution level, making it suitable for use in homes, businesses, and other low voltage applications. These transformers are typically smaller than power transformers and are mounted on poles or pads in close proximity to the areas they serve.",
       "They play a critical role in the efficient and safe delivery of electricity from the power plant to the end-users, and are designed to operate with high levels of reliability and efficiency over long periods of time."
@@ -96,14 +105,15 @@
     "coursename": "Working Principle of DC Motor",
     "image": "/images/elementry.png",
     "link": "model_pages/elementry",
-    "size": 0.99,
-    "hidden": true
+    "published": false,
+    "size": 0.99
   },
   {
     "_id": "627bf51e230fde07150bf1e1",
     "coursename": "Alternator",
     "image": "/images/alternator1.png",
     "link": "model_pages/alternator",
+    "published": true,
     "size": 11.6,
     "paragraphs": [
       "An alternator is an electrical generator that converts mechanical energy into electrical energy in the form of alternating current (AC). Alternators are commonly used in vehicles to charge the battery and power the electrical systems while the engine is running. They are also used in power plants to generate electricity on a larger scale.",
@@ -125,6 +135,7 @@
     "coursename": "Working Principle of Induction Motor",
     "image": "/images/workingPrincipleInductionmotor.png",
     "link": "model_pages/working_principle_of_induction_motor",
+    "published": false,
     "size": 22.8
   },
   {
@@ -132,6 +143,7 @@
     "coursename": "Synchronous Motor",
     "image": "/images/synchronus.png",
     "link": "model_pages/synchronous_motor",
+    "published": true,
     "size": 26.8
   },
   {
@@ -139,6 +151,7 @@
     "coursename": "Drill",
     "image": "/images/drill.png",
     "link": "model_pages/drill",
+    "published": false,
     "size": 3.1
   },
   {
@@ -146,6 +159,7 @@
     "coursename": "Single Phase Induction Motor with Run Capacitor",
     "image": "/images/singlephase.png",
     "link": "model_pages/single_phase",
+    "published": true,
     "size": 3.1
   },
   {
@@ -153,6 +167,7 @@
     "coursename": "Wind Turbine",
     "image": "/images/windTurbine.png",
     "link": "model_pages/wind_turbine",
+    "published": false,
     "size": 3.1
   },
   {
@@ -160,6 +175,7 @@
     "coursename": "Shaded Pole Motor",
     "image": "/images/shadedpole.png",
     "link": "model_pages/shaded_pole",
+    "published": false,
     "size": 3.1
   }
 ]

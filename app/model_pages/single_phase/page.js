@@ -28,7 +28,7 @@ import {
 // const state = proxy({
 //   current: null,
 // });
-const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/single_phase.glb`;
+const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/singlephase.glb`;
 function Model({ ...props }) {
   const group = useRef();
   //const snap = useSnapshot(state);
@@ -211,6 +211,405 @@ function Model({ ...props }) {
     }
   });
   const { highlightedParts } = props;
+  // return (
+  //   <group
+  //     ref={group}
+  //     {...props}
+  //     dispose={null}
+  //     onPointerOver={(e) => {
+  //       e.stopPropagation(), set(e.object.material.name);
+  //     }}
+  //     onPointerOut={(e) => {
+  //       e.intersections.length === 0 && set(null);
+  //     }}
+  //     onClick={(e) => {
+  //       e.stopPropagation();
+  //       //(state.current = e.object.material.name);
+  //     }}
+  //     onPointerMissed={(e) => {
+  //       //state.current = null;
+  //     }}
+  //   >
+  //     <Select enabled={highlightedParts[0].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Cage-1"].geometry}
+  //         material={materials.Cage}
+  //         position={[-3.86, 5.39, 1.06]}
+  //         rotation={[Math.PI / 2, -0.01, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[1].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Capacitor-1"].geometry}
+  //         material={materials.Capacitor}
+  //         position={[-7.73, 9.24, 1.06]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[2].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_CapacitorHolder-1"].geometry}
+  //         material={materials.Capacitor_Holder}
+  //         position={[-7.63, 8.84, 1.06]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[3].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_CapWire1-1"].geometry}
+  //         material={materials.Capwire}
+  //         position={[-4.75, 10.49, -1.33]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_CapWire2-1"].geometry}
+  //         material={materials.capwire}
+  //         position={[-4.73, 10.52, -0.86]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <group
+  //       position={[-3.87, 5.39, -4.44 - EndCap2]}
+  //       rotation={[Math.PI / 2, 0, 0]}
+  //       scale={27.15}
+  //       visible={EndCap2_Visibility}
+  //       ref={endcap2}
+  //     >
+  //       <Select enabled={highlightedParts[5].highlight}>
+  //         <mesh
+  //           geometry={nodes["asm_-_EndCap1-1_1"].geometry}
+  //           material={materials.EndCap2}
+  //         />
+  //       </Select>
+
+  //       <Select enabled={highlightedParts[6].highlight}>
+  //         <mesh
+  //           geometry={nodes["asm_-_EndCap1-1_2"].geometry}
+  //           material={materials.Nuts}
+  //         />
+  //       </Select>
+  //     </group>
+  //     <group
+  //       position={[-3.87, 5.39, 6.56 + EndCap1]}
+  //       rotation={[Math.PI / 2, 0, 0]}
+  //       scale={27.29}
+  //       visible={EndCap1_Visibility}
+  //       ref={endcap1}
+  //     >
+  //       <Select enabled={highlightedParts[7].highlight}>
+  //         <mesh
+  //           geometry={nodes["asm_-_EndCap2-1"].geometry}
+  //           material={materials.EndCap1}
+  //         />
+  //       </Select>
+
+  //       <Select enabled={highlightedParts[8].highlight}>
+  //         <mesh
+  //           geometry={nodes["asm_-_EndCap2-1_1"].geometry}
+  //           material={materials.Nuts}
+  //         />
+  //       </Select>
+  //     </group>
+
+  //     <Select enabled={highlightedParts[9].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Nut3-1"].geometry}
+  //         material={materials.Z1}
+  //         position={[-4.21, 10.48, -1.54]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[10].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Nut4-1"].geometry}
+  //         material={materials.Z2}
+  //         position={[-3.53, 10.48, -0.15]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[11].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Nut5-1"].geometry}
+  //         material={materials.U2}
+  //         position={[-3.53, 10.48, -0.84]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[12].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Nut6-1"].geometry}
+  //         material={materials.V2}
+  //         position={[-3.53, 10.48, -1.54]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[13].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_pan_cross_head_am-2"].geometry}
+  //         material={materials.Nuts}
+  //         position={[-0.14, 0.1, 0]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[14].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_pan_head_tapping_screw_am-2"].geometry}
+  //         material={nodes["asm_-_pan_head_tapping_screw_am-2"].material}
+  //         position={[0, 0.18, -0.06]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[15].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_pan_head_tapping_screw_am-3"].geometry}
+  //         material={nodes["asm_-_pan_head_tapping_screw_am-3"].material}
+  //         position={[0, 0.18, -0.08]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[16].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_pan_head_tapping_screw_am-5"].geometry}
+  //         material={nodes["asm_-_pan_head_tapping_screw_am-5"].material}
+  //         position={[0, 0.01, -0.1]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[17].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_radial_ball_bearing_68_am-2"].geometry}
+  //         material={materials.BallBearing}
+  //         position={[0, 0, 0.2]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         visible={false}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[18].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_RotorCore-1"].geometry}
+  //         material={materials.Rotor_Core}
+  //         position={[-3.87 + Rotor, 5.39, 1.03]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //         visible={Rotor_Visibility}
+  //         ref={rotor}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[19].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Terminal2-1"].geometry}
+  //         material={materials.V1}
+  //         position={[-4.21, 10.48, -0.84]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <group
+  //       position={[0, 0.22, -0.08]}
+  //       rotation={[Math.PI / 2, 0, 0]}
+  //       visible={false}
+  //     >
+  //       <Select enabled={highlightedParts[20].highlight}>
+  //         <mesh
+  //           geometry={nodes["asm_-_TerminalBoxCap-1_1"].geometry}
+  //           material={materials.Terminal_Cap}
+  //         />
+  //       </Select>
+
+  //       <Select enabled={highlightedParts[21].highlight}>
+  //         <mesh
+  //           geometry={nodes["asm_-_TerminalBoxCap-1_2"].geometry}
+  //           material={materials.Nuts}
+  //         />
+  //       </Select>
+  //     </group>
+
+  //     <Select enabled={highlightedParts[22].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_TerminalBridge1-1"].geometry}
+  //         material={materials.Terminal_Bridge}
+  //         position={[-4.21, 10.36, -0.5]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[23].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_TerminalBridge2-1"].geometry}
+  //         material={materials.Terminal_Bridge}
+  //         position={[-3.54, 10.36, -0.5]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[24].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_TerminalHolder-1"].geometry}
+  //         material={materials.Terminal_Holder}
+  //         position={[-3.87, 10.24, -0.84]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[25].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_TerminalLug1-1"].geometry}
+  //         material={materials.TerminalLug}
+  //         position={[-3.87, 10.34, -0.84]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[26].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_WireInsulation-1"].geometry}
+  //         material={materials.WireInsulation}
+  //         position={[-7, 9.92, -1.69]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[27].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Yoke-1"].geometry}
+  //         material={materials.Yoke}
+  //         position={[-3.93 + Yoke, 6.35, 1.05]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //         ref={yoke}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[28].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_DriveShaft-1"].geometry}
+  //         material={materials.DriveShaft}
+  //         position={[-3.87, 5.39, 1.56 + Shaft]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //         visible={Shaft_Visibility}
+  //         ref={shaft}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[29].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_hex_bolt_am-4"].geometry}
+  //         material={materials.Nuts}
+  //         position={[-3.87, 1.08, 1.06]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[30].highlight}>
+  //       <mesh
+  //         geometry={nodes["asm_-_Nut1-1"].geometry}
+  //         material={materials.U1}
+  //         position={[-4.21, 10.48, -0.15]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[31].highlight}>
+  //       <mesh
+  //         geometry={nodes.Circle.geometry}
+  //         material={materials.Stator}
+  //         position={[-3.87 + Stator, 5.39, 1.06]}
+  //         scale={27.15}
+  //         visible={Stator_Visibility}
+  //         ref={stator}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[32].highlight}>
+  //       <mesh
+  //         geometry={nodes.Paper.geometry}
+  //         material={materials.Paper}
+  //         position={[-3.82 + Paper, 5.4, 1.06]}
+  //         rotation={[0, 0, 0.08]}
+  //         scale={[0.21, 0.23, 2.73]}
+  //         visible={Paper_Visibility}
+  //         ref={paper}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[33].highlight}>
+  //       <mesh
+  //         geometry={nodes.Vert001.geometry}
+  //         material={materials.Running_Coil}
+  //         position={[-3.85 + Running_Coil, 5.44, 0.24]}
+  //         rotation={[0, 0, -1.61]}
+  //         scale={18.01}
+  //         visible={Running_Coil_Visibility}
+  //         ref={runningcoil}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[34].highlight}>
+  //       <mesh
+  //         geometry={nodes.startingcoil.geometry}
+  //         material={materials.Starting_Coil}
+  //         position={[-3.84 + Starting_Coil, 5.59, -0.22]}
+  //         scale={27.15}
+  //         visible={Starting_Coil_Visibility}
+  //         ref={startingcoil}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[35].highlight}>
+  //       <mesh
+  //         geometry={nodes.Vert002.geometry}
+  //         material={materials.Commonwire}
+  //         position={[-3.61, 9.93, -1.3]}
+  //         scale={27.15}
+  //       />
+  //     </Select>
+
+  //     <Select enabled={highlightedParts[36].highlight}>
+  //       <mesh
+  //         geometry={nodes.Circle001.geometry}
+  //         material={materials["Common_Wire connected to  Z2"]}
+  //         position={[-3.23, 10.34, -0.14]}
+  //         rotation={[0, 0, -Math.PI / 2]}
+  //         scale={0.04}
+  //       />
+  //     </Select>
+  //   </group>
+  // );
   return (
     <group
       ref={group}
@@ -230,384 +629,244 @@ function Model({ ...props }) {
         //state.current = null;
       }}
     >
-      <Select enabled={highlightedParts[0].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Cage-1"].geometry}
-          material={materials.Cage}
-          position={[-3.86, 5.39, 1.06]}
-          rotation={[Math.PI / 2, -0.01, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[1].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Capacitor-1"].geometry}
-          material={materials.Capacitor}
-          position={[-7.73, 9.24, 1.06]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[2].highlight}>
-        <mesh
-          geometry={nodes["asm_-_CapacitorHolder-1"].geometry}
-          material={materials.Capacitor_Holder}
-          position={[-7.63, 8.84, 1.06]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[3].highlight}>
-        <mesh
-          geometry={nodes["asm_-_CapWire1-1"].geometry}
-          material={materials.Capwire}
-          position={[-4.75, 10.49, -1.33]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[4].highlight}>
-        <mesh
-          geometry={nodes["asm_-_CapWire2-1"].geometry}
-          material={materials.capwire}
-          position={[-4.73, 10.52, -0.86]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <group
-        position={[-3.87, 5.39, -4.44 - EndCap2]}
+      <mesh
+        geometry={nodes["asm_-_Cage-1"].geometry}
+        material={materials.Cage}
+        rotation={[Math.PI / 2, -0.007, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_Capacitor-1"].geometry}
+        material={materials.Capacitor}
+        position={[-0.142, 0.142, 0]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={27.15}
+      />
+      <mesh
+        geometry={nodes["asm_-_CapacitorHolder-1"].geometry}
+        material={materials.Capacitor_Holder}
+        position={[-0.138, 0.127, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_CapWire1-1"].geometry}
+        material={materials.Capwire}
+        position={[-0.032, 0.188, -0.088]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_CapWire2-1"].geometry}
+        material={materials.capwire}
+        position={[-0.031, 0.189, -0.071]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <group
+        position={[0, 0, -0.202 - EndCap2]}
+        rotation={[Math.PI / 2, 0, 0]}
         visible={EndCap2_Visibility}
         ref={endcap2}
       >
-        <Select enabled={highlightedParts[5].highlight}>
-          <mesh
-            geometry={nodes["asm_-_EndCap1-1_1"].geometry}
-            material={materials.EndCap2}
-          />
-        </Select>
-
-        <Select enabled={highlightedParts[6].highlight}>
-          <mesh
-            geometry={nodes["asm_-_EndCap1-1_2"].geometry}
-            material={materials.Nuts}
-          />
-        </Select>
+        <mesh
+          geometry={nodes["asm_-_EndCap1-1_1"].geometry}
+          material={materials.EndCap2}
+        />
+        <mesh
+          geometry={nodes["asm_-_EndCap1-1_2"].geometry}
+          material={materials.Nuts}
+        />
       </group>
       <group
-        position={[-3.87, 5.39, 6.56 + EndCap1]}
+        position={[0, 0, 0.202 + EndCap1]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={27.29}
         visible={EndCap1_Visibility}
         ref={endcap1}
       >
-        <Select enabled={highlightedParts[7].highlight}>
-          <mesh
-            geometry={nodes["asm_-_EndCap2-1"].geometry}
-            material={materials.EndCap1}
-          />
-        </Select>
-
-        <Select enabled={highlightedParts[8].highlight}>
-          <mesh
-            geometry={nodes["asm_-_EndCap2-1_1"].geometry}
-            material={materials.Nuts}
-          />
-        </Select>
-      </group>
-
-      <Select enabled={highlightedParts[9].highlight}>
         <mesh
-          geometry={nodes["asm_-_Nut3-1"].geometry}
-          material={materials.Z1}
-          position={[-4.21, 10.48, -1.54]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
+          geometry={nodes["asm_-_EndCap2-1"].geometry}
+          material={materials.EndCap1}
         />
-      </Select>
-
-      <Select enabled={highlightedParts[10].highlight}>
         <mesh
-          geometry={nodes["asm_-_Nut4-1"].geometry}
-          material={materials.Z2}
-          position={[-3.53, 10.48, -0.15]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[11].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Nut5-1"].geometry}
-          material={materials.U2}
-          position={[-3.53, 10.48, -0.84]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[12].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Nut6-1"].geometry}
-          material={materials.V2}
-          position={[-3.53, 10.48, -1.54]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[13].highlight}>
-        <mesh
-          geometry={nodes["asm_-_pan_cross_head_am-2"].geometry}
+          geometry={nodes["asm_-_EndCap2-1_1"].geometry}
           material={materials.Nuts}
-          position={[-0.14, 0.1, 0]}
-          rotation={[Math.PI / 2, 0, 0]}
         />
-      </Select>
-
-      <Select enabled={highlightedParts[14].highlight}>
-        <mesh
-          geometry={nodes["asm_-_pan_head_tapping_screw_am-2"].geometry}
-          material={nodes["asm_-_pan_head_tapping_screw_am-2"].material}
-          position={[0, 0.18, -0.06]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[15].highlight}>
-        <mesh
-          geometry={nodes["asm_-_pan_head_tapping_screw_am-3"].geometry}
-          material={nodes["asm_-_pan_head_tapping_screw_am-3"].material}
-          position={[0, 0.18, -0.08]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[16].highlight}>
-        <mesh
-          geometry={nodes["asm_-_pan_head_tapping_screw_am-5"].geometry}
-          material={nodes["asm_-_pan_head_tapping_screw_am-5"].material}
-          position={[0, 0.01, -0.1]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[17].highlight}>
-        <mesh
-          geometry={nodes["asm_-_radial_ball_bearing_68_am-2"].geometry}
-          material={materials.BallBearing}
-          position={[0, 0, 0.2]}
-          rotation={[Math.PI / 2, 0, 0]}
-          visible={false}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[18].highlight}>
-        <mesh
-          geometry={nodes["asm_-_RotorCore-1"].geometry}
-          material={materials.Rotor_Core}
-          position={[-3.87 + Rotor, 5.39, 1.03]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-          visible={Rotor_Visibility}
-          ref={rotor}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[19].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Terminal2-1"].geometry}
-          material={materials.V1}
-          position={[-4.21, 10.48, -0.84]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <group
-        position={[0, 0.22, -0.08]}
+      </group>
+      <mesh
+        geometry={nodes["asm_-_Nut3-1"].geometry}
+        material={materials.Z1}
+        position={[-0.012, 0.187, -0.096]}
         rotation={[Math.PI / 2, 0, 0]}
-        visible={false}
-      >
-        <Select enabled={highlightedParts[20].highlight}>
-          <mesh
-            geometry={nodes["asm_-_TerminalBoxCap-1_1"].geometry}
-            material={materials.Terminal_Cap}
-          />
-        </Select>
-
-        <Select enabled={highlightedParts[21].highlight}>
-          <mesh
-            geometry={nodes["asm_-_TerminalBoxCap-1_2"].geometry}
-            material={materials.Nuts}
-          />
-        </Select>
-      </group>
-
-      <Select enabled={highlightedParts[22].highlight}>
+      />
+      <mesh
+        geometry={nodes["asm_-_Nut4-1"].geometry}
+        material={materials.Z2}
+        position={[0.013, 0.187, -0.045]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_Nut5-1"].geometry}
+        material={materials.U2}
+        position={[0.013, 0.187, -0.07]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_Nut6-1"].geometry}
+        material={materials.V2}
+        position={[0.013, 0.187, -0.096]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_pan_cross_head_am-2"].geometry}
+        material={materials.Nuts}
+        position={[-0.137, 0.1, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_pan_head_tapping_screw_am-2"].geometry}
+        material={nodes["asm_-_pan_head_tapping_screw_am-2"].material}
+        position={[0, 0.179, -0.057]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_pan_head_tapping_screw_am-3"].geometry}
+        material={nodes["asm_-_pan_head_tapping_screw_am-3"].material}
+        position={[0, 0.179, -0.083]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_pan_head_tapping_screw_am-5"].geometry}
+        material={nodes["asm_-_pan_head_tapping_screw_am-5"].material}
+        position={[-0.002, 0.011, -0.104]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_radial_ball_bearing_68_am-2"].geometry}
+        material={materials.BallBearing}
+        position={[0, 0, 0.204]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_RotorCore-1"].geometry}
+        material={materials.Rotor_Core}
+        position={[0 + Rotor, 0, -0.001]}
+        rotation={[Math.PI / 2, 0, 0]}
+        visible={Rotor_Visibility}
+        ref={rotor}
+      />
+      <mesh
+        geometry={nodes["asm_-_Terminal2-1"].geometry}
+        material={materials.V1}
+        position={[-0.012, 0.187, -0.07]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <group position={[-0.001, 0.222, -0.081]} rotation={[Math.PI / 2, 0, 0]}>
         <mesh
-          geometry={nodes["asm_-_TerminalBridge1-1"].geometry}
-          material={materials.Terminal_Bridge}
-          position={[-4.21, 10.36, -0.5]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
+          geometry={nodes["asm_-_TerminalBoxCap-1_1"].geometry}
+          material={materials.Terminal_Cap}
         />
-      </Select>
-
-      <Select enabled={highlightedParts[23].highlight}>
         <mesh
-          geometry={nodes["asm_-_TerminalBridge2-1"].geometry}
-          material={materials.Terminal_Bridge}
-          position={[-3.54, 10.36, -0.5]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[24].highlight}>
-        <mesh
-          geometry={nodes["asm_-_TerminalHolder-1"].geometry}
-          material={materials.Terminal_Holder}
-          position={[-3.87, 10.24, -0.84]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[25].highlight}>
-        <mesh
-          geometry={nodes["asm_-_TerminalLug1-1"].geometry}
-          material={materials.TerminalLug}
-          position={[-3.87, 10.34, -0.84]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[26].highlight}>
-        <mesh
-          geometry={nodes["asm_-_WireInsulation-1"].geometry}
-          material={materials.WireInsulation}
-          position={[-7, 9.92, -1.69]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[27].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Yoke-1"].geometry}
-          material={materials.Yoke}
-          position={[-3.93 + Yoke, 6.35, 1.05]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-          ref={yoke}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[28].highlight}>
-        <mesh
-          geometry={nodes["asm_-_DriveShaft-1"].geometry}
-          material={materials.DriveShaft}
-          position={[-3.87, 5.39, 1.56 + Shaft]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-          visible={Shaft_Visibility}
-          ref={shaft}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[29].highlight}>
-        <mesh
-          geometry={nodes["asm_-_hex_bolt_am-4"].geometry}
+          geometry={nodes["asm_-_TerminalBoxCap-1_2"].geometry}
           material={materials.Nuts}
-          position={[-3.87, 1.08, 1.06]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
         />
-      </Select>
-
-      <Select enabled={highlightedParts[30].highlight}>
-        <mesh
-          geometry={nodes["asm_-_Nut1-1"].geometry}
-          material={materials.U1}
-          position={[-4.21, 10.48, -0.15]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[31].highlight}>
-        <mesh
-          geometry={nodes.Circle.geometry}
-          material={materials.Stator}
-          position={[-3.87 + Stator, 5.39, 1.06]}
-          scale={27.15}
-          visible={Stator_Visibility}
-          ref={stator}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[32].highlight}>
-        <mesh
-          geometry={nodes.Paper.geometry}
-          material={materials.Paper}
-          position={[-3.82 + Paper, 5.4, 1.06]}
-          rotation={[0, 0, 0.08]}
-          scale={[0.21, 0.23, 2.73]}
-          visible={Paper_Visibility}
-          ref={paper}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[33].highlight}>
-        <mesh
-          geometry={nodes.Vert001.geometry}
-          material={materials.Running_Coil}
-          position={[-3.85 + Running_Coil, 5.44, 0.24]}
-          rotation={[0, 0, -1.61]}
-          scale={18.01}
-          visible={Running_Coil_Visibility}
-          ref={runningcoil}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[34].highlight}>
-        <mesh
-          geometry={nodes.startingcoil.geometry}
-          material={materials.Starting_Coil}
-          position={[-3.84 + Starting_Coil, 5.59, -0.22]}
-          scale={27.15}
-          visible={Starting_Coil_Visibility}
-          ref={startingcoil}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[35].highlight}>
-        <mesh
-          geometry={nodes.Vert002.geometry}
-          material={materials.Commonwire}
-          position={[-3.61, 9.93, -1.3]}
-          scale={27.15}
-        />
-      </Select>
-
-      <Select enabled={highlightedParts[36].highlight}>
-        <mesh
-          geometry={nodes.Circle001.geometry}
-          material={materials["Common_Wire connected to  Z2"]}
-          position={[-3.23, 10.34, -0.14]}
-          rotation={[0, 0, -Math.PI / 2]}
-          scale={0.04}
-        />
-      </Select>
+      </group>
+      <mesh
+        geometry={nodes["asm_-_TerminalBridge1-1"].geometry}
+        material={materials.Terminal_Bridge}
+        position={[-0.013, 0.183, -0.057]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_TerminalBridge2-1"].geometry}
+        material={materials.Terminal_Bridge}
+        position={[0.012, 0.183, -0.057]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_TerminalHolder-1"].geometry}
+        material={materials.Terminal_Holder}
+        position={[0, 0.179, -0.07]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_TerminalLug1-1"].geometry}
+        material={materials.TerminalLug}
+        position={[0, 0.182, -0.07]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_WireInsulation-1"].geometry}
+        material={materials.WireInsulation}
+        position={[-0.115, 0.167, -0.101]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_Yoke-1"].geometry}
+        material={materials.Yoke}
+        position={[-0.002 + Yoke, 0.036, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+        ref={yoke}
+      />
+      <mesh
+        geometry={nodes["asm_-_DriveShaft-1"].geometry}
+        material={materials.DriveShaft}
+        position={[0, 0, 0.018 + Shaft]}
+        rotation={[Math.PI / 2, 0, 0]}
+        visible={Shaft_Visibility}
+        ref={shaft}
+      />
+      <mesh
+        geometry={nodes["asm_-_hex_bolt_am-4"].geometry}
+        material={materials.Nuts}
+        position={[0, -0.159, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes["asm_-_Nut1-1"].geometry}
+        material={materials.U1}
+        position={[-0.012, 0.187, -0.045]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Circle.geometry}
+        material={materials.Stator}
+        position={[-3.87 + Stator, 5.39, 1.06]}
+        visible={Stator_Visibility}
+        ref={stator}
+      />
+      <mesh
+        geometry={nodes.Paper.geometry}
+        material={materials.Paper}
+        position={[0.002 + Paper, 0, 0]}
+        rotation={[0, 0, 0.081]}
+        scale={[0.008, 0.009, 0.101]}
+        visible={Paper_Visibility}
+        ref={paper}
+      />
+      <mesh
+        geometry={nodes.Vert001.geometry}
+        material={materials.Running_Coil}
+        position={[0.001 + Running_Coil, 0.002, -0.03]}
+        rotation={[0, 0, -1.607]}
+        scale={0.663}
+        visible={Running_Coil_Visibility}
+        ref={runningcoil}
+      />
+      <mesh
+        geometry={nodes.startingcoil.geometry}
+        material={materials.Starting_Coil}
+        position={[0.001 + Starting_Coil, 0.007, -0.047]}
+        visible={Starting_Coil_Visibility}
+        ref={startingcoil}
+      />
+      <mesh
+        geometry={nodes.Vert002.geometry}
+        material={materials.Commonwire}
+        position={[0.01, 0.167, -0.087]}
+      />
+      <mesh
+        geometry={nodes.Circle001.geometry}
+        material={materials["Common_Wire connected to  Z2"]}
+        position={[0.024, 0.182, -0.044]}
+        rotation={[0, 0, -Math.PI / 2]}
+        scale={0.001}
+      />
     </group>
   );
 }
@@ -639,7 +898,7 @@ export default function Induction() {
     { intensity: 0.4, position: [0, 5, 25] },
     { intensity: 0.4, position: [0, -5, 0] },
   ];
-  const camera = { position: [105, 250, 325], fov: 90 };
+  const camera = { position: [50, 250, 325], fov: 100 };
   const highlightedParts = [
     //0
     { id: "Cage", name: "Cage", description: "Cage", highlight: false },
@@ -880,16 +1139,17 @@ export default function Induction() {
   // return (
   //   <>
   //     <div className="w-screen h-screen">
-  //       <Pick />
-  //       <Canvas camera={{ position: [105, 250, 325], fov: 90 }}>
+  //       {/* <Pick /> */}
+  //       <Canvas camera={{ position: [105, 250, 325], fov: 69 }}>
   //         <color attach="background" args={["#050511"]} />
+
   //         <directionalLight intensity={1} />
   //         <directionalLight intensity={1} position={[0, 5, -25]} />
-  //         <directionalLight intensity={0.4} position={[0, 5, 25]} />
+  //         <directionalLight intensity={1} position={[0, 5, 25]} />
   //         <directionalLight intensity={1} position={[0, -5, 0]} />
   //         <OrbitControls enableDamping={false} />
   //         {/* <Suspense fallback={<Box />}> */}
-  //         <Suspense fallback={<Loader />}>
+  //         <Suspense fallback={null}>
   //           <Model position={[0 + X, 0 + Y, 0 + Z]} scale={15} />
   //         </Suspense>
   //       </Canvas>

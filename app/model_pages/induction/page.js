@@ -34,7 +34,7 @@ import {
 //   current: null,
 // });
 
-const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/induction_motor.glb`;
+const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/induction.glb`;
 
 function Model({ ...props }) {
   const group = useRef();
@@ -182,6 +182,423 @@ function Model({ ...props }) {
   });
   const { highlightedParts } = props;
 
+  // return (
+  //   <group
+  //     ref={group}
+  //     {...props}
+  //     dispose={null}
+  //     onPointerOver={(e) => {
+  //       e.stopPropagation(), set(e.object.material.name);
+  //     }}
+  //     onPointerOut={(e) => {
+  //       e.intersections.length === 0 && set(null);
+  //     }}
+  //     onClick={(e) => {
+  //       e.stopPropagation();
+  //       // state.current = e.object.material.name;
+  //       // props.dispatch({ id: state.current });
+  //       // console.log(state.current);
+  //     }}
+  //     onPointerMissed={(e) => {
+  //       // state.current = null;
+  //     }}
+  //   >
+  //     <Select enabled={highlightedParts[0].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.EndCap2.geometry}
+  //         material={materials.End_Cap2}
+  //         position={[1.44 - EndCap2, 90.16, -140.41 - EndCap2z]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.screw2.geometry}
+  //           material={nodes.screw2.material}
+  //           position={[-0.25, 11.78, -0.13]}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select enabled={highlightedParts[1].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.FanCover.geometry}
+  //         material={materials.Fan_Cover}
+  //         position={[1.39, 90.15, -201.73 - FanCover]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Screw.geometry}
+  //           material={materials.Screw}
+  //           position={[-0.05, 131.89, 0]}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select enabled={highlightedParts[2].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.SquirrelCage.geometry}
+  //         material={materials.Squirrel_Cage}
+  //         position={[1.41, 90.03 + SquirrelCageY, -35.47 + SquirrelCage]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[3].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.StatorLamination.geometry}
+  //         material={materials.Stator_Lamination}
+  //         position={[
+  //           1.25 + StatorLaminationX,
+  //           90.02 + StatorLaminationY,
+  //           -20.44,
+  //         ]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal3.geometry}
+  //         material={materials.Terminal}
+  //         position={[14.78, 182.2, 22.67]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal4.geometry}
+  //         material={materials.Terminal}
+  //         position={[-12.05, 182.2, 50.57]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal5.geometry}
+  //         material={materials.Terminal}
+  //         position={[-12.05, 182.2, 36.62]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[5].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Coil2.geometry}
+  //         material={materials.Coil_2}
+  //         position={[1.06, 101.54, -1.43]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[6].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes["Coil-3"].geometry}
+  //         material={materials.Coil_3}
+  //         position={[0.96, 101.66, -0.75]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[7].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.CoolingFan.geometry}
+  //         material={materials.Cooling_Fan}
+  //         position={[1.44, 90.15, -175.23 - Fan]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[8].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.EndCap1.geometry}
+  //         material={materials.EndCap1}
+  //         position={[1.43 + EndCap1x, 90.16, 99.07 + EndCap1z]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Bolt.geometry}
+  //           material={materials.SCREW}
+  //           position={[-0.24, -13.25, -0.13]}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select enabled={highlightedParts[9].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.RotorLamination.geometry}
+  //         material={materials.Rotor_Lamination}
+  //         position={[1.36, 90.15 + Rotor_Y, -20.14 + Rotor]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[10].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Shaft.geometry}
+  //         material={materials.Shaft}
+  //         position={[3.25, 90.15, -20.61 + Shaft]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[11].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.TerminalHolder.geometry}
+  //         material={materials.Terminal_Holder}
+  //         position={[1.3, 174.76, 37.32]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal1.geometry}
+  //         material={materials.Terminal}
+  //         position={[14.78, 182.2, 50.57]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal2.geometry}
+  //         material={materials.Terminal}
+  //         position={[14.78, 182.2, 36.62]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[4].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal6.geometry}
+  //         material={materials.Terminal}
+  //         position={[-12.05, 182.2, 22.67]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[12].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes._Yoke.geometry}
+  //         material={materials.Yoke}
+  //         position={[0.19, 98.2, -15.24]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[13].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Coil1.geometry}
+  //         material={materials.Coil_1}
+  //         position={[1.96, 101.57, 0.49]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[14].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Terminal_box.geometry}
+  //         material={materials.Terminal_Box}
+  //         position={[1.33, 197.68 + TerminalBox, 38.48]}
+  //         rotation={[Math.PI / 2, 0, 0]}
+  //         scale={0.54}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Terminal_Box_Bolt.geometry}
+  //           material={materials.Screw}
+  //           position={[0.22, 0.38, -0.62]}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Text.geometry}
+  //         material={materials.W2}
+  //         position={[-21.75, 181.05, 22.56]}
+  //         scale={2.24}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Cube.geometry}
+  //           material={nodes.Cube.material}
+  //           position={[-0.65, -0.61, 0.05]}
+  //           scale={0.6}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Text001.geometry}
+  //         material={materials.W1}
+  //         position={[20.68, 181.06, 50.26]}
+  //         scale={2.81}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Cube005.geometry}
+  //           material={nodes.Cube005.material}
+  //           position={[0.08, -0.49, 0.03]}
+  //           scale={0.48}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Text002.geometry}
+  //         material={materials.U2}
+  //         position={[-20.54, 181.08, 36.32]}
+  //         scale={2.77}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Cube001.geometry}
+  //           material={nodes.Cube001.material}
+  //           position={[-0.29, -0.51, 0.09]}
+  //           scale={0.49}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Text003.geometry}
+  //         material={materials.U1}
+  //         position={[19.63, 185.11, 23.26]}
+  //         scale={3.25}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Cube003.geometry}
+  //           material={nodes.Cube003.material}
+  //           position={[0.15, -0.46, -0.18]}
+  //           scale={0.41}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Text004.geometry}
+  //         material={materials.V2}
+  //         position={[-17.96, 181.13, 50.26]}
+  //         scale={2.8}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Cube002.geometry}
+  //           material={nodes.Cube002.material}
+  //           position={[-0.54, -0.52, 0.14]}
+  //           scale={0.48}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Text005.geometry}
+  //         material={materials.V1}
+  //         position={[19.54, 186.1, 36.74]}
+  //         scale={2.53}
+  //       >
+  //         <mesh
+  //           castShadow
+  //           receiveShadow
+  //           geometry={nodes.Cube004.geometry}
+  //           material={nodes.Cube004.material}
+  //           position={[0.02, -0.64, -0.01]}
+  //           scale={0.53}
+  //         />
+  //       </mesh>
+  //     </Select>
+  //     <Select enabled={highlightedParts[15].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Star.geometry}
+  //         material={materials.STAR_CONNECTION}
+  //         position={[-25, 184.78, 36.69]}
+  //         scale={19.87}
+  //         visible={StarConnection}
+  //         ref={star}
+  //       />
+  //     </Select>
+  //     <Select enabled={highlightedParts[16].highlight}>
+  //       <mesh
+  //         castShadow
+  //         receiveShadow
+  //         geometry={nodes.Delta.geometry}
+  //         material={materials.Delta_Connection}
+  //         position={[0.4, 185.07, 36.8]}
+  //         scale={5.22}
+  //         visible={DeltaConnection}
+  //         ref={delta}
+  //       />
+  //     </Select>
+  //   </group>
+  // );
   return (
     <group
       ref={group}
@@ -203,400 +620,268 @@ function Model({ ...props }) {
         // state.current = null;
       }}
     >
-      <Select enabled={highlightedParts[0].highlight}>
+      <mesh
+        geometry={nodes.EndCap2.geometry}
+        material={materials.End_Cap2}
+        position={[1.439 - EndCap2, 90.158, -140.406 - EndCap2z]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.EndCap2.geometry}
-          material={materials.End_Cap2}
-          position={[1.44 - EndCap2, 90.16, -140.41 - EndCap2z]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.screw2.geometry}
-            material={nodes.screw2.material}
-            position={[-0.25, 11.78, -0.13]}
-          />
-        </mesh>
-      </Select>
-      <Select enabled={highlightedParts[1].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.FanCover.geometry}
-          material={materials.Fan_Cover}
-          position={[1.39, 90.15, -201.73 - FanCover]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Screw.geometry}
-            material={materials.Screw}
-            position={[-0.05, 131.89, 0]}
-          />
-        </mesh>
-      </Select>
-      <Select enabled={highlightedParts[2].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.SquirrelCage.geometry}
-          material={materials.Squirrel_Cage}
-          position={[1.41, 90.03 + SquirrelCageY, -35.47 + SquirrelCage]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.screw2.geometry}
+          material={materials.SCREW}
+          position={[-0.249, 11.782, -0.126]}
         />
-      </Select>
-      <Select enabled={highlightedParts[3].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.FanCover.geometry}
+        material={materials.Fan_Cover}
+        position={[1.388, 90.149, -201.735 - FanCover]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.StatorLamination.geometry}
-          material={materials.Stator_Lamination}
-          position={[
-            1.25 + StatorLaminationX,
-            90.02 + StatorLaminationY,
-            -20.44,
-          ]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Screw.geometry}
+          material={materials.Screw}
+          position={[-0.048, 131.895, 0]}
         />
-      </Select>
-      <Select enabled={highlightedParts[4].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.SquirrelCage.geometry}
+        material={materials.Squirrel_Cage}
+        position={[1.41, 90.029 + SquirrelCageY, -35.472 + SquirrelCage]}
+        rotation={[Math.PI / 2, -0.022, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.StatorLamination.geometry}
+        material={materials.Stator_Lamination}
+        position={[
+          1.255 + StatorLaminationX,
+          90.022 + StatorLaminationY,
+          -20.44,
+        ]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal3.geometry}
+        material={materials.Terminal}
+        position={[14.776, 182.199, 22.667]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal4.geometry}
+        material={materials.Terminal}
+        position={[-12.055, 182.199, 50.572]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal5.geometry}
+        material={materials.Terminal}
+        position={[-12.055, 182.199, 36.619]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Coil2.geometry}
+        material={materials.Coil_2}
+        position={[1.064, 101.538, -1.434]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes["Coil-3"].geometry}
+        material={materials.Coil_3}
+        position={[0.963, 101.661, -0.753]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.CoolingFan.geometry}
+        material={materials.Cooling_Fan}
+        position={[1.439, 90.149, -175.229]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.EndCap1.geometry}
+        material={materials.EndCap1}
+        position={[1.429 + EndCap1x, 90.156, 100.71 + EndCap1z]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal3.geometry}
-          material={materials.Terminal}
-          position={[14.78, 182.2, 22.67]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Bolt.geometry}
+          material={materials.SCREW}
+          position={[-0.241, -13.254, -0.129]}
         />
-      </Select>
-      <Select enabled={highlightedParts[4].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Shaft.geometry}
+        material={materials.Shaft}
+        position={[3.247, 90.149, -20.612 + Shaft]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.544}
+      />
+      <mesh
+        geometry={nodes.TerminalHolder.geometry}
+        material={materials.Terminal_Holder}
+        position={[1.301, 174.76, 37.323]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal1.geometry}
+        material={materials.Terminal}
+        position={[14.776, 182.199, 50.572]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal2.geometry}
+        material={materials.Terminal}
+        position={[14.776, 182.199, 36.619]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal6.geometry}
+        material={materials.Terminal}
+        position={[-12.055, 182.199, 22.667]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes._Yoke.geometry}
+        material={materials.Yoke}
+        position={[0.185, 98.201, -15.244]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Coil1.geometry}
+        material={materials.Coil_1}
+        position={[1.964, 101.567, 0.494]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      />
+      <mesh
+        geometry={nodes.Terminal_box.geometry}
+        material={materials.Terminal_Box}
+        position={[1.33, 197.684 + TerminalBox, 38.481]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.537}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal4.geometry}
-          material={materials.Terminal}
-          position={[-12.05, 182.2, 50.57]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Terminal_Box_Bolt.geometry}
+          material={materials.Screw}
+          position={[0.217, 0.38, -0.618]}
         />
-      </Select>
-      <Select enabled={highlightedParts[4].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Text.geometry}
+        material={materials.W2}
+        position={[-21.751, 181.048, 22.565]}
+        scale={2.242}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal5.geometry}
-          material={materials.Terminal}
-          position={[-12.05, 182.2, 36.62]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Cube.geometry}
+          material={nodes.Cube.material}
+          position={[-0.653, -0.611, 0.046]}
+          scale={0.601}
         />
-      </Select>
-      <Select enabled={highlightedParts[5].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Text001.geometry}
+        material={materials.W1}
+        position={[20.679, 181.063, 50.257]}
+        scale={2.806}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Coil2.geometry}
-          material={materials.Coil_2}
-          position={[1.06, 101.54, -1.43]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Cube005.geometry}
+          material={nodes.Cube005.material}
+          position={[0.082, -0.493, 0.027]}
+          scale={0.48}
         />
-      </Select>
-      <Select enabled={highlightedParts[6].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Text002.geometry}
+        material={materials.U2}
+        position={[-20.535, 181.082, 36.317]}
+        scale={2.766}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Coil-3"].geometry}
-          material={materials.Coil_3}
-          position={[0.96, 101.66, -0.75]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Cube001.geometry}
+          material={nodes.Cube001.material}
+          position={[-0.292, -0.507, 0.088]}
+          scale={0.487}
         />
-      </Select>
-      <Select enabled={highlightedParts[7].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Text003.geometry}
+        material={materials.U1}
+        position={[19.633, 185.107, 23.26]}
+        scale={3.254}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.CoolingFan.geometry}
-          material={materials.Cooling_Fan}
-          position={[1.44, 90.15, -175.23 - Fan]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Cube003.geometry}
+          material={nodes.Cube003.material}
+          position={[0.149, -0.458, -0.182]}
+          scale={0.414}
         />
-      </Select>
-      <Select enabled={highlightedParts[8].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Text004.geometry}
+        material={materials.V2}
+        position={[-17.959, 181.134, 50.255]}
+        scale={2.8}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.EndCap1.geometry}
-          material={materials.EndCap1}
-          position={[1.43 + EndCap1x, 90.16, 99.07 + EndCap1z]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Bolt.geometry}
-            material={materials.SCREW}
-            position={[-0.24, -13.25, -0.13]}
-          />
-        </mesh>
-      </Select>
-      <Select enabled={highlightedParts[9].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.RotorLamination.geometry}
-          material={materials.Rotor_Lamination}
-          position={[1.36, 90.15 + Rotor_Y, -20.14 + Rotor]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Cube002.geometry}
+          material={nodes.Cube002.material}
+          position={[-0.54, -0.52, 0.141]}
+          scale={0.481}
         />
-      </Select>
-      <Select enabled={highlightedParts[10].highlight}>
+      </mesh>
+      <mesh
+        geometry={nodes.Text005.geometry}
+        material={materials.V1}
+        position={[19.536, 186.103, 36.738]}
+        scale={2.528}
+      >
         <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Shaft.geometry}
-          material={materials.Shaft}
-          position={[3.25, 90.15, -20.61 + Shaft]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
+          geometry={nodes.Cube004.geometry}
+          material={nodes.Cube004.material}
+          position={[0.019, -0.643, -0.01]}
+          scale={0.533}
         />
-      </Select>
-      <Select enabled={highlightedParts[11].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.TerminalHolder.geometry}
-          material={materials.Terminal_Holder}
-          position={[1.3, 174.76, 37.32]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        />
-      </Select>
-      <Select enabled={highlightedParts[4].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal1.geometry}
-          material={materials.Terminal}
-          position={[14.78, 182.2, 50.57]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        />
-      </Select>
-      <Select enabled={highlightedParts[4].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal2.geometry}
-          material={materials.Terminal}
-          position={[14.78, 182.2, 36.62]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        />
-      </Select>
-      <Select enabled={highlightedParts[4].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal6.geometry}
-          material={materials.Terminal}
-          position={[-12.05, 182.2, 22.67]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        />
-      </Select>
-      <Select enabled={highlightedParts[12].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes._Yoke.geometry}
-          material={materials.Yoke}
-          position={[0.19, 98.2, -15.24]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        />
-      </Select>
-      <Select enabled={highlightedParts[13].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Coil1.geometry}
-          material={materials.Coil_1}
-          position={[1.96, 101.57, 0.49]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        />
-      </Select>
-      <Select enabled={highlightedParts[14].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Terminal_box.geometry}
-          material={materials.Terminal_Box}
-          position={[1.33, 197.68 + TerminalBox, 38.48]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.54}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Terminal_Box_Bolt.geometry}
-            material={materials.Screw}
-            position={[0.22, 0.38, -0.62]}
-          />
-        </mesh>
-      </Select>
-      <Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Text.geometry}
-          material={materials.W2}
-          position={[-21.75, 181.05, 22.56]}
-          scale={2.24}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube.geometry}
-            material={nodes.Cube.material}
-            position={[-0.65, -0.61, 0.05]}
-            scale={0.6}
-          />
-        </mesh>
-      </Select>
-      <Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Text001.geometry}
-          material={materials.W1}
-          position={[20.68, 181.06, 50.26]}
-          scale={2.81}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube005.geometry}
-            material={nodes.Cube005.material}
-            position={[0.08, -0.49, 0.03]}
-            scale={0.48}
-          />
-        </mesh>
-      </Select>
-      <Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Text002.geometry}
-          material={materials.U2}
-          position={[-20.54, 181.08, 36.32]}
-          scale={2.77}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube001.geometry}
-            material={nodes.Cube001.material}
-            position={[-0.29, -0.51, 0.09]}
-            scale={0.49}
-          />
-        </mesh>
-      </Select>
-      <Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Text003.geometry}
-          material={materials.U1}
-          position={[19.63, 185.11, 23.26]}
-          scale={3.25}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube003.geometry}
-            material={nodes.Cube003.material}
-            position={[0.15, -0.46, -0.18]}
-            scale={0.41}
-          />
-        </mesh>
-      </Select>
-      <Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Text004.geometry}
-          material={materials.V2}
-          position={[-17.96, 181.13, 50.26]}
-          scale={2.8}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube002.geometry}
-            material={nodes.Cube002.material}
-            position={[-0.54, -0.52, 0.14]}
-            scale={0.48}
-          />
-        </mesh>
-      </Select>
-      <Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Text005.geometry}
-          material={materials.V1}
-          position={[19.54, 186.1, 36.74]}
-          scale={2.53}
-        >
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube004.geometry}
-            material={nodes.Cube004.material}
-            position={[0.02, -0.64, -0.01]}
-            scale={0.53}
-          />
-        </mesh>
-      </Select>
-      <Select enabled={highlightedParts[15].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Star.geometry}
-          material={materials.STAR_CONNECTION}
-          position={[-25, 184.78, 36.69]}
-          scale={19.87}
-          visible={StarConnection}
-          ref={star}
-        />
-      </Select>
-      <Select enabled={highlightedParts[16].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Delta.geometry}
-          material={materials.Delta_Connection}
-          position={[0.4, 185.07, 36.8]}
-          scale={5.22}
-          visible={DeltaConnection}
-          ref={delta}
-        />
-      </Select>
+      </mesh>
+      <mesh
+        ref={star}
+        geometry={nodes.Star.geometry}
+        material={materials.STAR_CONNECTION}
+        position={[0.86, 184.782, 36.69]}
+        scale={19.867}
+        visible={StarConnection}
+      />
+      <mesh
+        ref={delta}
+        geometry={nodes.Delta.geometry}
+        material={materials.Delta_Connection}
+        position={[0.399, 185.068, 36.799]}
+        scale={[5.279, 5.219, 5.279]}
+        visible={DeltaConnection}
+      />
+      <mesh
+        geometry={nodes.Rotor_Lamination.geometry}
+        material={materials["Material.001"]}
+        position={[1.362, 90.153, -18.545]}
+        rotation={[Math.PI / 2, -0.398, 0]}
+        scale={[46.005, 0.462, 46.005]}
+      />
     </group>
   );
 }
