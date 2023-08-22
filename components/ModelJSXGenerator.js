@@ -122,7 +122,7 @@ export default function ModelJSXGenerator({
               <Stage
                 intensity={0.5}
                 environment={null}
-                shadows={{ type: "accumulative", bias: -0.003 }}
+                //shadows={{ type: "accumulative", bias: -0.003 }}
                 adjustCamera={false}
               >
                 {children}
