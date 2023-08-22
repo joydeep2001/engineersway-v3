@@ -204,7 +204,7 @@ function Model({ ...props }) {
   //     }}
   //   >
   //     <Select enabled={highlightedParts[0].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.EndCap2.geometry}
@@ -213,7 +213,7 @@ function Model({ ...props }) {
   //         rotation={[Math.PI / 2, 0, 0]}
   //         scale={0.54}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.screw2.geometry}
@@ -223,7 +223,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select enabled={highlightedParts[1].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.FanCover.geometry}
@@ -232,7 +232,7 @@ function Model({ ...props }) {
   //         rotation={[Math.PI / 2, 0, 0]}
   //         scale={0.54}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Screw.geometry}
@@ -242,7 +242,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select enabled={highlightedParts[2].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.SquirrelCage.geometry}
@@ -253,7 +253,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[3].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.StatorLamination.geometry}
@@ -268,7 +268,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[4].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal3.geometry}
@@ -279,7 +279,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[4].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal4.geometry}
@@ -290,7 +290,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[4].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal5.geometry}
@@ -301,7 +301,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[5].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Coil2.geometry}
@@ -312,7 +312,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[6].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes["Coil-3"].geometry}
@@ -323,7 +323,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[7].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.CoolingFan.geometry}
@@ -334,7 +334,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[8].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.EndCap1.geometry}
@@ -343,7 +343,7 @@ function Model({ ...props }) {
   //         rotation={[Math.PI / 2, 0, 0]}
   //         scale={0.54}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Bolt.geometry}
@@ -353,7 +353,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select enabled={highlightedParts[9].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.RotorLamination.geometry}
@@ -364,7 +364,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[10].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Shaft.geometry}
@@ -375,7 +375,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[11].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.TerminalHolder.geometry}
@@ -386,7 +386,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[4].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal1.geometry}
@@ -397,7 +397,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[4].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal2.geometry}
@@ -408,7 +408,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[4].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal6.geometry}
@@ -419,7 +419,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[12].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes._Yoke.geometry}
@@ -430,7 +430,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[13].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Coil1.geometry}
@@ -441,7 +441,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[14].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Terminal_box.geometry}
@@ -450,7 +450,7 @@ function Model({ ...props }) {
   //         rotation={[Math.PI / 2, 0, 0]}
   //         scale={0.54}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Terminal_Box_Bolt.geometry}
@@ -460,7 +460,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Text.geometry}
@@ -468,7 +468,7 @@ function Model({ ...props }) {
   //         position={[-21.75, 181.05, 22.56]}
   //         scale={2.24}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Cube.geometry}
@@ -479,7 +479,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Text001.geometry}
@@ -487,7 +487,7 @@ function Model({ ...props }) {
   //         position={[20.68, 181.06, 50.26]}
   //         scale={2.81}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Cube005.geometry}
@@ -498,7 +498,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Text002.geometry}
@@ -506,7 +506,7 @@ function Model({ ...props }) {
   //         position={[-20.54, 181.08, 36.32]}
   //         scale={2.77}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Cube001.geometry}
@@ -517,7 +517,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Text003.geometry}
@@ -525,7 +525,7 @@ function Model({ ...props }) {
   //         position={[19.63, 185.11, 23.26]}
   //         scale={3.25}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Cube003.geometry}
@@ -536,7 +536,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Text004.geometry}
@@ -544,7 +544,7 @@ function Model({ ...props }) {
   //         position={[-17.96, 181.13, 50.26]}
   //         scale={2.8}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Cube002.geometry}
@@ -555,7 +555,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Text005.geometry}
@@ -563,7 +563,7 @@ function Model({ ...props }) {
   //         position={[19.54, 186.1, 36.74]}
   //         scale={2.53}
   //       >
-  //         <mesh
+  //         <mesh castShadow receiveShadow
   //           castShadow
   //           receiveShadow
   //           geometry={nodes.Cube004.geometry}
@@ -574,7 +574,7 @@ function Model({ ...props }) {
   //       </mesh>
   //     </Select>
   //     <Select enabled={highlightedParts[15].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Star.geometry}
@@ -586,7 +586,7 @@ function Model({ ...props }) {
   //       />
   //     </Select>
   //     <Select enabled={highlightedParts[16].highlight}>
-  //       <mesh
+  //       <mesh castShadow receiveShadow
   //         castShadow
   //         receiveShadow
   //         geometry={nodes.Delta.geometry}
@@ -621,6 +621,8 @@ function Model({ ...props }) {
       }}
     >
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.EndCap2.geometry}
         material={materials.End_Cap2}
         position={[1.439 - EndCap2, 90.158, -140.406 - EndCap2z]}
@@ -628,12 +630,16 @@ function Model({ ...props }) {
         scale={0.537}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.screw2.geometry}
           material={materials.SCREW}
           position={[-0.249, 11.782, -0.126]}
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.FanCover.geometry}
         material={materials.Fan_Cover}
         position={[1.388, 90.149, -201.735 - FanCover]}
@@ -641,12 +647,16 @@ function Model({ ...props }) {
         scale={0.537}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Screw.geometry}
           material={materials.Screw}
           position={[-0.048, 131.895, 0]}
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.SquirrelCage.geometry}
         material={materials.Squirrel_Cage}
         position={[1.41, 90.029 + SquirrelCageY, -35.472 + SquirrelCage]}
@@ -654,6 +664,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.StatorLamination.geometry}
         material={materials.Stator_Lamination}
         position={[
@@ -665,6 +677,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal3.geometry}
         material={materials.Terminal}
         position={[14.776, 182.199, 22.667]}
@@ -672,6 +686,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal4.geometry}
         material={materials.Terminal}
         position={[-12.055, 182.199, 50.572]}
@@ -679,6 +695,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal5.geometry}
         material={materials.Terminal}
         position={[-12.055, 182.199, 36.619]}
@@ -686,6 +704,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Coil2.geometry}
         material={materials.Coil_2}
         position={[1.064, 101.538, -1.434]}
@@ -693,6 +713,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["Coil-3"].geometry}
         material={materials.Coil_3}
         position={[0.963, 101.661, -0.753]}
@@ -700,6 +722,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.CoolingFan.geometry}
         material={materials.Cooling_Fan}
         position={[1.439, 90.149, -175.229]}
@@ -707,6 +731,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.EndCap1.geometry}
         material={materials.EndCap1}
         position={[1.429 + EndCap1x, 90.156, 100.71 + EndCap1z]}
@@ -714,12 +740,16 @@ function Model({ ...props }) {
         scale={0.537}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Bolt.geometry}
           material={materials.SCREW}
           position={[-0.241, -13.254, -0.129]}
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Shaft.geometry}
         material={materials.Shaft}
         position={[3.247, 90.149, -20.612 + Shaft]}
@@ -727,6 +757,8 @@ function Model({ ...props }) {
         scale={0.544}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.TerminalHolder.geometry}
         material={materials.Terminal_Holder}
         position={[1.301, 174.76, 37.323]}
@@ -734,6 +766,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal1.geometry}
         material={materials.Terminal}
         position={[14.776, 182.199, 50.572]}
@@ -741,6 +775,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal2.geometry}
         material={materials.Terminal}
         position={[14.776, 182.199, 36.619]}
@@ -748,6 +784,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal6.geometry}
         material={materials.Terminal}
         position={[-12.055, 182.199, 22.667]}
@@ -755,6 +793,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes._Yoke.geometry}
         material={materials.Yoke}
         position={[0.185, 98.201, -15.244]}
@@ -762,6 +802,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Coil1.geometry}
         material={materials.Coil_1}
         position={[1.964, 101.567, 0.494]}
@@ -769,6 +811,8 @@ function Model({ ...props }) {
         scale={0.537}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Terminal_box.geometry}
         material={materials.Terminal_Box}
         position={[1.33, 197.684 + TerminalBox, 38.481]}
@@ -776,18 +820,24 @@ function Model({ ...props }) {
         scale={0.537}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Terminal_Box_Bolt.geometry}
           material={materials.Screw}
           position={[0.217, 0.38, -0.618]}
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Text.geometry}
         material={materials.W2}
         position={[-21.751, 181.048, 22.565]}
         scale={2.242}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube.geometry}
           material={nodes.Cube.material}
           position={[-0.653, -0.611, 0.046]}
@@ -795,12 +845,16 @@ function Model({ ...props }) {
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Text001.geometry}
         material={materials.W1}
         position={[20.679, 181.063, 50.257]}
         scale={2.806}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube005.geometry}
           material={nodes.Cube005.material}
           position={[0.082, -0.493, 0.027]}
@@ -808,12 +862,16 @@ function Model({ ...props }) {
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Text002.geometry}
         material={materials.U2}
         position={[-20.535, 181.082, 36.317]}
         scale={2.766}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube001.geometry}
           material={nodes.Cube001.material}
           position={[-0.292, -0.507, 0.088]}
@@ -821,12 +879,16 @@ function Model({ ...props }) {
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Text003.geometry}
         material={materials.U1}
         position={[19.633, 185.107, 23.26]}
         scale={3.254}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube003.geometry}
           material={nodes.Cube003.material}
           position={[0.149, -0.458, -0.182]}
@@ -834,12 +896,16 @@ function Model({ ...props }) {
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Text004.geometry}
         material={materials.V2}
         position={[-17.959, 181.134, 50.255]}
         scale={2.8}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube002.geometry}
           material={nodes.Cube002.material}
           position={[-0.54, -0.52, 0.141]}
@@ -847,12 +913,16 @@ function Model({ ...props }) {
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Text005.geometry}
         material={materials.V1}
         position={[19.536, 186.103, 36.738]}
         scale={2.528}
       >
         <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Cube004.geometry}
           material={nodes.Cube004.material}
           position={[0.019, -0.643, -0.01]}
@@ -860,6 +930,8 @@ function Model({ ...props }) {
         />
       </mesh>
       <mesh
+        castShadow
+        receiveShadow
         ref={star}
         geometry={nodes.Star.geometry}
         material={materials.STAR_CONNECTION}
@@ -868,6 +940,8 @@ function Model({ ...props }) {
         visible={StarConnection}
       />
       <mesh
+        castShadow
+        receiveShadow
         ref={delta}
         geometry={nodes.Delta.geometry}
         material={materials.Delta_Connection}
@@ -876,6 +950,8 @@ function Model({ ...props }) {
         visible={DeltaConnection}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Rotor_Lamination.geometry}
         material={materials["Material.001"]}
         position={[1.362, 90.153, -18.545]}

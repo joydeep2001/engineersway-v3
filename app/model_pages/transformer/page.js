@@ -170,7 +170,7 @@ function Model({ ...props }) {
   //       }));
   //     }}
   //   >
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_Boss-Extrude2111-1"].geometry}
@@ -182,7 +182,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_BreatherBody-1"].geometry}
@@ -192,7 +192,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_BreatherSilicaGel-1"].geometry}
@@ -202,7 +202,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_BuchholzRelay-1"].geometry}
@@ -212,7 +212,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_CoreFormer-1"].geometry}
@@ -222,7 +222,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_CorrugatedTank-1"].geometry}
@@ -234,7 +234,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_HV_Bus1-1"].geometry}
@@ -244,7 +244,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_HV_Coil-1"].geometry}
@@ -256,7 +256,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LPattern133-1"].geometry}
@@ -266,7 +266,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Bushing2-1"].geometry}
@@ -276,7 +276,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Bushing3-1"].geometry}
@@ -286,7 +286,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Bushing4-1"].geometry}
@@ -296,7 +296,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Insulator2-1"].geometry}
@@ -306,7 +306,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Insulator4-1"].geometry}
@@ -316,7 +316,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_Mirror1211-1"].geometry}
@@ -326,7 +326,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_RingConnector3-1"].geometry}
@@ -336,7 +336,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_TopCover-1"].geometry}
@@ -348,7 +348,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_YPhaseInsulator-1"].geometry}
@@ -358,7 +358,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_BPhaseInsulator-1"].geometry}
@@ -368,7 +368,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_Conservator-1"].geometry}
@@ -378,7 +378,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_ConservatorTankCap-1"].geometry}
@@ -388,7 +388,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_Core-1"].geometry}
@@ -398,7 +398,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_HV_Bus2-1"].geometry}
@@ -408,7 +408,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_HV_Bus3-1"].geometry}
@@ -418,7 +418,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LPattern88-1"].geometry}
@@ -428,7 +428,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Bushing1-1"].geometry}
@@ -438,7 +438,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Insulator1-1"].geometry}
@@ -448,7 +448,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_LV_Insulator3-1"].geometry}
@@ -458,7 +458,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_RingConnector1-1"].geometry}
@@ -468,7 +468,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_RingConnector2-1"].geometry}
@@ -478,7 +478,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_RPhaseInsulator-1"].geometry}
@@ -488,7 +488,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_YPhaseInsulator-1001"].geometry}
@@ -498,7 +498,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_BPhaseInsulator-1001"].geometry}
@@ -508,7 +508,7 @@ function Model({ ...props }) {
   //       scale={0.05}
   //     />
 
-  //     <mesh
+  //     <mesh castShadow receiveShadow
   //       castShadow
   //       receiveShadow
   //       geometry={nodes["a_-_RPhaseInsulator-1001"].geometry}
@@ -549,6 +549,8 @@ function Model({ ...props }) {
       }}
     >
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_Boss-Extrude2111-1"].geometry}
         material={materials.Paper_Insulator}
         position={[12.232, 4.963, -6.554]}
@@ -558,6 +560,8 @@ function Model({ ...props }) {
         ref={Insulator}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_BreatherBody-1"].geometry}
         material={materials.BreatherBody}
         position={[19.575, 13.245, -8.698]}
@@ -565,6 +569,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_BreatherSilicaGel-1"].geometry}
         material={materials.SilikaGel}
         position={[19.575, 13.038, -8.697]}
@@ -572,6 +578,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_BuchholzRelay-1"].geometry}
         material={materials.Buchholz_Relay}
         position={[14.417, 11.653, -5.411]}
@@ -579,6 +587,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_CoreFormer-1"].geometry}
         material={materials.coreformer}
         position={[6.864, 3.59, -8.947]}
@@ -586,6 +596,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_CorrugatedTank-1"].geometry}
         material={materials.CorrugatedTank}
         position={[6.332, 7.152 - Tank, -8.027]}
@@ -595,6 +607,8 @@ function Model({ ...props }) {
         visible={Tank_Visibility}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_HV_Bus1-1"].geometry}
         material={materials.HV_Bus}
         position={[11.164, 10.033, -9.339]}
@@ -602,6 +616,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_HV_Coil-1"].geometry}
         material={materials.HV_Coil}
         position={[6.897, 4.164, -9.066 - HV]}
@@ -611,6 +627,8 @@ function Model({ ...props }) {
         visible={HV_Coilvisibility}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LPattern133-1"].geometry}
         material={materials.Lv_coil}
         position={[7.909, 8.422, -6.108]}
@@ -618,6 +636,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Bushing2-1"].geometry}
         material={materials.LV_Bushing}
         position={[5.344, 9.178, -7.263]}
@@ -625,6 +645,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Bushing3-1"].geometry}
         material={materials.LV_Bushing}
         position={[6.628, 9.178, -6.69]}
@@ -632,6 +654,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Bushing4-1"].geometry}
         material={materials.LV_Bushing}
         position={[7.913, 9.178, -6.118]}
@@ -639,6 +663,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Insulator2-1"].geometry}
         material={materials.LV_Insulator}
         position={[5.364, 9.732, -7.306]}
@@ -646,6 +672,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Insulator4-1"].geometry}
         material={materials.LV_Insulator}
         position={[7.933, 9.732, -6.161]}
@@ -653,6 +681,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_Mirror1211-1"].geometry}
         material={materials.Bolt}
         position={[15.014, 11.099, -5.314]}
@@ -660,6 +690,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_RingConnector3-1"].geometry}
         material={materials.Ring_Connector}
         position={[11.109, 8.538, -9.216]}
@@ -667,6 +699,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_TopCover-1"].geometry}
         material={materials.TopCover}
         position={[8.113, 9.435 + TopCover, -8.686]}
@@ -676,6 +710,8 @@ function Model({ ...props }) {
         ref={T_Cover}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_YPhaseInsulator-1"].geometry}
         material={materials.YPhase_Insulator}
         position={[11.164, 10.93, -9.339]}
@@ -683,6 +719,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_BPhaseInsulator-1"].geometry}
         material={materials.BPhase_Insulator}
         position={[7.724, 10.93, -10.873]}
@@ -690,6 +728,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_Conservator-1"].geometry}
         material={materials.Conservater}
         position={[16.685, 12.623, -5.86]}
@@ -697,6 +737,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_ConservatorTankCap-1"].geometry}
         material={materials.ConservatorTankCap}
         position={[17.602, 14.361, -4.27]}
@@ -704,6 +746,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_Core-1"].geometry}
         material={materials.Core}
         position={[6.865 + Core, 4.25, -8.946]}
@@ -711,6 +755,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_HV_Bus2-1"].geometry}
         material={materials.HV_Bus}
         position={[7.724, 10.033, -10.873]}
@@ -718,6 +764,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_HV_Bus3-1"].geometry}
         material={materials.HV_Bus}
         position={[4.283, 10.033, -12.407]}
@@ -725,6 +773,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LPattern88-1"].geometry}
         material={materials.Bolt}
         position={[4.488, 9.874, -12.866]}
@@ -732,6 +782,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Bushing1-1"].geometry}
         material={materials.LV_Bushing}
         position={[4.06, 9.178, -7.835]}
@@ -739,6 +791,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Insulator1-1"].geometry}
         material={materials.LV_Insulator}
         position={[4.079, 9.732, -7.879]}
@@ -746,6 +800,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_LV_Insulator3-1"].geometry}
         material={materials.LV_Insulator}
         position={[6.648, 9.732, -6.734]}
@@ -753,6 +809,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_RingConnector1-1"].geometry}
         material={materials.Ring_Connector}
         position={[4.228, 8.538, -12.284]}
@@ -760,6 +818,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_RingConnector2-1"].geometry}
         material={materials.Ring_Connector}
         position={[7.668, 8.538, -10.75]}
@@ -767,6 +827,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_RPhaseInsulator-1"].geometry}
         material={materials.RPhase_Insulator}
         position={[4.283, 10.93, -12.406]}
@@ -774,6 +836,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_YPhaseInsulator-1001"].geometry}
         material={materials.YPhase_Insulator}
         position={[11.164, 10.93, -9.339]}
@@ -781,6 +845,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_BPhaseInsulator-1001"].geometry}
         material={materials.BPhase_Insulator}
         position={[7.724, 10.93, -10.873]}
@@ -788,6 +854,8 @@ function Model({ ...props }) {
         scale={0.05}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes["a_-_RPhaseInsulator-1001"].geometry}
         material={materials.RPhase_Insulator}
         position={[4.283, 10.93, -12.406]}

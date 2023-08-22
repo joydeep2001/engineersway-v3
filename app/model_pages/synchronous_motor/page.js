@@ -31,7 +31,7 @@ import {
 //   current: null,
 // });
 
-const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/Sychronous.glb`;
+const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/Synchronous1.glb`;
 
 function Model({ ...props }) {
   const group = useRef();
@@ -176,13 +176,13 @@ function Model({ ...props }) {
       cage.current.position.x = 25.14 - Cage;
     }
   });
-  useEffect(() => {
-    if (Stator_Visibility == false) {
-      s_core.current.position.x = 5000000000000000;
-    } else {
-      s_core.current.position.x = 25.14 - Stator;
-    }
-  });
+  // useEffect(() => {
+  //   if (Stator_Visibility == false) {
+  //     s_core.current.position.x = 5000000000000000;
+  //   } else {
+  //     s_core.current.position.x = 25.14 - Stator;
+  //   }
+  // });
   useEffect(() => {
     if (Back_Cover_Visibility == false) {
       backcover.current.position.Z = 5000000000000000;
@@ -197,13 +197,13 @@ function Model({ ...props }) {
       frontcover.current.position.z = -22.55 + Front_Cover;
     }
   });
-  useEffect(() => {
-    if (TerminalCap_Visibility == false) {
-      t_cap.current.position.y = 5000000000000000;
-    } else {
-      t_cap.current.position.y = 6.04 + TerminalCap;
-    }
-  });
+  // useEffect(() => {
+  //   if (TerminalCap_Visibility == false) {
+  //     t_cap.current.position.y = 5000000000000000;
+  //   } else {
+  //     t_cap.current.position.y = 6.04 + TerminalCap;
+  //   }
+  // });
   useEffect(() => {
     if (Star == false && Delta == false) {
       star.current.position.y = 8000000;
@@ -1170,40 +1170,40 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes["a_-_Coil2-1"].geometry}
         material={materials.Coil2}
-        position={[30.523, 27.513, -83.179]}
+        position={[-0.397, 6.271, -1.404]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Spring1-1"].geometry}
         material={materials.Spring}
-        position={[31.219, 14.134, -75.305]}
+        position={[0.299, 8.334, 6.47]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_BrushHolderArm2-1"].geometry}
         material={materials["Material.002"]}
-        position={[31.168, 14.007, -75.304]}
+        position={[0.249, 8.207, 6.471]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_BrushHolderArm3-1"].geometry}
         material={materials["Material.002"]}
-        position={[29.844, 14.007, -74.483]}
+        position={[-1.076, 8.207, 7.292]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Coil1-1"].geometry}
         material={materials.Coil3}
-        position={[30.486, 28.324, -82.712]}
+        position={[-0.433, 6.271, -0.937]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <group
-        position={[30.505, 12.039, -90.639 + Front_Cover]}
+        position={[-0.414, 6.239, -8.864 + Front_Cover]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
         ref={frontcover}
@@ -1221,184 +1221,173 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes["a_-_LPattern42-1"].geometry}
         material={nodes["a_-_LPattern42-1"].material}
-        position={[29.959, 17.055, -75.24]}
+        position={[-0.96, 11.255, 6.535]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern43-1"].geometry}
         material={nodes["a_-_LPattern43-1"].material}
-        position={[28.944, 17.055, -75.24]}
+        position={[-1.976, 11.255, 6.535]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Wire2-1"].geometry}
         material={materials.SlipRingWire}
-        position={[30.246, 15.377, -74.491]}
+        position={[-0.674, 9.577, 7.284]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Boss-Extrude282-1"].geometry}
         material={materials.Bolt}
-        position={[30.135, 14.187, -75.586]}
+        position={[-0.784, 8.387, 6.189]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern32-1"].geometry}
         material={materials.Nut}
-        position={[30.975, 17.117, -76.614]}
+        position={[0.056, 11.317, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern36-1"].geometry}
         material={materials.Nut}
-        position={[30.975, 17.117, -75.363]}
+        position={[0.056, 11.317, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern37-1"].geometry}
         material={materials.Nut}
-        position={[31.991, 17.117, -75.363]}
+        position={[1.072, 11.317, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
-      />
-      <mesh
-        geometry={nodes["a_-_TerminalBoxCap-1"].geometry}
-        material={materials.Terminalcap}
-        position={[30.51, 32.188 + TerminalCap, -75.933]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={0.156}
-        ref={t_cap}
-        visible={TerminalCap_Visibility}
       />
       <mesh
         geometry={nodes["a_-_TerminalHolder-1"].geometry}
         material={materials.Terminal_Holder}
-        position={[30.464, 17.551, -75.999]}
+        position={[-0.455, 11.751, 5.776]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Boss-Extrude22-1"].geometry}
         material={materials.brush_holder}
-        position={[31.749, 13.527, -74.484]}
+        position={[0.83, 7.727, 7.291]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Boss-Extrude281-1"].geometry}
         material={materials.Bolt}
-        position={[30.877, 14.187, -75.586]}
+        position={[-0.042, 8.387, 6.189]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Boss-Extrude39-1"].geometry}
         material={materials.Nut}
-        position={[28.943, 17.117, -76.614]}
+        position={[-1.976, 11.317, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_BrushHolderArm1-1"].geometry}
         material={materials["Material.002"]}
-        position={[29.844, 14.007, -75.304]}
+        position={[-1.076, 8.207, 6.471]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_BrushHolderArm4-1"].geometry}
         material={materials["Material.002"]}
-        position={[31.168, 14.007, -74.483]}
+        position={[0.249, 8.207, 7.292]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_BrushHolderBody-1"].geometry}
         material={materials.Brush_Holder}
-        position={[30.506, 13.893, -74.103]}
+        position={[-0.413, 8.093, 7.672]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_CarbonBrush1-1"].geometry}
         material={materials.Brush}
-        position={[31.82, 13.684, -74.484]}
+        position={[0.9, 7.884, 7.291]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_CarbonBrush2-1"].geometry}
         material={nodes["a_-_CarbonBrush2-1"].material}
-        position={[31.82, 13.684, -75.305]}
+        position={[0.9, 7.884, 6.47]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_CarbonBrush3-1"].geometry}
         material={materials.Brush}
-        position={[29.193, 13.684, -74.484]}
+        position={[-1.727, 7.884, 7.291]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_CarbonBrush4-1"].geometry}
         material={materials.Brush}
-        position={[29.193, 13.684, -75.305]}
+        position={[-1.727, 7.884, 6.47]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Coil3-1"].geometry}
         material={materials.Coil1}
-        position={[30.526, 30.026, -82.863]}
+        position={[-0.393, 6.271, -1.088]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Cut-Extrude18-1"].geometry}
         material={nodes["a_-_Cut-Extrude18-1"].material}
-        position={[31.991, 17.055, -75.24]}
+        position={[1.072, 11.255, 6.535]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Cut-Extrude21-1"].geometry}
         material={materials.Bolt}
-        position={[30.507, 13.496, -72.341]}
+        position={[-0.413, 7.696, 9.434]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_DriveShaft-1"].geometry}
         material={materials.Shaft}
-        position={[30.513, 12.038, -83.681]}
-        rotation={[Math.PI / 2, 0, 0]}
+        position={[-0.406, 6.238, -1.906]}
+        rotation={[Math.PI / 2, 1.396, 0]}
         scale={0.156}
       >
         <mesh
           geometry={nodes["a_-_Cage-1"].geometry}
           material={materials.Cage}
-          position={[-0.119 - Cage, 255.219, 0.01]}
+          position={[-7.177 - Cage, -0.591, 1.254]}
           ref={cage}
           visible={Cage_Visibility}
         />
         <mesh
           geometry={nodes["a_-_Rotor-1"].geometry}
           material={materials.Rotor}
-          position={[30.5 - Rotor_core, 12.04, -9.5]} //added
           ref={r_core}
           visible={Rotor_core_Visibility}
         />
         <mesh
           geometry={nodes["a_-_RotorFieldcoil-1"].geometry}
           material={materials.Rotor_FieldCoil}
-          position={[30.5 + RotorCoil, 12.03, -9.02]}
           ref={r_coil}
           visible={RotorCoil_Visibility}
         />
@@ -1416,7 +1405,7 @@ function Model({ ...props }) {
         />
       </mesh>
       <group
-        position={[30.507, 12.137, -3.767 - Back_Cover]}
+        position={[-0.412, 6.337, 9.061 - Back_Cover]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
         ref={backcover}
@@ -1434,184 +1423,175 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes["a_-_LPattern31-1"].geometry}
         material={materials.Nut}
-        position={[29.959, 17.117, -76.614]}
+        position={[-0.96, 11.317, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern33-1"].geometry}
         material={materials.Nut}
-        position={[31.991, 17.117, -76.614]}
+        position={[1.072, 11.317, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern34-1"].geometry}
         material={materials.Nut}
-        position={[28.943, 17.117, -75.363]}
+        position={[-1.976, 11.317, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern35-1"].geometry}
         material={materials.Nut}
-        position={[29.959, 17.117, -75.363]}
+        position={[-0.96, 11.317, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_LPattern41-1"].geometry}
         material={nodes["a_-_LPattern41-1"].material}
-        position={[30.975, 17.055, -75.24]}
+        position={[0.056, 11.255, 6.535]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror72-1"].geometry}
         material={materials.Brush}
-        position={[31.749, 13.527, -75.305]}
+        position={[0.83, 7.727, 6.47]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror82-1"].geometry}
         material={materials.brush_holder}
-        position={[29.264, 13.527, -74.484]}
+        position={[-1.656, 7.727, 7.291]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror85-1"].geometry}
         material={materials.brush_holder}
-        position={[29.264, 13.527, -75.305]}
+        position={[-1.656, 7.727, 6.47]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror151-1"].geometry}
         material={nodes["a_-_Mirror151-1"].material}
-        position={[30.975, 17.055, -76.737]}
+        position={[0.056, 11.255, 5.038]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror152-1"].geometry}
         material={nodes["a_-_Mirror152-1"].material}
-        position={[31.991, 17.055, -76.737]}
+        position={[1.072, 11.255, 5.038]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror153-1"].geometry}
         material={nodes["a_-_Mirror153-1"].material}
-        position={[29.959, 17.055, -76.737]}
+        position={[-0.96, 11.255, 5.038]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Mirror154-1"].geometry}
         material={nodes["a_-_Mirror154-1"].material}
-        position={[28.944, 17.055, -76.737]}
+        position={[-1.976, 11.255, 5.038]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Spring2-1"].geometry}
         material={materials.Spring}
-        position={[29.794, 14.134, -74.484]}
+        position={[-1.125, 8.334, 7.291]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Spring3-1"].geometry}
         material={materials.Spring}
-        position={[31.219, 14.133, -74.484]}
+        position={[0.3, 8.333, 7.291]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Spring4-1"].geometry}
         material={materials.Spring}
-        position={[29.794, 14.134, -75.305]}
+        position={[-1.125, 8.334, 6.47]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
-      />
-      <mesh
-        geometry={nodes["a_-_StatorCore-1"].geometry}
-        material={materials.Stator_Core}
-        position={[30.502 - Stator, 12.035, -63.927]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={0.156}
-        ref={s_core}
-        visible={Stator_Visibility}
       />
       <mesh
         geometry={nodes["a_-_Terminal1-1"].geometry}
         material={materials.Terminal}
-        position={[31.991, 17.636, -75.363]}
+        position={[1.072, 11.836, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal2-1"].geometry}
         material={materials.Terminal}
-        position={[30.975, 17.636, -75.363]}
+        position={[0.056, 11.836, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal3-1"].geometry}
         material={materials.Terminal}
-        position={[29.959, 17.636, -75.363]}
+        position={[-0.96, 11.836, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal4-1"].geometry}
         material={materials.Terminal}
-        position={[28.943, 17.636, -75.363]}
+        position={[-1.976, 11.836, 6.412]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal5-1"].geometry}
         material={materials.Terminal}
-        position={[31.991, 17.636, -76.613]}
+        position={[1.072, 11.836, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal6-1"].geometry}
         material={materials.Terminal}
-        position={[30.975, 17.636, -76.613]}
+        position={[0.056, 11.836, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal7-1"].geometry}
         material={materials.Terminal}
-        position={[29.959, 17.636, -76.613]}
+        position={[-0.96, 11.836, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Terminal8-1"].geometry}
         material={materials.Terminal}
-        position={[28.943, 17.636, -76.613]}
+        position={[-1.976, 11.836, 5.162]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Wire1-1"].geometry}
         material={materials.SlipRingWire}
-        position={[29.876, 15.642, -75.748]}
+        position={[-1.043, 9.842, 6.027]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
       />
       <mesh
         geometry={nodes["a_-_Yoke-1"].geometry}
         material={materials.Yoke}
-        position={[5.266 + Yoke, 12.983, -79.746]}
+        position={[-0.41 + Yoke, 7.183, 2.029]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
         ref={yoke}
@@ -1620,56 +1600,56 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.Text.geometry}
         material={materials.POSITIVE_TERMINAL}
-        position={[28.636, 17.634, -76.58]}
+        position={[-2.284, 11.834, 5.195]}
         scale={0.384}
       />
       <mesh
         geometry={nodes.Text001.geometry}
         material={materials.NEGETIVE_TERMINAL}
-        position={[28.681, 17.636, -75.361]}
+        position={[-2.238, 11.836, 6.414]}
         rotation={[0, Math.PI / 2, 0]}
         scale={0.672}
       />
       <mesh
         geometry={nodes.Text002.geometry}
         material={materials.W2}
-        position={[30.046, 17.636, -74.961]}
+        position={[-0.874, 11.836, 6.814]}
         scale={0.199}
       />
       <mesh
         geometry={nodes.Text003.geometry}
         material={materials.U2}
-        position={[30.982, 17.632, -74.947]}
+        position={[0.062, 11.832, 6.828]}
         scale={0.245}
       />
       <mesh
         geometry={nodes.Text004.geometry}
         material={materials.V2}
-        position={[32.08, 17.636, -75.007]}
+        position={[1.16, 11.836, 6.768]}
         scale={0.27}
       />
       <mesh
         geometry={nodes.Text005.geometry}
         material={materials.U1}
-        position={[29.895, 17.636, -76.961]}
+        position={[-1.025, 11.836, 4.814]}
         scale={0.252}
       />
       <mesh
         geometry={nodes.Text006.geometry}
         material={materials.V1}
-        position={[30.957, 17.636, -77.096]}
+        position={[0.037, 11.836, 4.679]}
         scale={0.278}
       />
       <mesh
         geometry={nodes.Text007.geometry}
         material={materials.W1}
-        position={[32.157, 17.636, -77.108]}
+        position={[1.237, 11.836, 4.667]}
         scale={0.236}
       />
       <mesh
         geometry={nodes.Cube.geometry}
         material={materials["STAR CONNECTION"]}
-        position={[30.943, 17.902, -76.613]}
+        position={[0.024, 12.102, 5.162]}
         scale={[1.676, -0.032, 0.206]}
         ref={star}
         visible={Star}
@@ -1677,24 +1657,10 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.Cube003.geometry}
         material={materials["Delta Connection"]}
-        position={[30.964, 25.813, -75.984]}
+        position={[0.045, 12.136, 5.791]}
         scale={[0.173, 0.038, 0.824]}
         ref={delta}
         visible={Delta}
-      />
-      <mesh
-        geometry={nodes.Plane.geometry}
-        material={materials.Material}
-        position={[342.979, 1.506, -30.046]}
-        rotation={[1.594, -0.029, 0.205]}
-        scale={53.919}
-      />
-      <mesh
-        geometry={nodes.Plane001.geometry}
-        material={materials["Material.003"]}
-        position={[-9.851, -97.355, -92.553]}
-        rotation={[1.544, -0.026, -1.289]}
-        scale={53.919}
       />
     </group>
   );
@@ -1723,7 +1689,7 @@ export default function DcShunt() {
       step: 0.1,
     },
   });
-  const camera = { position: [5, 20, 35], fov: 69 };
+  const camera = { position: [12, 20, 35], fov: 42 };
   const directionalLight = [
     { intensity: 1, position: null },
     { intensity: 1, position: [0, 5, -25] },

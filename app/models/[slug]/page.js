@@ -30,6 +30,7 @@ import {
   Lightformer,
   ArcballControls,
 } from "@react-three/drei";
+import { useControls } from "leva";
 
 console.log(EffectComposer, SSAO, SMAA, Outline);
 export default function ModelJSXGenerator({ params }) {
@@ -48,7 +49,9 @@ export default function ModelJSXGenerator({ params }) {
   };
   const [popup, showPopup] = useState({ visibility: false, partDetails: {} });
   const [showSinglePart, setShowSinglePart] = useState(false);
-
+  const { intensity } = useControls({
+    intensity: { value: 1, min: 0, max: 1 },
+  });
   return (
     <>
       <AppContextProvider>
@@ -77,10 +80,11 @@ export default function ModelJSXGenerator({ params }) {
             })} */}
             <pointLight
               position={[-0.564129, 12.0037, 2.08061]}
-              intensity={0.1}
+              intensity={1}
             />
+            {/* <ambientLight intensity={intensity} /> */}
 
-            <OrbitControls enableDamping={false} />
+            <OrbitControls enableDamping={true} />
 
             <Suspense
               fallback={
