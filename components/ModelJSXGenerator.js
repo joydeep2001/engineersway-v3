@@ -13,6 +13,7 @@ import {
   Stage,
   Environment,
   Html,
+  BakeShadows,
 } from "@react-three/drei";
 import Login from "./Login";
 import AppContextProvider, { AppContext } from "../context/AppContext";
@@ -125,6 +126,7 @@ export default function ModelJSXGenerator({
                 adjustCamera={false}
               >
                 {children}
+                <BakeShadows />
               </Stage>
             </Suspense>
             {/* <GizmoHelper
