@@ -1116,7 +1116,7 @@ export default function Induction() {
     <ModelJSXGenerator
       camera={camera}
       directionalLight={directionalLight}
-      bgcolor="#050511"
+      bgcolor={"#d1a470"}
     >
       <Model
         dispatch={dispatch}
