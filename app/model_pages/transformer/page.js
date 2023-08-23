@@ -1089,13 +1089,15 @@ export default function DcShunt() {
   //     </div>
   //   </>
   // );
-
+  // const { color, realism, importanceSampling } = useControls({
+  //   color: "#ff9621",
+  // });
   return (
     <>
       <ModelJSXGenerator
         camera={camera}
         directionalLight={directionalLight}
-        bgcolor="#050511"
+        bgcolor={"#d1a470"}
         highlightedParts={highlightedParts}
       >
         <Model
