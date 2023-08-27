@@ -105,7 +105,11 @@ const AboutUs = () => {
               className="image1 shadow-yellow1 dark:shadow-4xl video mt-7 lg:my-auto cursor-pointer  rounded-lg"
             >
               <figure>
-                <img src="images/Shunt.png" alt="" className="h-full w-full" />
+                <img
+                  src="images/about-1.png"
+                  alt=""
+                  className="h-full w-full"
+                />
               </figure>
               {/* <a id="play-video" className="video-play-button z-0">
                 <span></span>
@@ -126,9 +130,28 @@ const AboutUs = () => {
               What We Do
             </h3>
             <p className="text-lg font-semibold font-Mont" data-aos="fade-left">
-              Engineers Way is a project to make machine more understandable.
-              Anyone can experience the details of any kind of machines to
-              analyze how they are made and how they work.
+              Engineersway is your gateway to a revolutionary learning
+              experience that brings the intricate world of industrial machinery
+              to life. Our platform offers a hands-on virtual exploration of
+              complex machines through interactive 3D models. Picture being able
+              to deconstruct these machines, uncover their components, and
+              understand how they function in detail. Whether you&apos;re a
+              curious engineering enthusiast, a student aiming to grasp the
+              fundamental principles, or a seasoned professional seeking
+              innovative insights, Engineersway empowers you to delve deep into
+              the realm of machinery.
+            </p>
+            <p
+              className="text-lg font-semibold font-Mont mt-4"
+              data-aos="fade-left"
+            >
+              Our mission is to bridge the gap between theory and practical
+              understanding, fostering a new era of engagement and knowledge.
+              With Engineersway, you have the unique opportunity to interact
+              with machinery like never before, gaining insights that spark
+              creativity and drive innovation. Join us as we reshape the
+              landscape of education and empower individuals to master the
+              mechanics behind the innovation that shapes our world.
             </p>
             <p
               className="text-lg font-semibold font-Mont mt-4"
@@ -137,14 +160,6 @@ const AboutUs = () => {
               It contains as simple as a kitkat fuse to as detailed as a
               transformer. It contains as simple working principle of wire in
               between magnets to as complex as DC Shunt Motor
-            </p>
-            <p
-              className="text-lg phide 2xl:block font-semibold font-Mont mt-7"
-              data-aos="fade-left"
-            >
-              In this paragraph there contains nothing fancy.It just to fill the
-              white space to look the website good.It is just a dummy
-              text,nothing else.Check out 3D models to know what we are doing.
             </p>
           </div>
         </div>

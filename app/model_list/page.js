@@ -78,16 +78,13 @@ const ModelList = () => {
             <div className="heroWrap container lg:flex md:px-5 mx-auto my-5 justify-between ">
               <div className="heroContent relative my-auto">
                 <h2 className="text-5xl xl:text-6xl 2xl:text-large  font-bold mb-5 leading-relaxed dark:text-slate-50">
-                  Start your{" "}
-                  <span className="text-purple-600 dark:text-purple-600">
-                    Journey
-                  </span>{" "}
-                  <br></br>with Us
+                  Unveiling the World of <span className="">Machinery</span>{" "}
+                  <br></br>
                 </h2>
                 <p className="font-medium mb-8 w-full font-Mont text-xl leading-normal dark:text-slate-50">
-                  Welcome to the world of machines.
-                  <br></br> Dismantle , watch internal construction , analyze
-                  machines better
+                  Unlocking the hidden mechanisms of industry through
+                  captivating 3D insights.
+                  <br></br>
                 </p>
                 <div>
                   <Link href="/">
