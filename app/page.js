@@ -82,6 +82,7 @@ const Index = () => {
         ></script>
       </Head>
       <div className="w-full h-full m-0 p-0 overflow-x-hidden">
+        <Background />
         <div className="overflow-hidden">
           <Navbar toggle={toggle} classname="fixed" />
           <Dropdown isOpen={isOpen} toggle={toggle} />
@@ -97,12 +98,13 @@ const Index = () => {
           <Aboutus />
           <Explore />
           <Team />
+          <Footer />
           <div className="">
             <ScrollToTop smooth color="#ff7b01" width="38" />
           </div>
-          <Background />
+          
         </div>
-        <Footer />
+        
       </div>
     </>
   );
