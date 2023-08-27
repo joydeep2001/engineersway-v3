@@ -26,7 +26,7 @@ const Hero = () => {
               ref={bannerHead}
               className="text-5xl xl:text-6xl 2xl:text-large  font-bold mb-5 leading-relaxed dark:text-slate-50"
             >
-              Let's Explore
+              Let&apos;s Explore
               <span className="text-purple-600 dark:text-fuchsia-600">
                 {" "}
                 Machines{" "}
