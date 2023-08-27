@@ -28,7 +28,7 @@
     "coursename": "DC SHUNT MOTOR",
     "image": "/images/DCshunt.png",
     "link": "model_pages/dc_shunt",
-    "published": false,
+    "published": true,
     "size": 24.9
   },
   {
@@ -44,7 +44,7 @@
     "coursename": "Kitkat Fuse",
     "image": "/images/fuse.png",
     "link": "model_pages/fuse",
-    "published": false,
+    "published": true,
     "size": 18
   },
   {
@@ -52,7 +52,7 @@
     "coursename": "Ammeter",
     "image": "/images/ammeter.png",
     "link": "model_pages/ammeter",
-    "published": false,
+    "published": true,
     "size": 2.6
   },
 
@@ -151,7 +151,7 @@
     "coursename": "Drill",
     "image": "/images/drill.png",
     "link": "model_pages/drill",
-    "published": false,
+    "published": true,
     "size": 3.1
   },
   {
@@ -175,7 +175,7 @@
     "coursename": "Shaded Pole Motor",
     "image": "/images/shadedpole.png",
     "link": "model_pages/shaded_pole",
-    "published": false,
+    "published": true,
     "size": 3.1
   }
 ]

@@ -73,6 +73,7 @@ const ModelList = () => {
         <Dropdown isOpen={isOpen} toggle={toggle} /> */}
         {/* content */}
         <div>
+          <Background />
           <div>
             <div className="heroWrap container lg:flex md:px-5 mx-auto my-5 justify-between ">
               <div className="heroContent relative my-auto">
@@ -140,7 +141,6 @@ const ModelList = () => {
               </div>
             </div>
           </div>
-          <Background />
         </div>
         <Footer />
       </div>

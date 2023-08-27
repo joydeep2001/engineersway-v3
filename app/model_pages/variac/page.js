@@ -34,526 +34,828 @@ import { useGroupControlsWithReset } from "@/hooks/useControlsCustom";
 
 const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/variac.glb`;
 
-function Model({ ...props }) {
-  const group = useRef();
-  const knob = useRef();
-  const Fpanel = useRef();
-  const B_holder = useRef();
-  const Bse = useRef();
-  //const snap = useSnapshot(state);
-  const [hover, set] = useState(null);
+// function Model({ ...props }) {
+//   const group = useRef();
+//   const knob = useRef();
+//   const Fpanel = useRef();
+//   const B_holder = useRef();
+//   const Bse = useRef();
+//   //const snap = useSnapshot(state);
+//   const [hover, set] = useState(null);
+//   const { nodes, materials } = useGLTF(glbFileURL);
+
+//   const {
+//     Position,
+//     frontpanel_visible,
+//     Body,
+//     KnobP,
+//     knob_visible,
+//     BaseP,
+//     Base_visibility,
+//     y_position,
+//     visiblity,
+//   } = useGroupControlsWithReset("Variac", {
+//     "Front Panel": {
+//       Position: {
+//         value: 0,
+//         min: 0,
+//         max: 5,
+//         step: 0.1,
+//       },
+//       frontpanel_visible: true,
+//     },
+//     "Outer Body": {
+//       Body: {
+//         value: 0,
+//         min: 0,
+//         max: 30,
+//         step: 0.1,
+//       },
+//     },
+//     Knob: {
+//       KnobP: {
+//         value: 0,
+//         min: 0,
+//         max: 5,
+//         step: 0.1,
+//       },
+//       knob_visible: true,
+//     },
+//     Base: {
+//       BaseP: {
+//         value: 0,
+//         min: 0,
+//         max: 5,
+//         step: 0.1,
+//       },
+//       Base_visibility: true,
+//     },
+//     "Bottom Core Holder": {
+//       y_position: {
+//         value: 0,
+//         min: 0,
+//         max: 5,
+//         step: 0.1,
+//       },
+//       visiblity: true,
+//     },
+//   });
+
+//   useEffect(() => {
+//     if (knob_visible == false) {
+//       knob.current.position.y = 800;
+//     } else {
+//       knob.current.position.y = 12.08 + KnobP;
+//     }
+//     if (frontpanel_visible == false) {
+//       Fpanel.current.position.z = -800;
+//     } else {
+//       Fpanel.current.position.z = -0.69 - Position;
+//     }
+//     if (visiblity == false) {
+//       B_holder.current.position.y = -800;
+//     } else {
+//       B_holder.current.position.y = 13.03 - y_position;
+//     }
+//     if (Base_visibility == false) {
+//       Bse.current.position.y = -800;
+//     } else {
+//       Bse.current.position.y = 13.03 - BaseP;
+//     }
+//   });
+//   const { highlightedParts } = props;
+//   return (
+//     <group
+//       ref={group}
+//       {...props}
+//       dispose={null}
+//       onPointerOver={(e) => {
+//         // e.stopPropagation(), set(e.object.material.name);
+//       }}
+//       onPointerOut={(e) => {
+//         e.intersections.length === 0 && set(null);
+//       }}
+//       onClick={(e) => {
+//         e.stopPropagation();
+//         // state.current = e.object.material.name;
+//         // props.dispatch({ id: state.current });
+//         // console.log(state.current);
+//       }}
+//       onPointerMissed={(e) => {
+//         //state.current = null;
+//       }}
+//     >
+//       <group
+//         position={[2.41, 15.36, -1.12]}
+//         rotation={[1.89, 0.88, -2.05]}
+//         scale={0.43}
+//       >
+//         <pointLight intensity={0} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
+//       </group>
+//       <group position={[22.85, 15.83, -18.32]}>
+//         <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
+//       </group>
+//       <group position={[17.09, 15.1, -21.72]}>
+//         <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
+//       </group>
+//       <group
+//         position={[14.43, 0, -10.64]}
+//         rotation={[1.89, 0.88, -2.05]}
+//         scale={0.43}
+//       >
+//         <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
+//       </group>
+//       <group
+//         position={[14.43, 13.69, -10.64]}
+//         rotation={[1.89, 0.88, -2.05]}
+//         scale={0.43}
+//       >
+//         <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
+//       </group>
+//       <group
+//         position={[8.48, 12.45, -18.36]}
+//         rotation={[1.89, 0.88, -2.05]}
+//         scale={0.43}
+//       >
+//         <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
+//       </group>
+//       <Select enabled={highlightedParts[0].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Base.geometry}
+//           ref={Bse}
+//           material={materials.Base}
+//           position={[0.66, 13.03 - BaseP, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//           visible={Base_visibility}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[1].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BindingPost1.geometry}
+//           material={materials.Binding_post}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[1].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BindingPost2.geometry}
+//           material={materials.Binding_post}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[1].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BindingPost3.geometry}
+//           material={materials.Binding_post}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[1].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BindingPost4.geometry}
+//           material={materials.Binding_post}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <group
+//         position={[0.66, 13.03, -0.69]}
+//         rotation={[-Math.PI / 2, 0, 0]}
+//         scale={0.03}
+//       >
+//         <Select enabled={highlightedParts[2].highlight}>
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes["Assambly_-_BindingPostCap3-1"].geometry}
+//             material={materials.Terminal}
+//           />
+//         </Select>
+//         <Select enabled={highlightedParts[3].highlight}>
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes["Assambly_-_BindingPostCap3-1_1"].geometry}
+//             material={materials.Terminal_}
+//           />
+//         </Select>
+//       </group>
+//       <Select enabled={highlightedParts[4].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BottomCoreHolder.geometry}
+//           ref={B_holder}
+//           material={materials.Bottom_CoreHolder}
+//           position={[0.66, 13.03 - y_position, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//           visible={visiblity}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[5].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BrushHolder.geometry}
+//           material={materials.Brush_Holder}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[6].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.BrushWire.geometry}
+//           material={materials.BrushWire}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[7].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.CarbonBrush.geometry}
+//           material={materials.Carbon_Brush}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[8].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.CentralShaft.geometry}
+//           material={materials.Central_Shaft}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[9].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Coil.geometry}
+//           material={materials.Coil}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[10].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Screw.geometry}
+//           material={materials.Screw}
+//           position={[6.79, 5.91, -10.89]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//           visible={false}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[11].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.FrontPanel.geometry}
+//           ref={Fpanel}
+//           material={materials.FrontPanel}
+//           position={[0.59, 13.03, -0.69 - Position]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//           visible={frontpanel_visible}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[12].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Fuse.geometry}
+//           material={materials.Fuse}
+//           position={[7.2, 7.17, -15.37]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[13].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.FuseNut.geometry}
+//           material={materials.Nut}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[14].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.hex_flange_nut.geometry}
+//           material={materials.Hex_flange_nut}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[10].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.hex_head_tapping_screw.geometry}
+//           material={materials.Screw}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[15].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.IndicatorPlate.geometry}
+//           material={materials.IndicatorPlate}
+//           position={[7.01, 10.67, -6.82]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[16].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.IronCore.geometry}
+//           material={materials.Iron_core}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[17].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Knob.geometry}
+//           material={materials.Knob}
+//           position={[6.92, 12.08 + KnobP, -6.86]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//           visible={knob_visible}
+//           ref={knob}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[13].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Nut.geometry}
+//           material={materials.Nut}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[18].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_OuterBody-1"].geometry}
+//           material={materials.Outerbody}
+//           position={[7.1, 7.68, -8.59 + Body]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[19].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_Spring-1"].geometry}
+//           material={materials.Spring}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[20].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_UpperCoreHolder-1"].geometry}
+//           material={materials.Upper_Core_Holder}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[21].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_Wiper-1"].geometry}
+//           material={materials.Wiper}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[22].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_Wire1-1"].geometry}
+//           material={materials.Wire}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[22].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_Wire2-1"].geometry}
+//           material={materials.Wire}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[22].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_Wire3-1"].geometry}
+//           material={materials.Wire}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[23].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes["Assambly_-_WireInsulation-1"].geometry}
+//           material={materials.Wire_insulation}
+//           position={[0.66, 13.03, -0.69]}
+//           rotation={[-Math.PI / 2, 0, 0]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[24].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Bolt.geometry}
+//           material={materials.Bolt}
+//           position={[7.31, 9.29, -7.71]}
+//           scale={0.03}
+//         />
+//       </Select>
+//       <Select enabled={highlightedParts[25].highlight}>
+//         <mesh
+//           castShadow
+//           receiveShadow
+//           geometry={nodes.Object.geometry}
+//           material={materials.FUSE}
+//           position={[7.58, 7.05, -16.57]}
+//           rotation={[Math.PI / 2, 0, -3.14]}
+//           scale={0.36}
+//         />
+//       </Select>
+//     </group>
+//   );
+// }
+export function Model({ ...props }) {
   const { nodes, materials } = useGLTF(glbFileURL);
-
-  const {
-    Position,
-    frontpanel_visible,
-    Body,
-    KnobP,
-    knob_visible,
-    BaseP,
-    Base_visibility,
-    y_position,
-    visiblity,
-  } = useGroupControlsWithReset("Variac", {
-    "Front Panel": {
-      Position: {
-        value: 0,
-        min: 0,
-        max: 5,
-        step: 0.1,
-      },
-      frontpanel_visible: true,
-    },
-    "Outer Body": {
-      Body: {
-        value: 0,
-        min: 0,
-        max: 30,
-        step: 0.1,
-      },
-    },
-    Knob: {
-      KnobP: {
-        value: 0,
-        min: 0,
-        max: 5,
-        step: 0.1,
-      },
-      knob_visible: true,
-    },
-    Base: {
-      BaseP: {
-        value: 0,
-        min: 0,
-        max: 5,
-        step: 0.1,
-      },
-      Base_visibility: true,
-    },
-    "Bottom Core Holder": {
-      y_position: {
-        value: 0,
-        min: 0,
-        max: 5,
-        step: 0.1,
-      },
-      visiblity: true,
-    },
-  });
-
-  useEffect(() => {
-    if (knob_visible == false) {
-      knob.current.position.y = 800;
-    } else {
-      knob.current.position.y = 12.08 + KnobP;
-    }
-    if (frontpanel_visible == false) {
-      Fpanel.current.position.z = -800;
-    } else {
-      Fpanel.current.position.z = -0.69 - Position;
-    }
-    if (visiblity == false) {
-      B_holder.current.position.y = -800;
-    } else {
-      B_holder.current.position.y = 13.03 - y_position;
-    }
-    if (Base_visibility == false) {
-      Bse.current.position.y = -800;
-    } else {
-      Bse.current.position.y = 13.03 - BaseP;
-    }
-  });
-  const { highlightedParts } = props;
   return (
-    <group
-      ref={group}
-      {...props}
-      dispose={null}
-      onPointerOver={(e) => {
-        // e.stopPropagation(), set(e.object.material.name);
-      }}
-      onPointerOut={(e) => {
-        e.intersections.length === 0 && set(null);
-      }}
-      onClick={(e) => {
-        e.stopPropagation();
-        // state.current = e.object.material.name;
-        // props.dispatch({ id: state.current });
-        // console.log(state.current);
-      }}
-      onPointerMissed={(e) => {
-        //state.current = null;
-      }}
-    >
-      <group
-        position={[2.41, 15.36, -1.12]}
-        rotation={[1.89, 0.88, -2.05]}
-        scale={0.43}
-      >
-        <pointLight intensity={0} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
-      </group>
-      <group position={[22.85, 15.83, -18.32]}>
-        <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
-      </group>
-      <group position={[17.09, 15.1, -21.72]}>
-        <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
-      </group>
-      <group
-        position={[14.43, 0, -10.64]}
-        rotation={[1.89, 0.88, -2.05]}
-        scale={0.43}
-      >
-        <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
-      </group>
-      <group
-        position={[14.43, 13.69, -10.64]}
-        rotation={[1.89, 0.88, -2.05]}
-        scale={0.43}
-      >
-        <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
-      </group>
-      <group
-        position={[8.48, 12.45, -18.36]}
-        rotation={[1.89, 0.88, -2.05]}
-        scale={0.43}
-      >
-        <pointLight intensity={1} decay={2} rotation={[-Math.PI / 2, 0, 0]} />
-      </group>
-      <Select enabled={highlightedParts[0].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Base.geometry}
-          ref={Bse}
-          material={materials.Base}
-          position={[0.66, 13.03 - BaseP, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-          visible={Base_visibility}
-        />
-      </Select>
-      <Select enabled={highlightedParts[1].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BindingPost1.geometry}
-          material={materials.Binding_post}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[1].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BindingPost2.geometry}
-          material={materials.Binding_post}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[1].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BindingPost3.geometry}
-          material={materials.Binding_post}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[1].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BindingPost4.geometry}
-          material={materials.Binding_post}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <group
-        position={[0.66, 13.03, -0.69]}
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Base.geometry}
+        material={materials.Base}
+        position={[0.664, 13.033, -0.686]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={0.03}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BindingPost1.geometry}
+        material={materials.Binding_post}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BindingPost2.geometry}
+        material={materials.Binding_post}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BindingPost3.geometry}
+        material={materials.Binding_post}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BindingPost4.geometry}
+        material={materials.Binding_post}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <group
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
       >
-        <Select enabled={highlightedParts[2].highlight}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes["Assambly_-_BindingPostCap3-1"].geometry}
-            material={materials.Terminal}
-          />
-        </Select>
-        <Select enabled={highlightedParts[3].highlight}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes["Assambly_-_BindingPostCap3-1_1"].geometry}
-            material={materials.Terminal_}
-          />
-        </Select>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Assambly_-_BindingPostCap3-1"].geometry}
+          material={materials.Terminal}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Assambly_-_BindingPostCap3-1_1"].geometry}
+          material={materials.Terminal_}
+        />
       </group>
-      <Select enabled={highlightedParts[4].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BottomCoreHolder.geometry}
-          ref={B_holder}
-          material={materials.Bottom_CoreHolder}
-          position={[0.66, 13.03 - y_position, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-          visible={visiblity}
-        />
-      </Select>
-      <Select enabled={highlightedParts[5].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BrushHolder.geometry}
-          material={materials.Brush_Holder}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[6].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BrushWire.geometry}
-          material={materials.BrushWire}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[7].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.CarbonBrush.geometry}
-          material={materials.Carbon_Brush}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[8].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.CentralShaft.geometry}
-          material={materials.Central_Shaft}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[9].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Coil.geometry}
-          material={materials.Coil}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[10].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Screw.geometry}
-          material={materials.Screw}
-          position={[6.79, 5.91, -10.89]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-          visible={false}
-        />
-      </Select>
-      <Select enabled={highlightedParts[11].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.FrontPanel.geometry}
-          ref={Fpanel}
-          material={materials.FrontPanel}
-          position={[0.59, 13.03, -0.69 - Position]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-          visible={frontpanel_visible}
-        />
-      </Select>
-      <Select enabled={highlightedParts[12].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Fuse.geometry}
-          material={materials.Fuse}
-          position={[7.2, 7.17, -15.37]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[13].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.FuseNut.geometry}
-          material={materials.Nut}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[14].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.hex_flange_nut.geometry}
-          material={materials.Hex_flange_nut}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[10].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.hex_head_tapping_screw.geometry}
-          material={materials.Screw}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[15].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.IndicatorPlate.geometry}
-          material={materials.IndicatorPlate}
-          position={[7.01, 10.67, -6.82]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[16].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.IronCore.geometry}
-          material={materials.Iron_core}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[17].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Knob.geometry}
-          material={materials.Knob}
-          position={[6.92, 12.08 + KnobP, -6.86]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-          visible={knob_visible}
-          ref={knob}
-        />
-      </Select>
-      <Select enabled={highlightedParts[13].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Nut.geometry}
-          material={materials.Nut}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[18].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_OuterBody-1"].geometry}
-          material={materials.Outerbody}
-          position={[7.1, 7.68, -8.59 + Body]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[19].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_Spring-1"].geometry}
-          material={materials.Spring}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[20].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_UpperCoreHolder-1"].geometry}
-          material={materials.Upper_Core_Holder}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[21].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_Wiper-1"].geometry}
-          material={materials.Wiper}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[22].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_Wire1-1"].geometry}
-          material={materials.Wire}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[22].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_Wire2-1"].geometry}
-          material={materials.Wire}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[22].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_Wire3-1"].geometry}
-          material={materials.Wire}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[23].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["Assambly_-_WireInsulation-1"].geometry}
-          material={materials.Wire_insulation}
-          position={[0.66, 13.03, -0.69]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[24].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Bolt.geometry}
-          material={materials.Bolt}
-          position={[7.31, 9.29, -7.71]}
-          scale={0.03}
-        />
-      </Select>
-      <Select enabled={highlightedParts[25].highlight}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object.geometry}
-          material={materials.FUSE}
-          position={[7.58, 7.05, -16.57]}
-          rotation={[Math.PI / 2, 0, -3.14]}
-          scale={0.36}
-        />
-      </Select>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BottomCoreHolder.geometry}
+        material={materials.Bottom_CoreHolder}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BrushHolder.geometry}
+        material={materials.Brush_Holder}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BrushWire.geometry}
+        material={materials.BrushWire}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.CarbonBrush.geometry}
+        material={materials.Carbon_Brush}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.CentralShaft.geometry}
+        material={materials.Central_Shaft}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Coil.geometry}
+        material={materials.Coil}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Screw.geometry}
+        material={materials.Screw}
+        position={[6.786, 5.913, -10.893]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.FrontPanel.geometry}
+        material={materials.FrontPanel}
+        position={[0.664, 13.033, -10.49]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Fuse.geometry}
+        material={materials.Fuse}
+        position={[6.803, 7.565, -14.674]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.FuseNut.geometry}
+        material={materials.Nut}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.hex_flange_nut.geometry}
+        material={materials.Hex_flange_nut}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.hex_head_tapping_screw.geometry}
+        material={materials.Screw}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.IndicatorPlate.geometry}
+        material={materials.IndicatorPlate}
+        position={[6.966, 10.665, -6.815]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.029}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.IronCore.geometry}
+        material={materials.Iron_core}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Knob.geometry}
+        material={materials.Knob}
+        position={[6.922, 12.078, -6.858]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.029}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Nut.geometry}
+        material={materials.Nut}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_OuterBody-1"].geometry}
+        material={materials.Outerbody}
+        position={[6.776, 7.96, -8.19]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_Spring-1"].geometry}
+        material={materials.Spring}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_UpperCoreHolder-1"].geometry}
+        material={materials.Upper_Core_Holder}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_Wiper-1"].geometry}
+        material={materials.Wiper}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_Wire1-1"].geometry}
+        material={materials.Wire}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_Wire2-1"].geometry}
+        material={materials.Wire}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_Wire3-1"].geometry}
+        material={materials.Wire}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["Assambly_-_WireInsulation-1"].geometry}
+        material={materials.Wire_insulation}
+        position={[0.664, 13.033, -0.686]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.028}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Bolt.geometry}
+        material={materials.Bolt}
+        position={[7.31, 9.286, -7.711]}
+        scale={0.032}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object.geometry}
+        material={materials.FUSE}
+        position={[7.183, 7.45, -15.766]}
+        rotation={[Math.PI / 2, 0, -3.137]}
+        scale={0.359}
+      />
     </group>
   );
 }
-
 useGLTF.preload(glbFileURL);
 
 export default function DcShunt() {
