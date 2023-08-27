@@ -16,6 +16,7 @@ import Footer from "./Footer";
 import ScrollToTop from "react-scroll-to-top";
 import { isMaintenanceMode } from "../context/AppContext";
 import { ThemeProvider } from "next-themes";
+import Background from "./background";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,22 +82,25 @@ const Index = () => {
         ></script>
       </Head>
       <div className="w-full h-full m-0 p-0 overflow-x-hidden">
-        <Navbar toggle={toggle} classname="fixed" />
-        <Dropdown isOpen={isOpen} toggle={toggle} />
-        <Hero />
-        {/* <Element name="Body">
+        <div className="overflow-hidden">
+          <Navbar toggle={toggle} classname="fixed" />
+          <Dropdown isOpen={isOpen} toggle={toggle} />
+          <Hero />
+          {/* <Element name="Body">
           <Body className="sticky" />
         </Element> */}
-        {/* <div data-aos="fade-up">
+          {/* <div data-aos="fade-up">
           <Element name="Course">
             <Aboutus />
           </Element>
         </div> */}
-        <Aboutus />
-        <Explore />
-        <Team />
-        <div className="">
-          <ScrollToTop smooth color="#ff7b01" width="38" />
+          <Aboutus />
+          <Explore />
+          <Team />
+          <div className="">
+            <ScrollToTop smooth color="#ff7b01" width="38" />
+          </div>
+          <Background />
         </div>
         <Footer />
       </div>

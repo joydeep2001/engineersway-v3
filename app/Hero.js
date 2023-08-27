@@ -39,7 +39,7 @@ const Hero = () => {
               machines better
             </p>
             <div>
-              <Link href="/ThreeD">
+              <Link href="/model_list">
                 <div class="vBtn justify-center inline-block items-center dark:bg-transparent dark:border-2 border-purple-600 dark:hover:bg-fuchsia-600/20 transition transform">
                   <h5 class=" text-purple-600 font-bold dark:text-slate-50 dark:hover:shadow-fuchsia-600/10 dark:shadow-fuchsia-600/40">
                     Explore 3D Models
