@@ -130,13 +130,28 @@ const AboutUs = () => {
               What We Do
             </h3>
             <p className="text-lg font-semibold font-Mont" data-aos="fade-left">
-            Engineersway is your gateway to a revolutionary learning experience that brings the intricate world of industrial machinery to life. Our platform offers a hands-on virtual exploration of complex machines through interactive 3D models. Picture being able to deconstruct these machines, uncover their components, and understand how they function in detail. Whether you're a curious engineering enthusiast, a student aiming to grasp the fundamental principles, or a seasoned professional seeking innovative insights, Engineersway empowers you to delve deep into the realm of machinery.
+              Engineersway is your gateway to a revolutionary learning
+              experience that brings the intricate world of industrial machinery
+              to life. Our platform offers a hands-on virtual exploration of
+              complex machines through interactive 3D models. Picture being able
+              to deconstruct these machines, uncover their components, and
+              understand how they function in detail. Whether you&apos;re a
+              curious engineering enthusiast, a student aiming to grasp the
+              fundamental principles, or a seasoned professional seeking
+              innovative insights, Engineersway empowers you to delve deep into
+              the realm of machinery.
             </p>
             <p
               className="text-lg font-semibold font-Mont mt-4"
               data-aos="fade-left"
             >
-              Our mission is to bridge the gap between theory and practical understanding, fostering a new era of engagement and knowledge. With Engineersway, you have the unique opportunity to interact with machinery like never before, gaining insights that spark creativity and drive innovation. Join us as we reshape the landscape of education and empower individuals to master the mechanics behind the innovation that shapes our world.
+              Our mission is to bridge the gap between theory and practical
+              understanding, fostering a new era of engagement and knowledge.
+              With Engineersway, you have the unique opportunity to interact
+              with machinery like never before, gaining insights that spark
+              creativity and drive innovation. Join us as we reshape the
+              landscape of education and empower individuals to master the
+              mechanics behind the innovation that shapes our world.
             </p>
             <p
               className="text-lg font-semibold font-Mont mt-4"
