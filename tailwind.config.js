@@ -33,9 +33,9 @@ module.exports = {
           },
         },
       },
-      fontFamily: {
-        Mont: "'Montserrat', sans-serif;",
-      },
+      // fontFamily: {
+      //   Mont: "'Montserrat', sans-serif;",
+      // },
       width: {
         70: "280px",
       },

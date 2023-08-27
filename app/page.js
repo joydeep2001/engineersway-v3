@@ -102,9 +102,7 @@ const Index = () => {
           <div className="">
             <ScrollToTop smooth color="#ff7b01" width="38" />
           </div>
-          
         </div>
-        
       </div>
     </>
   );
