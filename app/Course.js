@@ -1,7 +1,7 @@
 import Link from "next/dist/client/link";
-import SwiperCore, { Autoplay } from "swiper";
+//import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-SwiperCore.use([Autoplay]);
+// SwiperCore.use([Autoplay]);
 import "swiper/css";
 
 const data = [
