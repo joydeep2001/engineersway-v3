@@ -40,7 +40,7 @@ const Footer = () => {
               </div>
               <div>
                 <Link href="https://wduk1omhss3.typeform.com/to/CUx6uCDO">
-                  <button className="btn-second mt-4 py-2 rounded-2xl dark:shadow-3xl dark:hover:shadow-orange-500/10 dark:shadow-orange-500/30">
+                  <button className="vBtn justify-center  items-center dark:bg-transparent dark:border-2 border-purple-600 dark:hover:bg-fuchsia-600/20 transition transform mx-auto my-0 flex">
                     Click To Give Feedback!
                   </button>
                 </Link>

@@ -26,17 +26,14 @@ const Hero = () => {
               ref={bannerHead}
               className="text-5xl xl:text-6xl 2xl:text-large  font-bold mb-5 leading-relaxed dark:text-slate-50"
             >
-              Let&apos;s Explore
-              <span className="text-purple-600 dark:text-fuchsia-600">
-                {" "}
-                Machines{" "}
-              </span>
-              <br></br> like Never Before
+              Experience
+              <span className=""> Machinery </span>
+              <br></br> in a Whole <span className="">New Dimension</span>
             </h2>
             <p className="font-medium  mb-8 w-full font-Mont text-xl leading-normal dark:text-slate-50">
-              It is a replacement from your old boring lectures and 2D black and
-              white<br></br> diagrams to 3D models which will help and analyze
-              machines better
+              Experience the thrill of deconstructing machinery virtually,
+              fostering a deeper connection with industrial technology.<br></br>{" "}
+              Ignite your curiosity and master the mechanics behind innovation.
             </p>
             <div>
               <Link href="/model_list">
