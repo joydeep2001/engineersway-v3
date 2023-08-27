@@ -64,10 +64,10 @@ const Navbar = ({ toggle }) => {
   return (
     <nav
       ref={navRef}
-      className="flex justify-between items-center h-16  bg-white-1 dark:bg-transparent dark:shadow-fuchsia-600/10   font-Montserrat
+      className="flex justify-between items-center py-4  bg-white-1 dark:bg-transparent dark:shadow-fuchsia-600/10   font-Montserrat
           w-full fixed z-10 px-5 transition delay-150 ease-in-out"
     >
-      <div className="cursor-pointer flex ">
+      <div className="cursor-pointer flex align-center logowrap">
         <div onClick={toggle}>
           <svg
             className="w-6 h-6 lg:hidden justify-center items-center dark:text-slate-50 "
@@ -97,7 +97,6 @@ const Navbar = ({ toggle }) => {
           </div>
           <div className="p-4 cursor-pointer nav-hover hover:text-pink-600 dark:hover:text-fuchsia-600 transition transform">
             <Link
-              
               to="About"
               spy={true}
               smooth={true}
@@ -142,12 +141,8 @@ const Navbar = ({ toggle }) => {
         {/* {!loading && renderThemeChanger()} */}
         {!loggedIn ? (
           <div className="">
-            <NavLink href="/Login">
-              <div
-                className="hover:cursor-pointer px-4 py-2 sm:px-8 sm:py-2  border-2 border-purple-600 transition transform  text-black-bg bg-white rounded-3xl hover:bg-purple-600 hover:text-white-1
-          dark:text-slate-50 dark:bg-transparent dark:border-2 dark:border-
-              dark:hover:bg-fuchsia-600/20 dark:hover:shadow-fuchsia-600/10 dark:shadow-fuchsia-600/40"
-              >
+            <NavLink href="/login">
+              <div className="vBtn justify-center inline-block items-center dark:bg-transparent dark:border-2 border-purple-600 dark:hover:bg-fuchsia-600/20 transition transform">
                 Login
               </div>
             </NavLink>
