@@ -45,7 +45,7 @@ const Course = () => {
         </div>
         <Swiper
           spaceBetween={50}
-          onSwiper={swiper => console.log(swiper)}
+          onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
             250: {
               width: 250,
@@ -81,7 +81,7 @@ const Course = () => {
             disableOnInteraction: false,
           }}
         >
-          {data.map(user => (
+          {data.map((user) => (
             <SwiperSlide key={user.id}>
               <div className="   md:shadow-2xl  rounded-md flex flex-col justify-center items-center bg-blue-300">
                 <img src="/images/graphics 1 transparent.png"></img>

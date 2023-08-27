@@ -10,9 +10,9 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import Head from "next/head";
-// import { gsap } from "gsap";
-import CustomAos from "@/components/CustomAos";
-import Video from "@/components/Video";
+import { gsap } from "gsap";
+import CustomAos from "../components/CustomAos";
+import Video from "../components/Video";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTheme } from "next-themes";
@@ -56,16 +56,16 @@ const AboutUs = () => {
       <div
         id="About"
         ref={aboutSection}
-        className="w-full md:px-5 relative about h-full m-0  font-Mont overflow-hidden bg-slate-50
+        className="w-full md:px-5 relative about h-full m-0  pt-20 pb-48 font-Mont overflow-hidden bg-slate-50
         dark:bg-black-bg1 about"
       >
-        <img
+        {/* <img
           ref={bulb}
           src="images/BULB.png"
           alt=""
           className="absolute  abs1 drop-shadow-2xl"
-        />
-        <CustomAos
+        /> */}
+        {/* <CustomAos
           ethics={ethics}
           bulb={bulb}
           changeLocalLightTheme={setLocalLightTheme}
@@ -88,10 +88,10 @@ const AboutUs = () => {
             rotate: true,
             speedTune: 1.5,
           }}
-        />
+        /> */}
 
-        <div className="aboutWrap lg:flex container md:px-5 mx-auto my-5">
-          <div className="imageSec flex justify-center items-center flex-col lg:flex-row">
+        <div className="aboutWrap lg:flex container md:px-5 mx-auto py-5">
+          <div className="imageSec relative flex items-center flex-col lg:flex-row">
             {showVideo && (
               <Video
                 src=""
@@ -102,7 +102,7 @@ const AboutUs = () => {
             )}
             <div
               // onClick={() => setShowVideo(false)}
-              className="image1 shadow-yellow1 dark:shadow-4xl video mt-7 lg:my-auto cursor-pointer overflow-hidden rounded-lg relative"
+              className="image1 shadow-yellow1 dark:shadow-4xl video mt-7 lg:my-auto cursor-pointer  rounded-lg"
             >
               <figure>
                 <img src="images/Shunt.png" alt="" className="h-full w-full" />
@@ -110,7 +110,9 @@ const AboutUs = () => {
               {/* <a id="play-video" className="video-play-button z-0">
                 <span></span>
               </a> */}
-
+              <figure className="imgabt2">
+                <img src="images/abt-2.png" alt="" />
+              </figure>
               <div id="video-overlay" className="video-overlay">
                 <a className="video-overlay-close">&times;</a>
               </div>
@@ -149,159 +151,110 @@ const AboutUs = () => {
       </div>
       <div
         ref={ethics}
-        className="ethics  md:px-5  w-full h-full  m-0 p-0 font-Mont overflow-hidden  bg-yellow-1
-        dark:bg-black-bg1 text-black-bg"
+        className="ethics  md:px-5  w-full h-full  m-0 p-0 font-Mont overflow-hidden  
+        bg-black-bg1 text-black-bg"
       >
-        <div className="eWrap transition container md:px-5 mx-auto my-5 lg:flex md:justify-between">
+        <div className="eWrap transition container md:px-5 mx-auto py-5 xl:flex md:justify-between">
           <div
-            className={`contentEach  relative overflow-hidden  bg-white-1 lg:w-80  ml-0 my-4   rounded-2xl shadow-md
-          ${localLightTheme ? "" : "dark:bg-slate-800 dark:shadow-4xl"}`}
+            className="contentEach  relative overflow-hidden  bg-white-1 lg:w-80  ml-0 my-4   rounded-2xl shadow-md
+          dark:bg-slate-800 dark:shadow-4xl"
             data-aos="fade-up"
             data-aos-duration="500"
           >
             <div className="content flex flex-col justify-center items-center py-8 px-4">
               <figure className="mb-3">
-                <img src="images/light-bulb.png" alt="" />
+                <img src="images/aIc-1.png" alt="" />
               </figure>
               <h4
-                className={`text-purple-600 font-bold text-2xl mb-2 ${
-                  localLightTheme ? "" : "dark:text-fuchsia-600"
-                }`}
+                className="text-yellow font-bold text-2xl mb-2 
+                  dark:text-yellow"
               >
                 Vision
               </h4>
               <p
-                className={`text-lg font-semibold ${
-                  localLightTheme ? "" : "dark:text-slate-50"
-                }  text-center`}
+                className="text-lg font-medium text-slate-50
+                 text-center"
               >
                 To become largest Ed-Tech Platform for Engineering Stuents by
                 providing them Best{" "}
-                <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
-                  }`}
-                >
+                <span className="text-yellow font-semibold">
                   Interactive Videos
                 </span>
                 ,{" "}
                 <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
+                  className={`text-yellow"
                   }`}
                 >
                   Labs
                 </span>
                 ,
                 <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
+                  className={`text-yellow font-semibold"
                   }`}
                 >
                   Practicals
                 </span>{" "}
                 and{" "}
-                <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
-                  }`}
-                >
+                <span className="text-yellow font-semibold">
                   Interactive 3D models
                 </span>
               </p>
             </div>
           </div>
           <div
-            className={`contentEach  relative overflow-hidden  bg-white-1 lg:w-80  ml-0 my-4   rounded-2xl shadow-md
-            ${localLightTheme ? "" : "dark:bg-slate-800 dark:shadow-4xl"}`}
+            className="contentEach  relative overflow-hidden  bg-white-1 lg:w-80  ml-0 my-4   rounded-2xl shadow-md
+          dark:bg-slate-800 dark:shadow-4xl"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
             <div className="content flex flex-col justify-center items-center py-8 px-4">
               <figure className="mb-3">
-                <img src="images/target.png" alt="" />
+                <img src="images/aIc-2.png" alt="" />
               </figure>
-              <h4
-                className={`text-purple-600 font-bold text-2xl mb-2 ${
-                  localLightTheme ? "" : "dark:text-fuchsia-600"
-                }`}
-              >
+              <h4 className="text-yellow font-bold text-2xl mb-2 text-yellow">
                 Mission
               </h4>
-              <p
-                className={`text-lg font-semibold ${
-                  localLightTheme ? "" : "dark:text-slate-50"
-                } text-center`}
-              >
+              <p className="text-lg font-medium dark:text-slate-50 text-center">
                 To Make Engineering Students More{" "}
-                <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
-                  }`}
-                >
+                <span className="text-yellow dark:text-yellow font-semibold">
                   Proeffiecient
                 </span>
                 , More{" "}
                 <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
-                  }`}
+                  className="text-yellow 
+                    dark:text-yellow font-semibold"
                 >
                   Curious
                 </span>
                 ,More{" "}
-                <span
-                  className={`text-purple-600 ${
-                    localLightTheme ? "" : "dark:text-fuchsia-600"
-                  }`}
-                >
+                <span className="text-yellow  font-semibold dark:text-yellow">
                   Analytical
                 </span>
               </p>
             </div>
           </div>
           <div
-            className={`contentEach  relative overflow-hidden  bg-white-1 lg:w-80  ml-0 my-4   rounded-2xl shadow-md
-            ${localLightTheme ? "" : "dark:bg-slate-800 dark:shadow-4xl"}`}
+            className="contentEach  relative overflow-hidden  bg-white-1 lg:w-80  ml-0 my-4   rounded-2xl shadow-md
+            dark:bg-slate-800 dark:shadow-4xl"
             data-aos="fade-up"
             data-aos-duration="1500"
           >
             <div className="content flex flex-col justify-center items-center py-8 px-4">
               <figure className="mb-3">
-                <img src="images/quality.png" alt="" />
+                <img src="images/aIc-3.png" alt="" />
               </figure>
               <h4
-                className={`text-purple-600 ${
+                className={`text-yellow ${
                   localLightTheme ? "" : "dark:text-fuchsia-500"
                 } font-bold text-2xl mb-2`}
               >
                 Values
               </h4>
-              <p className="text-lg font-semibold text-center">
-                <span
-                  className={`${localLightTheme ? "" : "dark:text-slate-50"}`}
-                >
-                  {" "}
-                  Innovation |
-                </span>
-                <span
-                  className={`${localLightTheme ? "" : "dark:text-slate-50"}`}
-                >
-                  {" "}
-                  Interactive |
-                </span>
-                <span
-                  className={`${localLightTheme ? "" : "dark:text-slate-50"}`}
-                >
-                  {" "}
-                  Engaging |
-                </span>
-                <span
-                  className={`${localLightTheme ? "" : "dark:text-slate-50"}`}
-                >
-                  {" "}
-                  Quality
-                </span>
+              <p className="text-lg font-medium text-center">
+                <span className="dark:text-slate-50"> Innovation |</span>
+                <span className="text-slate-50"> Interactive |</span>
+                <span className="dark:text-slate-50"> Engaging |</span>
+                <span className="dark:text-slate-50"> Quality</span>
               </p>
             </div>
           </div>
