@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@next/font": "^13.4.19",
     "@react-three/drei": "^9.79.3",
     "@react-three/postprocessing": "^2.15.0",
     "aos": "^2.3.4",
