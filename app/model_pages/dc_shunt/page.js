@@ -331,9 +331,19 @@ const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/dcshunt.glb`;
 //   );
 // }
 function Model({ ...props }) {
+  const { EndCap } = useGroupControlsWithReset("DC Shunt Motor", {
+    EndCap: {
+      EndCap: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+    },
+  });
   const { nodes, materials } = useGLTF(glbFileURL);
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[0, 0, 0]}>
       <mesh
         castShadow
         receiveShadow
@@ -460,7 +470,7 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.EndCap_2.geometry}
         material={materials.EndCap}
-        position={[0.1, 11.829, -66.648]}
+        position={[0.1, 11.829, -7.485 - EndCap]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -584,7 +594,7 @@ export default function DcShunt() {
       //state={state}
       camera={camera}
       directionalLight={directionalLight}
-      bgcolor="#050511"
+      bgcolor="#d1a470"
     >
       <Model position={[0 + X, 0 + Y, 0 + Z]} />
     </ModelJSXGenerator>

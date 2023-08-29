@@ -12,7 +12,7 @@ export default function PartViewPopup({ onPartCardClick, partDetails }) {
   }
   const [panel, showPanel] = useState(false);
   const settings = {
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -30,10 +30,15 @@ export default function PartViewPopup({ onPartCardClick, partDetails }) {
               <div
                 key={`part-dtls-pan-${i}`}
                 style={{ width: 96 }}
-                className="part-card  h-12 w-12 bg-blue-200 cursor-pointer"
+                className="part-card  h-12 w-12 cursor-pointer"
+                title={part.name}
                 data-index={i}
               >
-                {part.name}
+                <img
+                  data-index={i}
+                  className="part-card h-full w-full object-contain"
+                  src={part.image}
+                />
               </div>
             ))}
           </Slider>
