@@ -36,6 +36,7 @@ import SideMenu from "./SideMenu";
 import PartDetailsView from "./PartDetailsView";
 import PartViewer from "./PartViewer";
 import ToolBar from "@/components/ToolBar";
+import { useControls } from "leva";
 
 console.log(EffectComposer, SSAO, SMAA, Outline);
 export default function ModelJSXGenerator({
@@ -161,6 +162,9 @@ export default function ModelJSXGenerator({
   function handleShowPartDetails(i) {
     showPopup({ visibility: true, selected: i });
   }
+  const { color } = useControls({
+    color: "#ff9621",
+  });
   return (
     <>
       <AppContextProvider>
@@ -173,7 +177,7 @@ export default function ModelJSXGenerator({
           /> */}
           {/* <Pick handleToggleMenu={handleToggleMenu} state={state} /> */}
           <Canvas gl={{ logarithmicDepthBuffer: true }} shadows camera={camera}>
-            <color attach="background" args={[bgcolor]} />
+            <color attach="background" args={[color]} />
             {/* {directionalLight?.map(({ intensity, position }, index) => {
               return (
                 <directionalLight
