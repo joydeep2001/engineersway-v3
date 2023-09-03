@@ -6,6 +6,23 @@ export default function PartDetailsView({ showPopup, partDetails }) {
   function handleClose() {
     showPopup({ visibility: false });
   }
+  function parseData(data) {
+    if (typeof data === "string") return data;
+    if (typeof data !== "object")
+      return "Invalid format. It must be object or string";
+    let output = "<ul class=outer_list>";
+    for (const key in data) {
+      output += `<li>${key}`;
+      output += `<ul class=inner_list>`;
+      data[key].forEach((item) => {
+        output += `<li>${item}</li>`;
+      });
+      output += `</ul></li>`;
+    }
+    output += `</ul>`;
+    console.log(output);
+    return output;
+  }
   return (
     <div className="popUpwrap">
       <div className="popUpDetailswrap">
@@ -37,7 +54,13 @@ export default function PartDetailsView({ showPopup, partDetails }) {
                 </span>
                 Working Principle
               </h5>
-              <p>{partDetails.partDescription.workingPrinciple}</p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: parseData(
+                    partDetails.partDescription.workingPrinciple
+                  ),
+                }}
+              ></p>
             </div>
           </div>
         </div>

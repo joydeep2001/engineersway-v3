@@ -79,25 +79,33 @@ export default function ModelJSXGenerator({
         The culmination of these steps results in a meticulously constructed DC shunt motor armature, 
         ready to provide efficient and dependable motor performance in a wide range of applications.
         `,
-        workingPrinciple: `1. Magnetic Field Generation:
-        •	The armature winding, consisting of multiple coils wound around the armature core, is connected to a direct current (DC) power source.
-        •	When current flows through the coils, it creates a magnetic field around each coil according to the right-hand rule (the direction of the field depends on the direction of the current and the coil's orientation).
-        2. Interaction with Stator Field:
-        •	The armature's magnetic field interacts with the stationary magnetic field produced by the stator (field windings) of the motor.
-        •	In a shunt motor configuration, the field windings are connected in parallel with the armature windings, and they both receive power from the same DC source.
-        •	The armature's magnetic field aligns with the stator's magnetic field, resulting in a torque-producing force on the armature.
-        3. Commutator and Rotation:
-        •	As the armature rotates due to the generated torque, the commutator rotates with it.
-        •	The commutator's copper segments are connected to the armature coils.
-        •	As the coils rotate within the magnetic field of the stator, the direction of the current in each coil is periodically reversed by the commutator's segments. This reversal of current direction ensures that the torque remains in the same direction, leading to continuous rotation.
-        4. Continuous Rotation:
-        •	The interaction between the armature's magnetic field and the stator's magnetic field creates a continuous torque that drives the armature to rotate.
-        •	As long as the DC power source is maintained, the armature will keep rotating, producing mechanical work.
-        5. Speed Regulation:
-        •	The speed of the motor can be controlled by adjusting the voltage applied to the armature windings. Higher voltage increases the magnetic force and speed, while lower voltage decreases them.
-        6. Back EMF:
-        •	As the armature rotates faster, it generates a counter electromotive force (EMF) known as back EMF. This back EMF opposes the applied voltage and helps regulate the motor's speed.        
-        `,
+        workingPrinciple: {
+          "Magnetic Field Generation": [
+            `The armature winding, consisting of multiple coils wound around the armature core, is connected to a direct current (DC) power source.`,
+          ],
+          "Interaction with Stator Field": [
+            `The armature's magnetic field interacts with the stationary magnetic field produced by the stator (field windings) of the motor.`,
+            `In a shunt motor configuration, the field windings are connected in parallel with the armature windings, and they both receive power from the same DC source.`,
+            `The armature's magnetic field aligns with the stator's magnetic field, resulting in a torque-producing force on the armature.`,
+          ],
+          "Commutator and Rotation": [
+            `As the armature rotates due to the generated torque, the commutator rotates with it.`,
+            `The commutator's copper segments are connected to the armature coils.`,
+            `As the coils rotate within the magnetic field of the stator, the direction of the current in each coil is periodically reversed by the commutator's segments. This reversal of current direction ensures that the torque remains in the same direction, leading to continuous rotation.`,
+          ],
+          "Continuous Rotation": [
+            `The interaction between the armature's magnetic field and the stator's magnetic field creates a continuous torque that drives the armature to rotate.`,
+            `As long as the DC power source is maintained, the armature will keep rotating, producing mechanical work.`,
+          ],
+          "Speed Regulation": [
+            `The speed of the motor can be controlled by adjusting the voltage applied to the armature windings. `,
+            `Higher voltage increases the magnetic force and speed, while lower voltage decreases them.`,
+          ],
+          "Back EMF": [
+            `As the armature rotates faster, it generates a counter electromotive force (EMF) known as back EMF. `,
+            `This back EMF opposes the applied voltage and helps regulate the motor's speed.`,
+          ],
+        },
       },
     },
     {
