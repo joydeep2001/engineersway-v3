@@ -100,7 +100,7 @@ export default function ModelJSXGenerator({
               intensity={0.1}
             />
 
-            <OrbitControls enableDamping={false} />
+            <OrbitControls makeDefault enableDamping={false} />
 
             <Suspense
               fallback={
@@ -121,16 +121,16 @@ export default function ModelJSXGenerator({
                 {/* <BakeShadows /> */}
               </Stage>
             </Suspense>
-            {/* <GizmoHelper
+            <GizmoHelper
               alignment="top-left"
               margin={[80, 80]}
-              renderPriority={2}
+              renderPriority={1}
             >
               <GizmoViewport
                 axisColors={["hotpink", "aquamarine", "#3498DB"]}
                 labelColor="black"
               />
-            </GizmoHelper> */}
+            </GizmoHelper>
             {/* <Environment background preset="sunset" blur={0.8} /> */}
             {/* <ProgressLoader /> */}
           </Canvas>

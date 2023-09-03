@@ -332,46 +332,7 @@ const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/dcshunt.glb`;
 // }
 function Model({ ...props }) {
   const group = useRef();
-  const { EndCap } = useGroupControlsWithReset("DC Shunt Motor", {
-    EndCap: {
-      EndCap: {
-        value: 0,
-        min: 0,
-        max: 85,
-        step: 0.1,
-      },
-    },
-  });
-  const { nodes, materials } = useGLTF(glbFileURL);
-  // const yoke = useRef();
-  // const cover = useRef();
-  // const backcover = useRef();
-  // const terminalcap = useRef();
-  // const bs_holder = useRef();
-  // const r_core = useRef();
-  // const {
-  //   Yoke,
-  //   Yoke_Visibility,
-  //   EndCap,
-  //   EndCap_Visibility,
-  //   Backcover,
-  //   Backcover_Visibility,
-  //   Brushshaft_Visibility,
-  //   Rotor,
-  //   Rotor_Visibility,
-  //   Brush,
-  //   BrushHolder,
-  //   Brush_Cap,
-  // } = useGroupControlsWithReset("DC Shunt Motor", {
-  //   Yoke: {
-  //     Yoke: {
-  //       value: 0,
-  //       min: 0,
-  //       max: 85,
-  //       step: 0.1,
-  //     },
-  //     Yoke_Visibility: true,
-  //   },
+  // const { EndCap } = useGroupControlsWithReset("DC Shunt Motor", {
   //   EndCap: {
   //     EndCap: {
   //       value: 0,
@@ -379,77 +340,116 @@ function Model({ ...props }) {
   //       max: 85,
   //       step: 0.1,
   //     },
-  //     EndCap_Visibility: true,
-  //   },
-  //   Backcover: {
-  //     Backcover: {
-  //       value: 0,
-  //       min: 0,
-  //       max: 85,
-  //       step: 0.1,
-  //     },
-  //     Backcover_Visibility: true,
-  //   },
-  //   Brushshaft: {
-  //     Brushshaft_Visibility: true,
-  //   },
-  //   Rotor: {
-  //     Rotor: {
-  //       value: 0,
-  //       min: 0,
-  //       max: 85,
-  //       step: 0.1,
-  //     },
-  //     Rotor_Visibility: true,
-  //   },
-  //   "Brush Details": {
-  //     Brush: {
-  //       value: 0,
-  //       min: 0,
-  //       max: 85,
-  //       step: 0.1,
-  //     },
-  //     BrushHolder: {
-  //       value: 0,
-  //       min: 0,
-  //       max: 85,
-  //       step: 0.1,
-  //     },
-  //     Brush_Cap: {
-  //       value: 0,
-  //       min: 0,
-  //       max: 85,
-  //       step: 0.1,
-  //     },
   //   },
   // });
-  // useEffect(() => {
-  //   if (Yoke_Visibility == false) {
-  //     yoke.current.position.y = 200000000;
-  //   } else {
-  //     yoke.current.position.y = 10.19 + Yoke;
-  //   }
-  //   if (EndCap_Visibility == false) {
-  //     cover.current.position.z = 200000000;
-  //   } else {
-  //     cover.current.position.z = 14.56 + EndCap;
-  //   }
-  //   if (Backcover_Visibility == false) {
-  //     backcover.current.position.z = 200000000;
-  //   } else {
-  //     backcover.current.position.z = -7.67 - Backcover;
-  //   }
-  //   if (Rotor_Visibility == false) {
-  //     r_core.current.position.z = 200000000;
-  //   } else {
-  //     r_core.current.position.z = 11.77 - Rotor;
-  //   }
-  //   if (Brushshaft_Visibility == false) {
-  //     bs_holder.current.position.z = 200000000;
-  //   } else {
-  //     bs_holder.current.position.z = -4.47;
-  //   }
-  // });
+  const { nodes, materials } = useGLTF(glbFileURL);
+  const yoke = useRef();
+  const cover = useRef();
+  const backcover = useRef();
+  const terminalcap = useRef();
+  const bs_holder = useRef();
+  const r_core = useRef();
+  const {
+    Yoke,
+    Yoke_Visibility,
+    EndCap,
+    EndCap_Visibility,
+    Backcover,
+    Backcover_Visibility,
+    Brushshaft_Visibility,
+    Rotor,
+    Rotor_Visibility,
+    Brush,
+    BrushHolder,
+    Brush_Cap,
+  } = useGroupControlsWithReset("DC Shunt Motor", {
+    Yoke: {
+      Yoke: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+      Yoke_Visibility: true,
+    },
+    EndCap: {
+      EndCap: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+      EndCap_Visibility: true,
+    },
+    Backcover: {
+      Backcover: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+      Backcover_Visibility: true,
+    },
+    Brushshaft: {
+      Brushshaft_Visibility: true,
+    },
+    Rotor: {
+      Rotor: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+      Rotor_Visibility: true,
+    },
+    "Brush Details": {
+      Brush: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+      BrushHolder: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+      Brush_Cap: {
+        value: 0,
+        min: 0,
+        max: 85,
+        step: 0.1,
+      },
+    },
+  });
+  useEffect(() => {
+    if (Yoke_Visibility == false) {
+      yoke.current.position.y = 200000000;
+    } else {
+      yoke.current.position.y = 10.19 + Yoke;
+    }
+    if (EndCap_Visibility == false) {
+      cover.current.position.z = 200000000;
+    } else {
+      cover.current.position.z = 14.56 + EndCap;
+    }
+    if (Backcover_Visibility == false) {
+      backcover.current.position.z = 200000000;
+    } else {
+      backcover.current.position.z = -7.67 - Backcover;
+    }
+    if (Rotor_Visibility == false) {
+      r_core.current.position.z = 200000000;
+    } else {
+      r_core.current.position.z = 11.77 - Rotor;
+    }
+    if (Brushshaft_Visibility == false) {
+      bs_holder.current.position.z = 200000000;
+    } else {
+      bs_holder.current.position.z = -4.47;
+    }
+  });
   return (
     <group
       ref={group}
@@ -475,8 +475,10 @@ function Model({ ...props }) {
         castShadow
         receiveShadow
         geometry={nodes.EndCap.geometry}
+        ref={cover}
         material={materials.EndCap}
-        position={[0.097, 11.832, 14.555]}
+        visible={EndCap_Visibility}
+        position={[0.097, 11.832, 14.555 + EndCap]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -503,7 +505,7 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.BrushHolder2.geometry}
         material={materials.Brush_Holder2}
-        position={[-4.852, 11.829, -4.464]}
+        position={[-4.852 - BrushHolder, 11.829, -4.464]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -512,7 +514,7 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.BrushHolder.geometry}
         material={materials.Brush_holder}
-        position={[5.052, 11.829, -4.464]}
+        position={[5.052 + BrushHolder, 11.829, -4.464]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -521,7 +523,7 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.BrushHolderAndTerminal1.geometry}
         material={materials.BrushHolder_and_Terminal1}
-        position={[-0.256, 19.598, -1.036]}
+        position={[-0.256, 19.598 + Brush, -1.036]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -539,7 +541,7 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.BrushHolderCap1.geometry}
         material={materials.Brush_HolderCap1}
-        position={[-6.071, 11.829, -4.479]}
+        position={[-6.071 - Brush_Cap, 11.829, -4.479]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -548,7 +550,7 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.BrushHolderCap2.geometry}
         material={materials.Brush_HolderCap2}
-        position={[6.271, 11.829, -4.479]}
+        position={[6.271 + Brush_Cap, 11.829, -4.479]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
@@ -566,9 +568,11 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.DrivingShaft.geometry}
         material={materials.Shaft}
-        position={[0.21, 12.038, 11.773]}
+        visible={Rotor_Visibility}
+        position={[0.21, 12.04, 11.77 - Rotor]}
         rotation={[Math.PI / 2, 1.084, 0]}
         scale={0.058}
+        ref={r_core}
       >
         <mesh
           castShadow
@@ -597,8 +601,10 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.EndCap_2.geometry}
         material={materials.EndCap}
-        position={[0.1, 11.829, -7.485 - EndCap]}
+        position={[0.1, 11.829, -7.485 - Backcover]}
         rotation={[Math.PI / 2, 0, 0]}
+        ref={backcover}
+        visible={Backcover_Visibility}
         scale={0.058}
       />
       <mesh
@@ -654,6 +660,8 @@ function Model({ ...props }) {
         position={[0.079, 11.838, -4.466]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
+        visible={Brushshaft_Visibility}
+        ref={bs_holder}
       />
       <mesh
         castShadow
@@ -678,7 +686,9 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes.Yoke.geometry}
         material={materials.Yoke}
-        position={[0.086, 10.189, 3.042]}
+        ref={yoke}
+        visible={Yoke_Visibility}
+        position={[0.086, 10.189 + Yoke, 3.042]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.058}
       />
