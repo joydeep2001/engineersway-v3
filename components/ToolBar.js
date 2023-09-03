@@ -22,48 +22,27 @@ export default function PartViewPopup({ onPartCardClick, partDetails }) {
     variableWidth: true,
   };
 
-  function showText(e) {
-    const index = e.currentTarget.dataset.index;
-    /**Warning: This is bad code. Must come up with some other stratigies. */
-    document.querySelectorAll(`div[data-index="${index}"]`).forEach((card) => {
-      card.querySelectorAll(".layover-text").forEach((layoverTxt) => {
-        layoverTxt.classList.remove("hidden");
-        layoverTxt.classList.add("flex");
-      });
-    });
-  }
-  function hideText(e) {
-    const index = e.currentTarget.dataset.index;
-    /**Warning: This is bad code. Must come up with some other stratigies. */
-    document.querySelectorAll(`div[data-index="${index}"]`).forEach((card) => {
-      card.querySelectorAll(".layover-text").forEach((layoverTxt) => {
-        layoverTxt.classList.add("hidden");
-        layoverTxt.classList.remove("flex");
-      });
-    });
-  }
-
   return (
-    <div className="flex flex-col items-center justify-center text-black-bg absolute top-full left-0 h-32 w-full transition-all   -translate-y-full">
+    <div className="flex flex-col items-center justify-center text-black-bg absolute top-full left-0 h-32 w-full transition-all   -translate-y-[105%]">
       {panel && (
         <div className="in-out w-1/4 ">
           <Slider {...settings}>
             {partDetails.map((part, i) => (
               <div
+                className="relative part-card h-20 w-12 cursor-pointer  "
+                style={{ width: 96 }}
                 onClick={handlePartCardClick}
                 key={`part-dtls-pan-${i}`}
-                style={{ width: 96 }}
-                className="relative part-card  h-12 w-12 cursor-pointer "
                 data-index={i}
-                onMouseEnter={showText}
-                onMouseLeave={hideText}
               >
-                <img
-                  data-index={i}
-                  className="part-card h-full w-full object-contain"
-                  src={part.image}
-                />
-                <div className="layover-text transition hidden absolute top-0 text-xs  justify-center items-center bg-[#000A] h-full w-full  text-white-1">
+                <div className="absolute top-10 w-12">
+                  <img
+                    data-index={i}
+                    className="h-full w-full object-contain"
+                    src={part.image}
+                  />
+                </div>
+                <div className="opacity-0 whitespace-nowrap absolute top-12 text-top text-[10px] text-white-1 bg-black-bg p-2 transition-all">
                   {part.name}
                 </div>
               </div>
