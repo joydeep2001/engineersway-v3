@@ -25,7 +25,7 @@ import {
 const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/dcshunt.glb`;
 
 // function Model({ ...props }) {
-//   const group = useRef();
+// const group = useRef();
 //   //const snap = useSnapshot(state);
 //   const [hover, set] = useState(null);
 //   const yoke = useRef();
@@ -331,6 +331,7 @@ const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/dcshunt.glb`;
 //   );
 // }
 function Model({ ...props }) {
+  const group = useRef();
   const { EndCap } = useGroupControlsWithReset("DC Shunt Motor", {
     EndCap: {
       EndCap: {
@@ -342,8 +343,134 @@ function Model({ ...props }) {
     },
   });
   const { nodes, materials } = useGLTF(glbFileURL);
+  // const yoke = useRef();
+  // const cover = useRef();
+  // const backcover = useRef();
+  // const terminalcap = useRef();
+  // const bs_holder = useRef();
+  // const r_core = useRef();
+  // const {
+  //   Yoke,
+  //   Yoke_Visibility,
+  //   EndCap,
+  //   EndCap_Visibility,
+  //   Backcover,
+  //   Backcover_Visibility,
+  //   Brushshaft_Visibility,
+  //   Rotor,
+  //   Rotor_Visibility,
+  //   Brush,
+  //   BrushHolder,
+  //   Brush_Cap,
+  // } = useGroupControlsWithReset("DC Shunt Motor", {
+  //   Yoke: {
+  //     Yoke: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //     Yoke_Visibility: true,
+  //   },
+  //   EndCap: {
+  //     EndCap: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //     EndCap_Visibility: true,
+  //   },
+  //   Backcover: {
+  //     Backcover: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //     Backcover_Visibility: true,
+  //   },
+  //   Brushshaft: {
+  //     Brushshaft_Visibility: true,
+  //   },
+  //   Rotor: {
+  //     Rotor: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //     Rotor_Visibility: true,
+  //   },
+  //   "Brush Details": {
+  //     Brush: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //     BrushHolder: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //     Brush_Cap: {
+  //       value: 0,
+  //       min: 0,
+  //       max: 85,
+  //       step: 0.1,
+  //     },
+  //   },
+  // });
+  // useEffect(() => {
+  //   if (Yoke_Visibility == false) {
+  //     yoke.current.position.y = 200000000;
+  //   } else {
+  //     yoke.current.position.y = 10.19 + Yoke;
+  //   }
+  //   if (EndCap_Visibility == false) {
+  //     cover.current.position.z = 200000000;
+  //   } else {
+  //     cover.current.position.z = 14.56 + EndCap;
+  //   }
+  //   if (Backcover_Visibility == false) {
+  //     backcover.current.position.z = 200000000;
+  //   } else {
+  //     backcover.current.position.z = -7.67 - Backcover;
+  //   }
+  //   if (Rotor_Visibility == false) {
+  //     r_core.current.position.z = 200000000;
+  //   } else {
+  //     r_core.current.position.z = 11.77 - Rotor;
+  //   }
+  //   if (Brushshaft_Visibility == false) {
+  //     bs_holder.current.position.z = 200000000;
+  //   } else {
+  //     bs_holder.current.position.z = -4.47;
+  //   }
+  // });
   return (
-    <group {...props} dispose={null} position={[0, 0, 0]}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      onPointerOver={(e) => {
+        // e.stopPropagation(), set(e.object.material.name);
+      }}
+      onPointerOut={(e) => {
+        // e.intersections.length === 0 && set(null);
+      }}
+      onClick={(e) => {
+        // e.stopPropagation();
+        // state.current = e.object.material.name;
+        // props.dispatch({ id: state.current });
+        // console.log(state.current);
+      }}
+      onPointerMissed={(e) => {
+        // state.current = null;
+      }}
+    >
       <mesh
         castShadow
         receiveShadow

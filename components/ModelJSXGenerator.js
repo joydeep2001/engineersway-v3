@@ -71,7 +71,7 @@ export default function ModelJSXGenerator({
     showPopup({ visibility: true, selected: i });
   }
   const { color } = useControls({
-    color: "#ff9621",
+    color: "#bababa",
   });
   return (
     <>
