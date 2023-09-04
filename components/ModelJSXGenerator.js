@@ -84,7 +84,12 @@ export default function ModelJSXGenerator({
             items={highlightedParts}
           /> */}
           {/* <Pick handleToggleMenu={handleToggleMenu} state={state} /> */}
-          <Canvas gl={{ logarithmicDepthBuffer: true }} shadows camera={camera}>
+          <Canvas
+            dpr={[1, 2]}
+            gl={{ logarithmicDepthBuffer: true }}
+            shadows
+            camera={camera}
+          >
             <color attach="background" args={[color]} />
             {/* {directionalLight?.map(({ intensity, position }, index) => {
               return (
@@ -120,6 +125,44 @@ export default function ModelJSXGenerator({
                 {children}
                 {/* <BakeShadows /> */}
               </Stage>
+              <Environment resolution={256}>
+                <group rotation={[-Math.PI / 2, 0, 0]}>
+                  <Lightformer
+                    intensity={4}
+                    rotation-x={Math.PI / 2}
+                    position={[0, 5, -9]}
+                    scale={[10, 10, 1]}
+                  />
+                  {[2, 0, 2, 0, 2, 0, 2, 0].map((x, i) => (
+                    <Lightformer
+                      key={i}
+                      form="circle"
+                      intensity={4}
+                      rotation={[Math.PI / 2, 0, 0]}
+                      position={[x, 4, i * 4]}
+                      scale={[4, 1, 1]}
+                    />
+                  ))}
+                  <Lightformer
+                    intensity={2}
+                    rotation-y={Math.PI / 2}
+                    position={[-5, 1, -1]}
+                    scale={[50, 2, 1]}
+                  />
+                  <Lightformer
+                    intensity={2}
+                    rotation-y={Math.PI / 2}
+                    position={[-5, -1, -1]}
+                    scale={[50, 2, 1]}
+                  />
+                  <Lightformer
+                    intensity={2}
+                    rotation-y={-Math.PI / 2}
+                    position={[10, 1, 0]}
+                    scale={[50, 2, 1]}
+                  />
+                </group>
+              </Environment>
             </Suspense>
             <GizmoHelper
               alignment="top-left"
@@ -131,6 +174,7 @@ export default function ModelJSXGenerator({
                 labelColor="black"
               />
             </GizmoHelper>
+            {/* <ArcballControls makeDefault /> */}
             {/* <Environment background preset="sunset" blur={0.8} /> */}
             {/* <ProgressLoader /> */}
           </Canvas>
