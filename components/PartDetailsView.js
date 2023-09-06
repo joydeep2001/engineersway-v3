@@ -10,8 +10,12 @@ export default function PartDetailsView({ showPopup, partDetails }) {
     if (typeof data === "string") return data;
     if (typeof data !== "object")
       return "Invalid format. It must be object or string";
+
     let output = "<ul class=outer_list>";
     for (const key in data) {
+      if (key === "__intro__" || key === "__extro__") {
+        continue;
+      }
       output += `<li>${key}`;
       output += `<ul class=inner_list>`;
       data[key].forEach((item) => {
@@ -45,7 +49,13 @@ export default function PartDetailsView({ showPopup, partDetails }) {
                 </span>
                 Construction
               </h5>
-              <p>{partDetails.partDescription.construction}</p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: parseData(
+                    partDetails.partDescription.workingPrinciple
+                  ),
+                }}
+              ></p>
             </div>
             <div className="eachdetailsM">
               <h5>
