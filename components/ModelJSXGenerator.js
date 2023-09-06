@@ -125,7 +125,7 @@ export default function ModelJSXGenerator({
                 {children}
                 {/* <BakeShadows /> */}
               </Stage>
-              <Environment resolution={256}>
+              {/* <Environment resolution={256}>
                 <group rotation={[-Math.PI / 2, 0, 0]}>
                   <Lightformer
                     intensity={4}
@@ -162,7 +162,7 @@ export default function ModelJSXGenerator({
                     scale={[50, 2, 1]}
                   />
                 </group>
-              </Environment>
+              </Environment> */}
             </Suspense>
             <GizmoHelper
               alignment="top-left"
