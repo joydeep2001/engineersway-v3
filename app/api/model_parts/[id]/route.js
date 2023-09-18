@@ -303,6 +303,105 @@ const tempDB = [
       },
     ],
   },
+  {
+    id: "transformer",
+    data: [
+      {
+        name: "Oil Tank",
+        image: "/images/model_parts/transformer/oil_tank.png",
+        partDescription: {
+          construction: `A transformer oil tank is typically constructed using steel or another suitable material to ensure durability and corrosion resistance. It consists of a cylindrical or rectangular enclosure designed to hold the transformer's core and windings submerged in insulating oil. The tank also incorporates features like cooling fins, radiators, and oil level indicators for efficient heat dissipation and oil monitoring.`,
+          workingPrinciple: `The primary purpose of a transformer oil tank is to provide a sealed and protective environment for the internal components of the transformer, such as the core and windings, immersed in insulating oil. This oil serves as both electrical insulation and coolant, preventing electrical breakdown and dissipating heat generated during transformer operation. The tank's construction and design ensure the safe and efficient functioning of the transformer while maintaining the integrity of the insulating oil.`,
+        },
+      },
+      {
+        name: "Core Former",
+        image: "/images/model_parts/transformer/coreformer.png",
+        partDescription: {
+          construction: `Transformer core former clamps are typically made of high-strength, non-magnetic materials such as stainless steel or aluminum. They consist of two parts: a U-shaped clamp and a threaded bolt. The U-shaped clamp has a curved profile that matches the shape of the transformer core, while the threaded bolt is used to secure the clamp in place.`,
+          workingPrinciple: `Transformer core former clamps are used to firmly hold the laminated core of a transformer in its desired shape. The U-shaped clamp is placed around the core, and the threaded bolt is tightened, applying pressure to the core's outer layers. This ensures that the core remains tightly bound together, preventing deformation and maintaining the transformer's efficiency and performance.`,
+        },
+      },
+      {
+        name: "Core",
+        image: "/images/model_parts/transformer/core.png",
+        partDescription: {
+          construction: `A transformer core consists of two main components: the primary winding and the secondary winding. These windings are typically wrapped around a core made of laminated iron or steel sheets. The core's laminated structure reduces eddy current losses and improves the transformer's efficiency.`,
+          workingPrinciple: `The transformer core plays a crucial role in the device's operation by providing a path for magnetic flux. When an alternating current flows through the primary winding, it creates a changing magnetic field that induces a voltage in the secondary winding through electromagnetic induction. The core's magnetic properties concentrate and guide this magnetic flux, facilitating efficient energy transfer from the primary to the secondary winding, making transformers essential in voltage conversion and power distribution.`,
+        },
+      },
+
+      {
+        name: "Hv Coil",
+        image: "/images/model_parts/transformer/hv_coil.png",
+        partDescription: {
+          construction: `The high-voltage (HV) coil in a transformer is typically constructed using high-quality, insulated copper or aluminum wire wound tightly around a laminated iron core. The number of turns and thickness of the wire determine the coil's voltage rating.`,
+          workingPrinciple: `The HV coil's primary function is to receive and transmit electrical energy through electromagnetic induction. When an alternating current (AC) flows through the primary winding (HV coil), it creates a magnetic field that induces a voltage in the secondary winding, allowing for efficient voltage transformation and power distribution in electrical systems.`,
+        },
+      },
+      {
+        name: "Lv Coil",
+        image: "/images/model_parts/transformer/lv_coil.png",
+        partDescription: {
+          construction: `A low-voltage (LV) coil in a transformer is typically made of copper or aluminum wire wound around a laminated core. The coil is designed to handle lower voltage levels, often used for distribution purposes.`,
+          workingPrinciple: `The LV coil is connected to the primary side of the transformer, where it receives the incoming electrical voltage. Through electromagnetic induction, it transfers this energy to the secondary coil, which is connected to the load, allowing voltage transformation and distribution at a lower voltage level.`,
+        },
+      },
+      {
+        name: "Core Insulators",
+        image: "/images/model_parts/transformer/insulator.png",
+        partDescription: {
+          construction: `Transformer core insulators are typically made of high-quality insulating materials such as laminated pressboard or composite materials. They are precision-cut into specific shapes and sizes to fit between the transformer's core laminations, providing electrical insulation and mechanical support.`,
+          workingPrinciple: `The primary function of transformer core insulators is to prevent electrical contact between the core laminations, which helps to maintain the electrical isolation of the transformer windings. By doing so, they minimize the risk of short circuits and ensure efficient energy transfer within the transformer while maintaining structural stability.`,
+        },
+      },
+      {
+        name: "Lv Bus Insulators",
+        image: "/images/model_parts/transformer/lv_busbar_and-insualator.png",
+        partDescription: {
+          construction: `LV (Low Voltage) bus insulators are typically constructed using high-quality, non-conductive materials such as porcelain, polymer, or glass-reinforced plastic. These insulators are designed in various shapes and sizes to provide electrical insulation and mechanical support for low-voltage busbars in electrical distribution systems.`,
+          workingPrinciple: `LV bus bars are a fundamental component in electrical distribution systems. They serve to carry low voltage electrical currents from the power source to various loads and equipment. The bus bars efficiently distribute electricity by minimizing resistance and are crucial for maintaining a stable and reliable electrical supply within a facility.contacts, signaling a potential issue or disconnecting power to prevent further damage to the transformer.`,
+        },
+      },
+      {
+        name: "Hv Bus Insulators",
+        image: "/images/model_parts/transformer/hv_busbar_and-insualator.png",
+        partDescription: {
+          construction: `HV (High Voltage) bus insulators are typically made of high-quality materials such as porcelain or composite materials. They consist of a cylindrical or conical shape with flanges on both ends for mounting. The insulators are designed to provide electrical insulation and mechanical support for high-voltage conductors in substations and power transmission systems.`,
+          workingPrinciple: `The primary function of HV bus insulators is to maintain a physical separation between high-voltage conductors and the supporting structures, preventing electrical arcing and ensuring the safe and reliable operation of the electrical system. They work by effectively isolating the conductors from ground and nearby objects, thus preventing electrical faults and ensuring the uninterrupted flow of electricity in the transmission and distribution networks`,
+        },
+      },
+      {
+        name: "Breather",
+        image: "/images/model_parts/transformer/breather.png",
+        partDescription: {
+          construction: `A transformer breather is typically composed of a cylindrical container made of non-corrosive materials such as metal or plastic. Inside the container, there is a desiccant, usually silica gel or molecular sieve, which absorbs moisture from the air entering the breather.`,
+          workingPrinciple: `The breather works on the principle of maintaining a dry and moisture-free environment within the transformer's oil-filled tank. As the transformer oil contracts and expands due to temperature changes, air is drawn in or pushed out through the breather. The desiccant inside the breather adsorbs any moisture in the incoming air, preventing it from contaminating the transformer oil and ensuring the transformer operates efficiently and safely.
+          `,
+        },
+      },
+      {
+        name: "Conservator tank",
+        image: "/images/model_parts/transformer/conservator.png",
+        partDescription: {
+          workingPrinciple: {
+            "Oil Expansion and Contraction": [
+              `Transformers generate heat during operation due to losses in the core and winding resistance. This causes the insulating oil to expand. When the oil expands, it needs a place to go to prevent excessive pressure build-up. This is where the conservator tank comes into play.`,
+            ],
+            "Oil Cooling and Contraction": [
+              `Conversely, when the transformer is not in operation or is under light load, the oil cools down and contracts. Again, the conservator tank provides a reservoir of oil to make up for the reduced level in the main tank.`,
+            ],
+            "Maintaining Oil Quality": [
+              `The breather on top of the conservator tank plays a crucial role in maintaining the quality of the insulating oil. As the oil level rises and falls, it is exposed to air. The breather contains a desiccant to remove moisture from the incoming air, which helps prevent the oil from becoming contaminated.`,
+            ],
+            "Preventing Air Contact": [
+              `The conservator tank also serves to minimize the contact of the oil with the atmosphere, which can lead to oxidation and degradation of the oil. This helps extend the lifespan of the insulating oil and, consequently, the transformer.`,
+            ],
+          },
+        },
+      },
+    ],
+  },
 ];
 
 export async function GET(request, { params }) {
