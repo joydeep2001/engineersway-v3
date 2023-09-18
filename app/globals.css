@@ -875,6 +875,7 @@ h3 {
   filter: drop-shadow(10px 5px 40px rgba(13, 17, 13, 1));
 }
 .leftBlock h4 {
+  text-align: center;
   margin-bottom: 25px;
   color: #fff !important;
   font-size: 48px;
@@ -915,9 +916,11 @@ h3 {
   overflow-y: auto;
 }
 .eachdetailsM {
-  border-bottom: 1px solid #ffffff20;
   padding-bottom: 40px;
   margin-bottom: 20px;
+}
+.eachdetailsM:not(:last-child) {
+  border-bottom: 1px solid #ffffff20;
 }
 .eachdetailsM span {
   display: inline-block;
@@ -925,7 +928,7 @@ h3 {
 }
 .eachdetailsM h5 {
   font-size: 28px;
-  color: #fff;
+  color: #e47d01;
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -1052,6 +1055,31 @@ footer svg {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.outer_list li {
+  position: relative;
+  font-size: 20px;
+  color: #e47d01;
+  padding-left: 40px;
+}
+.inner_list li {
+  padding-left: 0px !important;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 15px;
+  /* padding-left: 40px; */
+}
+.outer_list > li::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 5px;
+  width: 24px;
+  height: 24px;
+  background-image: url(../public/images/outer_list.png);
+  background-size: contain;
+}
+
+
 /*--------- Responsive design ---------*/
 
 @media (max-width: 1440px) {
