@@ -45,7 +45,7 @@ export default function PartDetailsView({ showPopup, partDetails }) {
             <div className="eachdetailsM">
               <h5>
                 <span>
-                  <img src="images/cube1.png" alt="" />
+                  <img src="/images/cube.png" alt="" />
                 </span>
                 Construction
               </h5>
@@ -60,7 +60,7 @@ export default function PartDetailsView({ showPopup, partDetails }) {
             <div className="eachdetailsM">
               <h5>
                 <span>
-                  <img src="images/cube1.png" alt="" />
+                  <img src="/images/cube.png" alt="" />
                 </span>
                 Working Principle
               </h5>
