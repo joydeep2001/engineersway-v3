@@ -9,7 +9,7 @@ export default function PartDetailsView({ showPopup, partDetails }) {
   function parseData(data) {
     if (typeof data === "string") return data;
     if (typeof data !== "object")
-      return "Invalid format. It must be object or string";
+      return `Invalid format. It must be object or string instead got ${typeof data}`;
 
     let output = "<ul class=outer_list>";
     for (const key in data) {
@@ -51,9 +51,7 @@ export default function PartDetailsView({ showPopup, partDetails }) {
               </h5>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: parseData(
-                    partDetails.partDescription.workingPrinciple
-                  ),
+                  __html: parseData(partDetails.partDescription.construction),
                 }}
               ></p>
             </div>
