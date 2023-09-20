@@ -402,6 +402,145 @@ const tempDB = [
       },
     ],
   },
+  {
+    id: "alternator",
+    data: [
+      {
+        name: "Brush",
+        image: "/images/model_parts/alternator/brush.png",
+        partDescription: {
+          construction: {
+            "Carbon Brush Holder": [
+              `An alternator carbon brush holder is typically made of a non-conductive material such as plastic or ceramic. It houses carbon brushes, which are essential for electrical contact with the rotating slip rings of the alternator.`,
+            ],
+            "Carbon Brush Holder Arms": [
+              `Alternator carbon brush holder arms are typically made of a durable and conductive material, such as copper or brass. They are designed as small, adjustable components that hold the carbon brushes securely in place within the alternator housing. These arms often have threaded ends for easy installation and adjustment`,
+            ],
+            "Carbon Brush": [
+              `Alternator carbon brushes are typically made of a mix of carbon and other materials. They are housed in a brush holder, which is often mounted on the alternator casing. The brush is designed with a curved shape to ensure proper contact with the slip rings.`,
+            ],
+          },
+          workingPrinciple: {
+            "Carbon Brush Holder": [
+              `The carbon brush holder ensures consistent electrical contact between the stationary brushes and the rotating slip rings of the alternator. As the alternator rotor spins, the brushes maintain contact, allowing the transfer of electrical current to generate alternating current (AC) power in the stator windings. Proper maintenance of the brush holder is crucial for efficient and reliable alternator performance.`,
+            ],
+            "Carbon Brush Holder Arms": [
+              `The primary function of alternator carbon brush holder arms is to maintain constant contact between the carbon brushes and the slip rings on the alternator rotor. This continuous contact allows for the transfer of electrical current from the rotor to the external circuit, ensuring a stable output of electrical power from the alternator. Properly adjusted and maintained brush holder arms are essential for the efficient operation of an alternator.`,
+            ],
+            "Carbon Brush": [
+              `Alternator carbon brushes play a crucial role in electrical contact between the stationary parts (brushes) and the rotating parts (slip rings) of an alternator. As the alternator rotor spins, the carbon brushes maintain continuous electrical contact with the slip rings, allowing the transfer of electrical current to the external circuit. This contact enables the generation of alternating current (AC) by the alternator, which is vital for various electrical systems in vehicles and power generation applications.`,
+            ],
+          },
+        },
+      },
+      {
+        name: "Controls",
+        image: "/images/model_parts/alternator/controls.png",
+        partDescription: {
+          construction: {
+            "Electrical Socket": [
+              `An alternator electrical socket, also known as a power outlet or receptacle, consists of a durable housing typically made of heat-resistant plastic or metal. Inside, it contains electrical contacts, terminals, and wiring to safely connect to an electrical circuit. The socket may have multiple slots or holes to accommodate different plug types and sizes.`,
+            ],
+            "Electrical Switch": [
+              `An alternator electrical switch typically consists of a durable metal or plastic casing housing various components, including contact points, a lever or toggle for manual operation, and often a spring mechanism for tension control. Inside, it contains electrical contacts and conductive materials to facilitate the switching process.`,
+            ],
+            "Volt Meter": [
+              `An alternator voltmeter consists of a calibrated coil of wire, usually wound around an iron core, connected in parallel to the electrical circuit whose voltage is being measured. It also includes a pointer and a scale for voltage readings.`,
+            ],
+          },
+          workingPrinciple: {
+            "Electrical Socket": [
+              `The alternator electrical socket serves as a connection point for electrical devices to access AC (alternating current) power. When a plug is inserted into the socket, it engages with the contacts inside, completing the electrical circuit. The socket's terminals are designed to ensure a secure and reliable connection, allowing electrical energy to flow from the source, such as a generator or wall outlet, to the connected device, providing the necessary power for its operation.`,
+            ],
+            "Electrical Switch": [
+              `The alternator electrical switch's primary function is to open or close an electrical circuit, allowing or interrupting the flow of electrical current. When the lever or toggle is moved, it either physically separates or connects the electrical contacts, enabling the alternator to supply or disconnect power to a specific load or electrical system. This switching action ensures efficient power distribution and control within an electrical system.`,
+            ],
+            "Volt Meter": [
+              `When voltage flows through the coil in the alternator voltmeter, it generates an electromagnetic field. This field interacts with the iron core, causing the pointer to move along the scale, indicating the voltage level. The deflection of the pointer is proportional to the voltage, allowing for accurate voltage measurements.`,
+            ],
+          },
+        },
+      },
+      {
+        name: "Cooling fan",
+        image: "/images/model_parts/alternator/cooling_fan.png",
+        partDescription: {
+          construction: `The alternator cooling fan typically consists of a set of blades or impellers mounted on a shaft within the alternator housing. These blades are often made of metal or plastic and are designed to efficiently move air through the alternator for cooling purposes. `,
+          workingPrinciple: `When the alternator is in operation, it generates heat due to electrical resistance and friction within its components. The cooling fan is connected to the alternator shaft and spins along with it. As the fan rotates, it draws in ambient air and directs it over the alternator's internal components, dissipating heat and helping to maintain the alternator's optimal operating temperature. This cooling process helps prevent overheating and ensures the alternator's proper functioning.`,
+        },
+      },
+      {
+        name: "Rotor Coil",
+        image: "/images/model_parts/alternator/rotor_coil.png",
+        partDescription: {
+          construction: `The alternator rotor coil former is typically made of a high-strength, non-conductive material such as fiberglass or epoxy resin. It is designed as a cylindrical or barrel-shaped structure with precise dimensions to accommodate the rotor windings.`,
+          workingPrinciple: `The rotor coil former plays a crucial role in an alternator by providing structural support for the rotor windings. The windings are placed around the former, ensuring they maintain the correct shape and alignment during rotation. As the rotor spins within the stator, the magnetic field induces an alternating current in the rotor windings, which is then rectified to produce electrical output.`,
+        },
+      },
+      {
+        name: "Rotor Pole Coreformer",
+        image: "/images/model_parts/alternator/rotor_pole_coreformer.png",
+        partDescription: {
+          construction: `Alternator rotor poles are typically made of laminated iron cores, which reduce eddy current losses. They are mounted on the rotor shaft and spaced evenly around it. The poles may have a cylindrical or salient (projecting) design depending on the type of alternator.`,
+          workingPrinciple: `When the rotor rotates within the stator windings, the changing magnetic field created by the rotor poles induces an alternating current (AC) in the stator windings through electromagnetic induction. This AC voltage output is then used to generate electrical power in alternators. The design of the rotor poles plays a crucial role in determining the alternator's output voltage and frequency.`,
+        },
+      },
+      {
+        name: "Shaft",
+        image: "/images/model_parts/alternator/shaft.png",
+        partDescription: {
+          construction: `The rotor shaft of an alternator is typically made of high-strength steel or other durable materials to withstand mechanical stress and rotational forces. It is designed with precision to ensure proper balance and alignment within the alternator assembly.`,
+          workingPrinciple: `The alternator rotor shaft serves as the central axis for the rotor assembly, which consists of field windings or magnets. When the rotor shaft rotates within the stator (stationary part), it induces a magnetic field, facilitating the generation of alternating current (AC) electricity through electromagnetic induction, which is the fundamental working principle of an alternator.`,
+        },
+      },
+      {
+        name: "Slip ring and holder",
+        image: "/images/model_parts/alternator/slip_ring_and_holder.png",
+        partDescription: {
+          construction: {
+            "Slip Rings": [
+              `An alternator consists of two main components: a stator and a rotor. The rotor includes slip rings, which are conductive rings typically made of copper or a similar material, mounted on the shaft of the alternator.`,
+            ],
+            "Slip Ring Holder": [
+              `A slip ring holder, also known as a slip ring assembly, consists of a cylindrical structure typically made of insulating materials like plastic or ceramic. It houses a set of conductive rings, usually made of copper or other conductive materials, which are mounted on the inner surface of the cylinder. Each ring is separated from the others to prevent electrical contact.`,
+            ],
+          },
+          workingPrinciple: {
+            "Slip Rings": [
+              `Slip rings in an alternator serve as electrical contacts for the rotor winding. They enable the transfer of electrical energy from the rotor to the external circuit. As the rotor spins within the stator's magnetic field, the slip rings maintain continuous electrical contact, allowing the generation of alternating current (AC) output.`,
+            ],
+            "Slip Ring Holder": [
+              `The slip ring holder is used in electrical machinery, such as alternators, to enable continuous electrical connection between a rotating component (like the rotor) and a stationary one (like the stator). When the machine rotates, the conductive rings within the slip ring holder maintain electrical contact with brushes or contacts, allowing the transfer of electrical signals or power without the need for wires to twist or tangle. This enables the efficient transmission of electricity and data in applications where continuous rotation is required, like in generators and certain types of machinery.`,
+            ],
+          },
+        },
+      },
+      {
+        name: "Stator Coil",
+        image: "/images/model_parts/alternator/stator_coil.png",
+        partDescription: {
+          construction: `The stator coil in an alternator is typically made of a laminated iron core wound with multiple coils of copper wire. The core provides a magnetic path, and the coils are arranged in a specific pattern to generate alternating current.`,
+          workingPrinciple: `When the rotor (usually a magnetic field) spins within the stator coil, it induces a changing magnetic flux. This changing flux in the stator coils generates an alternating current (AC) output through electromagnetic induction, which can be used for various electrical applications, including power generation in vehicles and power plants.`,
+        },
+      },
+      {
+        name: "Stator Core",
+        image: "/images/model_parts/alternator/stator_core.png",
+        partDescription: {
+          construction: `The alternator stator core is typically made of high-quality laminated iron or steel sheets. These sheets are stacked together to form a cylindrical or rectangular core structure. The laminations reduce eddy current losses and enhance the magnetic properties of the core.`,
+          workingPrinciple: `The alternator stator core plays a crucial role in generating electrical power. When it rotates within a magnetic field produced by the rotor, it induces a varying magnetic flux. This changing flux induces alternating current (AC) in the stator windings, which is then rectified to produce usable electrical power. The core's design and materials are essential for efficient power generation and minimizing losses in the alternator.`,
+        },
+      },
+      {
+        name: "Yoke",
+        image: "/images/model_parts/alternator/yoke.png",
+        partDescription: {
+          construction: `The alternator yoke is typically made of a high-quality magnetic material, such as cast iron or steel. It forms the outermost part of the alternator's core and provides mechanical support and protection to the internal components.`,
+          workingPrinciple: `The alternator yoke plays a crucial role in completing the magnetic circuit within the alternator. It helps to channel the magnetic field generated by the rotor and stator, ensuring efficient electromagnetic induction, which is essential for producing alternating current (AC) electricity in the alternator's windings.`,
+        },
+      },
+    ],
+  },
 ];
 
 export async function GET(request, { params }) {
