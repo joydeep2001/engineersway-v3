@@ -30,6 +30,9 @@ export default function PartDetailsView({ showPopup, partDetails }) {
   return (
     <div className="popUpwrap">
       <div className="popUpDetailswrap">
+        <div onClick={handleClose} className="detailsCros cursor-pointer">
+        <img src="/images/cross_p.svg" alt="" />
+        </div>
         <div className="leftBlock">
           <div className="imgLeft">
             <img src={partDetails.image} alt="" />
@@ -38,9 +41,6 @@ export default function PartDetailsView({ showPopup, partDetails }) {
           {/* <a className="showModel btn-second">Show 3D Model</a> */}
         </div>
         <div className="rightBlock">
-          <div onClick={handleClose} className="detailsCros cursor-pointer">
-            <AiFillCloseCircle size={20} />
-          </div>
           <div className="machineDetailsWrap">
             <div className="eachdetailsM">
               <h5>

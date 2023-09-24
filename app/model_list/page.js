@@ -75,7 +75,7 @@ const ModelList = () => {
         <div>
           <Background />
           <div>
-            <div className="heroWrap container lg:flex md:px-5 mx-auto my-5 justify-between ">
+            <div className="heroWrap threeD container lg:flex md:px-5 mx-auto my-5 justify-between ">
               <div className="heroContent relative my-auto">
                 <h2 className="text-5xl xl:text-6xl 2xl:text-large  font-bold mb-5 leading-relaxed dark:text-slate-50">
                   Unveiling the World of <span className="">Machinery</span>{" "}

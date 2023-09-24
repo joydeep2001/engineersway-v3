@@ -106,7 +106,7 @@ const AboutUs = () => {
             >
               <figure>
                 <img
-                  src="images/about-1.png"
+                  src="images/abt-1.jpg"
                   alt=""
                   className="h-full w-full"
                 />
@@ -115,7 +115,7 @@ const AboutUs = () => {
                 <span></span>
               </a> */}
               <figure className="imgabt2">
-                <img src="images/abt-2.png" alt="" />
+                <img src="images/abt-2.jpg" alt="" />
               </figure>
               <div id="video-overlay" className="video-overlay">
                 <a className="video-overlay-close">&times;</a>
