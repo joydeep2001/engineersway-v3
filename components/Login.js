@@ -147,8 +147,8 @@ const Login = () => {
                       onChange={(e) =>
                         handleChange(setUsername, e.target.value, password)
                       }
-                      className="input-border"
-                      placeholder="username"
+                      className="input-border ip-place-holder"
+                      placeholder="Username"
                       type="text"
                     />
                     {errors[0] ? (
@@ -162,8 +162,8 @@ const Login = () => {
                       onChange={(e) =>
                         handleChange(setPassword, e.target.value, username)
                       }
-                      className="input-border"
-                      placeholder="password"
+                      className="input-border ip-place-holder"
+                      placeholder="Password"
                       type={inputType}
                     />
                     <ToggleInputType
@@ -177,7 +177,7 @@ const Login = () => {
                       ""
                     )}
                   </div>
-                  <div className="p-2 text-white bg-gradient-to-r from-orange-500 to-yellow-500 rounded-2xl border-none shadow-lg w-full flex justify-center items-center font-bold">
+                  <div className="vBtn justify-center inline-block items-center dark:bg-transparent dark:border-2 border-purple-600 dark:hover:bg-fuchsia-600/20 transition transform">
                     {" "}
                     <button
                       className="w-full"
@@ -185,7 +185,7 @@ const Login = () => {
                       // disabled={isSubmitClicked}
                       onClick={() => handleSubmit()}
                     >
-                      {textOnBtn}
+                      Login
                     </button>
                   </div>
                   <span>OR</span>

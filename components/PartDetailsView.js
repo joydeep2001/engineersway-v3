@@ -31,7 +31,7 @@ export default function PartDetailsView({ showPopup, partDetails }) {
     <div className="popUpwrap">
       <div className="popUpDetailswrap">
         <div onClick={handleClose} className="detailsCros cursor-pointer">
-        <img src="/images/cross_p.svg" alt="" />
+          <img src="/images/cross_p.svg" alt="" />
         </div>
         <div className="leftBlock">
           <div className="imgLeft">

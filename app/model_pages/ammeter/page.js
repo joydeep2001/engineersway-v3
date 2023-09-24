@@ -587,6 +587,76 @@ const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/Ammeter.glb`;
 // }
 function Model({ ...props }) {
   const { nodes, materials } = useGLTF(glbFileURL);
+  const {
+    LidZ,
+    LidY,
+    Lid_Visibility,
+    CasingZ,
+    CasingY,
+    Casing_Visibility,
+    Permanent_MagnetZ,
+    Permanent_MagnetY,
+    Permanent_Magnet_Visibility,
+    Shaft_Y,
+    Shaft_Visibility,
+  } = useGroupControlsWithReset("Ammmeter", {
+    Lid: {
+      LidZ: {
+        value: 0,
+        min: 0,
+        max: 25,
+        step: 0.1,
+      },
+      LidY: {
+        value: 0,
+        min: 0,
+        max: 18,
+        step: 0.1,
+      },
+      Lid_Visibility: true,
+    },
+    Casing: {
+      CasingZ: {
+        value: 0,
+        min: 0,
+        max: 25,
+        step: 0.1,
+      },
+      CasingY: {
+        value: 0,
+        min: 0,
+        max: 90,
+        step: 0.5,
+      },
+      Casing_Visibility: true,
+    },
+    "Permanent Magnet": {
+      Permanent_MagnetZ: {
+        value: 0,
+        min: 0,
+        max: 18,
+        step: 0.1,
+      },
+      Permanent_MagnetY: {
+        value: 0,
+        min: 0,
+        max: 18,
+        step: 0.1,
+      },
+      Permanent_Magnet_Visibility: {
+        value: true,
+      },
+    },
+    Shaft: {
+      Shaft_Y: {
+        value: 0,
+        min: 0,
+        max: 18,
+        step: 0.1,
+      },
+      Shaft_Visibility: true,
+    },
+  });
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -604,12 +674,14 @@ function Model({ ...props }) {
         <mesh
           geometry={nodes["Asably_-_Shaft1-1"].geometry}
           material={materials.Shaft}
-          position={[-22.991, -75.421, -15.5]}
+          position={[-22.991, -75.421, -15.5 - Shaft_Y]}
+          visible={Shaft_Visibility}
         />
         <mesh
           geometry={nodes["Asably_-_Shaft2-1"].geometry}
           material={materials.Shaft}
           position={[-22.991, -34.365, -15.5]}
+          visible={Shaft_Visibility}
         />
         <mesh
           geometry={nodes["Asably_-_ShuntResistorBody-1"].geometry}
@@ -695,9 +767,10 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes["Casing-1"].geometry}
         material={materials.Casing}
-        position={[4.158, 4.764, -7.383]}
+        position={[4.158, 4.764 + CasingY, -7.383 - CasingZ]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.106}
+        visible={Casing_Visibility}
       />
       <mesh
         geometry={nodes.HoldingPlate1.geometry}
@@ -751,9 +824,10 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.Lid.geometry}
         material={materials.Lid}
-        position={[4.133, 2.016, 18.277]}
+        position={[4.133, 2.016 + LidY, -0.76 + LidZ]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.106}
+        visible={Lid_Visibility}
       >
         <mesh
           geometry={nodes["Asably_-_oval_head_am-2"].geometry}
@@ -811,9 +885,14 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes["Asably_-_PermanentMagnet-1"].geometry}
         material={materials.Permanent_Magnet}
-        position={[4.146, 4.711, -3.963]}
+        position={[
+          4.146,
+          4.711 + Permanent_MagnetY,
+          -3.963 - Permanent_MagnetZ,
+        ]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.106}
+        visible={Permanent_Magnet_Visibility}
       />
       <mesh
         geometry={nodes.Cube.geometry}

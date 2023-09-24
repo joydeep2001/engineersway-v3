@@ -44,7 +44,7 @@
     "coursename": "Kitkat Fuse",
     "image": "/images/fuse.png",
     "link": "model_pages/fuse",
-    "published": true,
+    "published": false,
     "size": 18
   },
   {
@@ -143,7 +143,7 @@
     "coursename": "Synchronous Motor",
     "image": "/images/synchronus.png",
     "link": "model_pages/synchronous_motor",
-    "published": true,
+    "published": false,
     "size": 26.8
   },
   {
@@ -151,7 +151,7 @@
     "coursename": "Drill",
     "image": "/images/drill.png",
     "link": "model_pages/drill",
-    "published": true,
+    "published": false,
     "size": 3.1
   },
   {
@@ -159,7 +159,7 @@
     "coursename": "Single Phase Induction Motor with Run Capacitor",
     "image": "/images/singlephase.png",
     "link": "model_pages/single_phase",
-    "published": true,
+    "published": false,
     "size": 3.1
   },
   {
@@ -175,7 +175,7 @@
     "coursename": "Shaded Pole Motor",
     "image": "/images/shadedpole.png",
     "link": "model_pages/shaded_pole",
-    "published": true,
+    "published": false,
     "size": 3.1
   }
 ]

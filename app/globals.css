@@ -250,6 +250,9 @@ button {
   border: 1px solid rgb(255, 255, 255, 0.1);
   /* filter: blur(100px); */
 }
+.ip-place-holder {
+  @apply placeholder-gray-400;
+}
 /* @keyframes mymove3{
   0%{
       transform: translateY(0px);
@@ -888,7 +891,11 @@ h3 {
   position: relative;
   /* overflow-y: auto;
   height: 750px; */
-  background: linear-gradient( 88.97deg, rgb(255 122 0 / 22%) 34.89%, rgba(217, 217, 217, 0) 113.95% );
+  background: linear-gradient(
+    88.97deg,
+    rgb(255 122 0 / 22%) 34.89%,
+    rgba(217, 217, 217, 0) 113.95%
+  );
   padding: 80px 40px;
 }
 /* width */

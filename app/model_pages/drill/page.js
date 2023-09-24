@@ -931,6 +931,127 @@ const glbFileURL = `${process.env.NEXT_PUBLIC_S3_MODEL_BUCKET}/drill.glb`;
 // }
 function Model({ ...props }) {
   const { nodes, materials } = useGLTF(glbFileURL);
+  const group = useRef();
+  //const snap = useSnapshot(state);
+
+  const cover = useRef();
+  const headassembly = useRef();
+  const tbquil = useRef();
+  const spndl = useRef();
+  const spring = useRef();
+  const hub = useRef();
+  const {
+    HeadAssembly,
+    HeadAssembly_Visibility,
+    Hub,
+    Hub_Visibility,
+    TubeQuil,
+    TubeQuil_Visibility,
+    Spindle,
+    Spindle_Visibility,
+    Spring,
+    Spring_Visibility,
+    PulleyGardCover,
+    PulleyGardCover_Visibility,
+  } = useGroupControlsWithReset("Drill", {
+    "Head Assembly": {
+      HeadAssembly: {
+        value: 0,
+        min: 0,
+        max: 55,
+        step: 0.1,
+      },
+      HeadAssembly_Visibility: true,
+    },
+    Hub: {
+      Hub: {
+        value: 0,
+        min: 0,
+        max: 55,
+        step: 0.1,
+      },
+      Hub_Visibility: true,
+    },
+    "Tube Quil": {
+      TubeQuil: {
+        value: 0,
+        min: 0,
+        max: 55,
+        step: 0.1,
+      },
+      TubeQuil_Visibility: true,
+    },
+    Spindle: {
+      Spindle: {
+        value: 0,
+        min: 0,
+        max: 55,
+        step: 0.1,
+      },
+      Spindle_Visibility: true,
+    },
+    Spring: {
+      Spring: {
+        value: 0,
+        min: 0,
+        max: 55,
+        step: 0.1,
+      },
+      Spring_Visibility: true,
+    },
+    "Pulley Gard Cover": {
+      PulleyGardCover: {
+        value: 0,
+        min: 0,
+        max: 55,
+        step: 0.1,
+      },
+      PulleyGardCover_Visibility: true,
+    },
+  });
+
+  useEffect(() => {
+    if (PulleyGardCover_Visibility == false) {
+      cover.current.position.y = 20000000000;
+    } else {
+      cover.current.position.y = 71.8 + PulleyGardCover;
+    }
+  });
+  useEffect(() => {
+    if (Spring_Visibility == false) {
+      spring.current.position.x = 20000000000;
+    } else {
+      spring.current.position.x = 1.73 + Spring;
+    }
+  });
+  useEffect(() => {
+    if (Spindle_Visibility == false) {
+      spndl.current.position.x = 20000000000;
+    } else {
+      spndl.current.position.x = 8.03 - Spindle;
+    }
+  });
+  useEffect(() => {
+    if (TubeQuil_Visibility == false) {
+      tbquil.current.position.x = 20000000000;
+    } else {
+      tbquil.current.position.x = 7.97 - TubeQuil;
+    }
+  });
+  // useEffect(() => {
+  //   if (Hub_Visibility == false) {
+  //     hub.current.position.x = 20000000000;
+  //   } else {
+  //     hub.current.position.x = 5.84 + Hub;
+  //   }
+  // });
+  useEffect(() => {
+    if (HeadAssembly_Visibility == false) {
+      headassembly.current.position.x = 20000000000;
+    } else {
+      headassembly.current.position.x = 8.65 + HeadAssembly;
+    }
+  });
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -1109,9 +1230,11 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes["ass_-_Head_Assembly-1"].geometry}
         material={materials.Head_Assembly}
-        position={[-61.791, 64.231, -80.968]}
+        position={[-61.791 + HeadAssembly, 64.231, -80.968]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.428}
+        visible={HeadAssembly_Visibility}
+        ref={headassembly}
       />
       <mesh
         castShadow
@@ -1321,9 +1444,11 @@ function Model({ ...props }) {
         scale={0.428}
       />
       <group
-        position={[0.652, 128.061, -98.03]}
+        position={[0.652, 128.061 + PulleyGardCover, -98.03]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.329}
+        visible={PulleyGardCover_Visibility}
+        ref={cover}
       >
         <mesh
           castShadow
@@ -1370,18 +1495,22 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes["ass_-_Spindle-1"].geometry}
         material={materials.Spindle}
-        position={[8.034, 58.283, -73.416]}
+        position={[8.034 - Spindle, 58.283, -73.416]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.428}
+        visible={Spindle_Visibility}
+        ref={spndl}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes["ass_-_Spring-1"].geometry}
         material={materials.Handle}
-        position={[1.733, 60.081, -76.725]}
+        position={[1.733 + Spring, 60.081, -76.725]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.428}
+        visible={Spring_Visibility}
+        ref={spring}
       />
       <mesh
         castShadow
@@ -1406,9 +1535,11 @@ function Model({ ...props }) {
         receiveShadow
         geometry={nodes["ass_-_TubeQuill-1"].geometry}
         material={materials.TubeQuil}
-        position={[7.966, 129.93, -49.538]}
+        position={[7.966 - TubeQuil, 57.24, -73.79]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.428}
+        visible={TubeQuil_Visibility}
+        ref={tbquil}
       />
       <mesh
         castShadow

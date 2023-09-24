@@ -485,27 +485,8 @@ export default function Fuse() {
     //12
     { id: "Plane", name: "Plane", description: "Plane", highlight: false },
   ];
-  const { cX, cY, cZ } = useControlsWithReset("Camera", {
-    cX: {
-      value: 0,
-      min: -100,
-      max: 100,
-      step: 0.1,
-    },
-    cY: {
-      value: 0,
-      min: -100,
-      max: 100,
-      step: 0.1,
-    },
-    cZ: {
-      value: 0,
-      min: -100,
-      max: 100,
-      step: 0.1,
-    },
-  });
-  const camera = { position: [5 + cX, 2 + cY, 5 + cZ], fov: 30 };
+
+  const camera = { position: [5, 2, 5], fov: 30 };
   const [highlightState, dispatch] = useReducer(reducer, highlightedParts);
   return (
     <ModelJSXGenerator

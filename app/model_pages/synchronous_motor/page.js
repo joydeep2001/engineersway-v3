@@ -1405,7 +1405,7 @@ function Model({ ...props }) {
         />
       </mesh>
       <group
-        position={[-0.412, 6.337, 9.061 - Back_Cover]}
+        position={[-0.412, 6.337, -17.62 - Back_Cover]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.156}
         ref={backcover}
