@@ -37,7 +37,7 @@ import SideMenu from "./SideMenu";
 import PartDetailsView from "./PartDetailsView";
 import PartViewer from "./PartViewer";
 import ToolBar from "@/components/ToolBar";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
 import useFetch from "@/hooks/useFetch";
 import { usePathname } from "next/navigation";
 
@@ -178,17 +178,19 @@ export default function ModelJSXGenerator({
             {/* <Environment background preset="sunset" blur={0.8} /> */}
             {/* <ProgressLoader /> */}
           </Canvas>
-          <ToolBar
-            onPartCardClick={handleShowPartDetails}
-            partDetails={partDetails}
-          />
-          {popup.visibility && (
+          {popup.visibility ? (
             <PartDetailsView
               showPopup={showPopup}
               partDetails={partDetails[popup.selected]}
             />
+          ) : (
+            <ToolBar
+              onPartCardClick={handleShowPartDetails}
+              partDetails={partDetails}
+            />
           )}
         </div>
+        <Leva hidden={popup.visibility} />
       </AppContextProvider>
     </>
   );
