@@ -87,7 +87,7 @@ export default function ModelJSXGenerator({
           <Canvas
             dpr={[1, 2]}
             gl={{ logarithmicDepthBuffer: true }}
-            shadows
+            shadows={false}
             camera={camera}
           >
             <color attach="background" args={[color]} />
