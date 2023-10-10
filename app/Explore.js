@@ -113,8 +113,9 @@ const Explore = () => {
                         link,
                         paragraphs,
                         points,
+                        published,
                       }) => {
-                        if (paragraphs && points)
+                        if (published && paragraphs && points)
                           return (
                             <div key={_id} className="modelSlide">
                               <div className="modelWrapE  justify-between grid grid-cols-1 xl:grid-cols-3 gap-4">
