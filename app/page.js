@@ -72,6 +72,7 @@ const Index = () => {
         <div className="overflow-hidden">
           <Navbar toggle={toggle} classname="fixed" />
           <Dropdown isOpen={isOpen} toggle={toggle} />
+
           <Hero />
           {/* <Element name="Body">
           <Body className="sticky" />

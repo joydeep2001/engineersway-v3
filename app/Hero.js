@@ -50,11 +50,25 @@ const Hero = () => {
           </div>
           <div className="heroImage relative my-auto mx-0 md:mx-0">
             <figure>
-              <img
+              {/* <img
                 src="images/transformerHero.png"
                 alt=""
                 className="drop-shadow-2xl"
-              />
+              /> */}
+              <div
+                style={{
+                  height: "600px",
+                  width: "1200px",
+                  background: "#000000",
+                }}
+              >
+                <iframe
+                  src="https://my.spline.design/untitled-81704e862c50d809b961c15ecce1faea/"
+                  frameborder="0"
+                  width="100%"
+                  height="100%"
+                ></iframe>
+              </div>
             </figure>
           </div>
         </div>
