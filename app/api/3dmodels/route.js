@@ -21,10 +21,10 @@ export async function POST(req, res) {
     const formData = await req.formData();
     console.log(formData.get("data"));
     console.log(formData.get("thumbnail"));
-    const files = [formData.get("thumbnail"), formData.get("_3d_model")];
+    const files = [formData.get("thumbnail"), formData.get("_3dmodel")];
     const buffers = await uploadedFileToBuffer(files);
     const fileToFolder = ["model_thumbnails", "models"];
-    const [thumb_url, _3d_model_url] = await Promise.all(
+    const [thumb_url, _3dmodel_url] = await Promise.all(
       buffers.map(
         async (buffer, i) =>
           await uploadFileToS3(buffer, { folderName: fileToFolder[i] })
@@ -33,17 +33,17 @@ export async function POST(req, res) {
 
     const { name, isPublished } = JSON.parse(formData.get("data"));
     console.log(name);
-    await ThreeDModels.create({
+    const savedData = await ThreeDModels.create({
       name,
       size: formData.get("thumbnail").size / 1024, //coverting to KB
       js_file: "path",
       thumbnail: thumb_url,
-      _3dmodel: _3d_model_url,
+      _3dmodel: _3dmodel_url,
       isPublished,
     });
 
     return NextResponse.json(
-      { message: "Data saved successfully" },
+      { message: "Data saved successfully", savedData },
       { status: 201 }
     );
   } catch (error) {
@@ -52,7 +52,7 @@ export async function POST(req, res) {
   }
 }
 
-export async function GET(req) {
+export async function GET() {
   try {
     await connectToDB();
     // Get all the records in the table
