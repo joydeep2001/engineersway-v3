@@ -39,7 +39,7 @@ export const teamInfo = [
     img: `images/Souvik.jpg`,
     hyperlinks: {
       facebook: "https://m.facebook.com/100013330239185/",
-      linkedin: "https://www.linkedin.com/mwlite/in/souvik-das-775142220/",
+      linkedin: "https://www.linkedin.com/in/souvik-das-775142220/",
     },
     body: [
       {
