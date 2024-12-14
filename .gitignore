@@ -36,3 +36,4 @@ next-env.d.ts
 #model folder
 /public/models
 (test)
+.vscode
