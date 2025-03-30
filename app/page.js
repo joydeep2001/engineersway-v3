@@ -83,7 +83,7 @@ const Index = () => {
         </div> */}
           <Aboutus />
           <Explore />
-          <Team />
+          {/* <Team /> */}
           <Footer />
           <div className="">
             <ScrollToTop smooth color="#ff7b01" width="38" />
